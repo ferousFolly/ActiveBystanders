@@ -8,11 +8,15 @@ public class TextureSetup : MonoBehaviour {
     public Camera camera2;
     public Camera camera3;
     public Camera camera4;
+    public Camera camera5;
+    public Camera camera6;
 
     public Material camera1Mat;
     public Material camera2Mat;
     public Material camera3Mat;
     public Material camera4Mat;
+    public Material camera5Mat;
+    public Material camera6Mat;
 
 
     // When game starts remove current camera textures and set new textures with the dimensions of the players screen
@@ -46,6 +50,19 @@ public class TextureSetup : MonoBehaviour {
         camera4.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
         camera4Mat.mainTexture = camera4.targetTexture;
 
+        if (camera5.targetTexture != null)
+        {
+            camera5.targetTexture.Release();
+        }
+        camera5.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
+        camera5Mat.mainTexture = camera5.targetTexture;
+
+        if (camera6.targetTexture != null)
+        {
+            camera6.targetTexture.Release();
+        }
+        camera6.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
+        camera6Mat.mainTexture = camera6.targetTexture;
     }
 
 }

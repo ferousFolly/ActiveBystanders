@@ -18,9 +18,11 @@ public class PickWeapon : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E) && weapon != null)
             {
-                weapon.transform.SetParent(transform.GetChild(0));
-                weapon.transform.eulerAngles = new Vector3(-15, 110, -55);
+                Debug.Log("ss");
+                weapon.transform.SetParent(transform.GetChild(0).GetChild(0));
+                weapon.transform.localPosition = Vector3.zero;
                 isHoldingWeapon = true;
+                isShowingButton = false;
             }
             if (!isHoldingWeapon)
             {

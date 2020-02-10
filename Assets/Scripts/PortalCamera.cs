@@ -21,7 +21,7 @@ public class PortalCamera : MonoBehaviour {
 
         // adjust position of camera
 		Vector3 playerOffsetFromPortal = playerCameraPos - otherPortalPos;
-        transform.position = portalPos + playerOffsetFromPortal;
+        //transform.position = portalPos + playerOffsetFromPortal;
 
         // adjust rotation of camera
 		float anglarDifferenceBetweenPortalRotations = Quaternion.Angle(portal.transform.rotation, otherPortal.transform.rotation);
