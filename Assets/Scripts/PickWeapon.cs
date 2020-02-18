@@ -43,8 +43,10 @@ public class PickWeapon : MonoBehaviour
         if (other.tag == "Weapon") {
             isShowingButton = true;
             weapon = other.transform.parent.gameObject;
+            
         }
     }
+
 
     private void OnTriggerExit(Collider other)
     {
