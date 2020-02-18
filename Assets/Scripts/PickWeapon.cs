@@ -18,7 +18,6 @@ public class PickWeapon : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E) && weapon != null)
             {
-                Debug.Log("ss");
                 weapon.transform.SetParent(transform.GetChild(0).GetChild(0));
                 weapon.transform.localPosition = Vector3.zero;
                 isHoldingWeapon = true;
@@ -43,9 +42,14 @@ public class PickWeapon : MonoBehaviour
         if (other.tag == "Weapon") {
             isShowingButton = true;
             weapon = other.transform.parent.gameObject;
-            
+        }
+
+        if (other.tag == "Open") {
+            other.GetComponentInParent<Animator>().SetBool("Open",true);
         }
     }
+
+
 
 
     private void OnTriggerExit(Collider other)
