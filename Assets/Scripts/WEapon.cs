@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WEapon : MonoBehaviour
-{
+public class Weapon : MonoBehaviour {
 
-    void Update()
-    {
+    void Update() {
         if (transform.parent != null) {
             transform.eulerAngles = Vector3.zero;
             if (GetComponent<Rigidbody>() != null) {
