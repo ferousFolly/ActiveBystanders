@@ -55,14 +55,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AI_chase.cs" />
      <Compile Include="Assets\Scripts\Chase.cs" />
      <Compile Include="Assets\Scripts\PickWeapon.cs" />
      <Compile Include="Assets\Scripts\PortalCamera.cs" />
      <Compile Include="Assets\Scripts\Sender.cs" />
      <Compile Include="Assets\Scripts\TextureSetup.cs" />
      <Compile Include="Assets\Scripts\WEapon.cs" />
-     <None Include="Assets\Shader\NewImageEffectShader.shader" />
+     <None Include="Assets\Shader\PortalShader.shader" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/cbouchmouny/Desktop/ActiveBystanders/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
