@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PickWeapon.cs">
+    <Files>
+      <File FileName="Assets/Scripts/PickWeapon.cs" Line="37" Column="10" />
+      <File FileName="Assets/Scripts/PortalCamera.cs" />
+      <File FileName="Assets/Scripts/TextureSetup.cs" />
+      <File FileName="Assets/Scripts/WEapon.cs" Line="7" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ActiveBystanders" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="PickWeapon.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3e45f679-5631-4ab0-ae9a-9c85db9608dd" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
