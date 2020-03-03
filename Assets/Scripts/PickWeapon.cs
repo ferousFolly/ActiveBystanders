@@ -37,15 +37,21 @@ public class PickWeapon : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Open")
+        {
+            if (Input.GetKeyDown(KeyCode.E)) { 
+            other.GetComponent<Animator>().SetBool("Open", true);
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Weapon") {
             isShowingButton = true;
             weapon = other.transform.parent.gameObject;
-        }
-
-        if (other.tag == "Open") {
-            other.GetComponentInParent<Animator>().SetBool("Open",true);
         }
     }
 

@@ -30,7 +30,7 @@ public class Chase : MonoBehaviour
 
         if (state == "patrol" && waypoints.Length > 0)
         {
-            anim.SetBool("isWlaking", true);
+            anim.SetBool("isWalking", true);
         if (Vector3.Distance(waypoints[currentWP].transform.position, transform.position) < accuracyWP)
             {
                 currentWP++;

@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":-9.237506866455079,"y":3.425619125366211,"z":-67.44949340820313},"rotation":{"x":0.01589212566614151,"y":-0.9736253023147583,"z":0.07169472426176071,"w":0.21608403325080872},"size":22.0,"orthographic":false}
 =======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":-4.094902038574219,"y":4.428495407104492,"z":-29.819782257080079},"rotation":{"x":0.0012472235830500723,"y":-0.9900731444358826,"z":0.14154040813446046,"w":0.007481224834918976},"size":16.098529815673829,"orthographic":false}
 >>>>>>> Jordan
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":505.15081787109377,"y":224.14395141601563,"z":-11.75},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":305.1944274902344,"orthographic":true}
+>>>>>>> Vincent

@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-Base path: 'D:/2019.3.0f6/Editor/Data', plugins path 'D:/2019.3.0f6/Editor/Data/PlaybackEngines'
-=======
 Base path: 'C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/PlaybackEngines'
->>>>>>> Jordan
 Cmd: initializeCompiler
+
+Quitting shader compiler process
