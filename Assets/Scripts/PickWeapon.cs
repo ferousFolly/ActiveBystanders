@@ -12,6 +12,8 @@ public class PickWeapon : MonoBehaviour
     [SerializeField]
     GameObject weapon;
 
+    public Transform frontDoor;
+
     void Update()
     {
         if (isShowingButton)
@@ -53,10 +55,11 @@ public class PickWeapon : MonoBehaviour
             isShowingButton = true;
             weapon = other.transform.parent.gameObject;
         }
+        if (other.tag == "Teleport")
+        {
+            transform.position = frontDoor.position;
+        }
     }
-
-
-
 
     private void OnTriggerExit(Collider other)
     {
