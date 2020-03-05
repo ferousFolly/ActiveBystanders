@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
 {
-
-    public Image Health;
+   
+    public Text Health;
     public float MaxH = 100f;
     public float CurH = 0f;
     public bool alive = true;
@@ -19,7 +20,14 @@ public class HealthBar : MonoBehaviour
         
     }
 
-   
+    private void Update()
+    {
+        Health.text = "Health" + MaxH.ToString();
+        if (MaxH >= 0)
+        {
+            SceneManager.LoadScene("Winner");
+        }
+    }
 
     public void TakeDamage(float amount)
     {

@@ -9,7 +9,10 @@ public class Chase : MonoBehaviour
     {
         Idle,
         Patrol,
-        Persuing
+        Persuing,
+        Hurt,
+        Death
+        
     }
 
 
