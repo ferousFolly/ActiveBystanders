@@ -64,6 +64,8 @@
   <ItemGroup>
     <Compile Include="Assets\Audio\ADAD.cs" />
     <Compile Include="Assets\Scripts\Chase.cs" />
+    <Compile Include="Assets\Scripts\DamagePlayer.cs" />
+    <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ButtonFunc.cs" />
     <Compile Include="Assets\Scripts\MainMenu\LightControl.cs" />
     <Compile Include="Assets\Scripts\MainMenu\UI_Button.cs" />
