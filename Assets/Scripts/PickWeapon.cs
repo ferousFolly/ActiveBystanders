@@ -12,6 +12,8 @@ public class PickWeapon : MonoBehaviour
     [SerializeField]
     GameObject weapon;
 
+    public GameObject inventory;
+
     void Update()
     {
         if (isShowingButton)
@@ -35,6 +37,8 @@ public class PickWeapon : MonoBehaviour
         else {
             buttonE.SetActive(false);
         }
+
+        inventory.SetActive(Input.GetKey(KeyCode.Space));
     }
 
     private void OnTriggerEnter(Collider other)
