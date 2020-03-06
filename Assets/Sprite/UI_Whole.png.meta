@@ -26,6 +26,9 @@ TextureImporter:
   - first:
       213: -1483649801399837002
     second: UI_Whole_7
+  - first:
+      213: 3244410941095937321
+    second: UI_Whole_8
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -137,10 +140,10 @@ TextureImporter:
       name: UI_Whole_0
       rect:
         serializedVersion: 2
-        x: 95
-        y: 953
-        width: 80
-        height: 77
+        x: 86
+        y: 950
+        width: 92
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,10 +161,10 @@ TextureImporter:
       name: UI_Whole_1
       rect:
         serializedVersion: 2
-        x: 223
-        y: 937
-        width: 417
-        height: 94
+        x: 222
+        y: 934
+        width: 411
+        height: 106
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,10 +182,10 @@ TextureImporter:
       name: UI_Whole_2
       rect:
         serializedVersion: 2
-        x: 684
-        y: 923
-        width: 418
-        height: 109
+        x: 674
+        y: 919
+        width: 429
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,10 +203,10 @@ TextureImporter:
       name: UI_Whole_3
       rect:
         serializedVersion: 2
-        x: 60
-        y: 269
-        width: 417
-        height: 610
+        x: 63
+        y: 283
+        width: 411
+        height: 598
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,10 +224,10 @@ TextureImporter:
       name: UI_Whole_4
       rect:
         serializedVersion: 2
-        x: 69
-        y: 17
-        width: 191
-        height: 177
+        x: 61
+        y: 14
+        width: 201
+        height: 201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,10 +245,10 @@ TextureImporter:
       name: UI_Whole_5
       rect:
         serializedVersion: 2
-        x: 305
-        y: 29
-        width: 168
-        height: 142
+        x: 309
+        y: 24
+        width: 167
+        height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,13 +266,13 @@ TextureImporter:
       name: UI_Whole_6
       rect:
         serializedVersion: 2
-        x: 477
-        y: 372
-        width: 1097
-        height: 513
+        x: 617
+        y: 286
+        width: 77
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 25, y: 25, z: 25, w: 25}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -284,10 +287,10 @@ TextureImporter:
       name: UI_Whole_7
       rect:
         serializedVersion: 2
-        x: 1575
-        y: 277
-        width: 557
-        height: 651
+        x: 482
+        y: 372
+        width: 1090
+        height: 509
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,10 +304,31 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: UI_Whole_8
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 288
+        width: 539
+        height: 630
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9250a61bf86760d20800000000000000
+      internalID: 3244410941095937321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 92ed3ef3dc7194bb5920f43b566eff66
+    spriteID: 6e063170e9f9a4e1691cd4b3a80f4f7d
     internalID: 0
     vertices: []
     indices: 
