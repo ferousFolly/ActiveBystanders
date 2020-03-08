@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 881, y: 492}
   m_MaxSize: {x: 16006, y: 14042}
   vertical: 0
-  controlID: 134
+  controlID: 135
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 492}
   m_MaxSize: {x: 12005, y: 14042}
   vertical: 1
-  controlID: 135
+  controlID: 136
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 136
+  controlID: 137
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -444,23 +444,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 2e99feff92a5feff52b5feff7ac0fefff4dcfeff
+      m_SelectedIDs: 145f0000805e0000
+      m_LastClickedID: 24340
+      m_ExpandedIDs: c6e7ffffbeebffff72fbffffc0570000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Furiture
+        m_OriginalName: Furiture
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 23148
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -506,9 +506,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.8906624, y: 15.175003, z: -13.979251}
+    m_Target: {x: -6.826998, y: 3.5013576, z: -12.358173}
     speed: 2
-    m_Value: {x: 2.8906624, y: 15.175003, z: -13.979251}
+    m_Value: {x: -6.826998, y: 3.5013576, z: -12.358173}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -554,13 +554,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.0133556565, y: 0.9755064, z: -0.061841592, w: -0.21067616}
+    m_Target: {x: -0.031184921, y: 0.9644115, z: -0.13277031, w: -0.22652218}
     speed: 2
-    m_Value: {x: -0.013355657, y: 0.9755065, z: -0.061841596, w: -0.21067618}
+    m_Value: {x: -0.031583056, y: 0.9637265, z: -0.132676, w: -0.22941414}
   m_Size:
-    m_Target: 85.16272
+    m_Target: 69.292465
     speed: 2
-    m_Value: 85.16272
+    m_Value: 66.30858
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -748,20 +748,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Scenes
+    - Assets/Model
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/_Scenes
+  - Assets/Model
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\yshiou\Documents\Git\ActiveBystanders
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 727e0000
-    m_LastClickedID: 32370
-    m_ExpandedIDs: 00000000707e0000867e0000aa7e0000b27e0000007f000000ca9a3b
+    m_SelectedIDs: 543d0000
+    m_LastClickedID: 15700
+    m_ExpandedIDs: 00000000123d0000143d0000543d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -789,7 +789,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 00000000123d0000143d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -816,7 +816,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300005647feff
     m_RenameOverlay:
       m_UserAcceptedRename: 0
