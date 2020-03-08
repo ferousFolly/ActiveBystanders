@@ -28,8 +28,4 @@ public class UI_Button : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,
             onButtonClick.Invoke();
         }
     }
-
-    public void DissolveButton() {
-        GetComponentInChildren<Animator>().SetBool("Dissolve", true);
-    }
 }

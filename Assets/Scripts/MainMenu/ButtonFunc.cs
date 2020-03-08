@@ -8,10 +8,12 @@ public class ButtonFunc : MonoBehaviour
     public UI_Button[] buttons;
     public LightControl[] lights;
 
+    bool isOptoin;
+
     public void ClickStart() {
         foreach (UI_Button button in buttons)
         {
-            button.DissolveButton();
+            button.GetComponentInChildren<Animator>().SetBool("Dissolve", true);
         }
 
         foreach (LightControl light in lights)
@@ -25,6 +27,11 @@ public class ButtonFunc : MonoBehaviour
 
     public void ClickExit() {
         Application.Quit();
+    }
+
+    public void ClickOption(bool b) {
+        isOptoin = b;
+        buttons[1].GetComponentInChildren<Animator>().SetBool("Pressed", isOptoin);
     }
 
     void ChangeScene() {

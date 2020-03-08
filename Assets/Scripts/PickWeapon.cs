@@ -37,6 +37,7 @@ public class PickWeapon : MonoBehaviour
         else {
             buttonE.SetActive(false);
         }
+
     }
 
     private void OnTriggerStay(Collider other)
