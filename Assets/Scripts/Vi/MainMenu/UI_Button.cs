@@ -11,6 +11,7 @@ public class UI_Button : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,
     public void OnPointerEnter(PointerEventData eventData)
     {
         GetComponentInChildren<Animator>().SetBool("HighLight",true);
+        SoundManager.PlaySound(SoundManager.UI_SoundEffects.UI_HighLight);
     }
 
     public void OnPointerClick(PointerEventData eventData)

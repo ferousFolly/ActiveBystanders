@@ -34,6 +34,10 @@ public class ButtonFunc : MonoBehaviour
         buttons[1].GetComponentInChildren<Animator>().SetBool("Pressed", isOptoin);
     }
 
+    public void ClickApply() {
+        SoundManager.PlaySound(SoundManager.UI_SoundEffects.UI_Back);
+    }
+
     void ChangeScene() {
         SceneManager.LoadScene(1);
     }

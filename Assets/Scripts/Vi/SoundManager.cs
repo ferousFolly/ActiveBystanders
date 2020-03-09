@@ -5,32 +5,14 @@ using UnityEngine;
 public static class SoundManager
 {
     public enum SoundEffects {
-        PlayerSlash_1,
-        PlayerSlash_2,
-        PlayerHeavySlash,
-        PlayerSlashAir,
-        BlockSword_1,
-        BlockSword_2,
-        EnemySlash,
-        PlayerSpecialSlash,
-        EnemyPullBow,
-        EnemyFireArrow,
-        ArrowHitSword,
-        RecoveryInjury,
-        SnowFootStep_1,
-        SnowFootStep_2,
-        NormalFootStep_1,
-        NormalFootStep_2,
-        EnemySlashAir,
-        BossSlashPlayer,
-        TimeStop,
-        FlameIngite
+      
     }
 
     public enum UI_SoundEffects {
         UI_Press,
         UI_HighLight,
         UI_Cancel,
+        UI_Back,
     }
 
     private static GameObject audioObject;
