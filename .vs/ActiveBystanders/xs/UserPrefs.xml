@@ -1,10 +1,16 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MainMenu/ButtonFunc.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="Assets/Scripts/MainMenu/UI_Button.cs" Line="27" Column="26" />
       <File FileName="Assets/Scripts/MainMenu/ButtonFunc.cs" Line="32" Column="38" />
       <File FileName="Assets/Scripts/MainMenu/LightControl.cs" />
       <File FileName="Assets/Scripts/PickWeapon.cs" />
+=======
+      <File FileName="Assets/Scripts/MainMenu/UI_Button.cs" Line="32" Column="35" />
+      <File FileName="Assets/Scripts/MainMenu/ButtonFunc.cs" Line="22" Column="32" />
+      <File FileName="Assets/Scripts/MainMenu/LightControl.cs" Line="26" Column="38" />
+>>>>>>> Charbel
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,6 +21,7 @@
                 <Node name="MainMenu" expanded="True">
                   <Node name="ButtonFunc.cs" selected="True" />
                 </Node>
+<<<<<<< HEAD
               </Node>
               <Node name="Standard Assets" expanded="True">
                 <Node name="Characters" expanded="True">
@@ -22,6 +29,8 @@
                     <Node name="Scripts" expanded="True" />
                   </Node>
                 </Node>
+=======
+>>>>>>> Charbel
               </Node>
             </Node>
           </Node>
@@ -31,7 +40,11 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2e073db2-0505-4b7f-abba-91c42f8abf77" />
+=======
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8fb2eb3e-91eb-4072-af8c-8fda04879e93" />
+>>>>>>> Charbel
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
