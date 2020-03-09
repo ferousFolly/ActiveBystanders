@@ -50,16 +50,6 @@ public class PickWeapon : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Open")
-        {
-            if (Input.GetKeyDown(KeyCode.E)) { 
-            other.GetComponent<Animator>().SetBool("Open", true);
-            }
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Weapon") {
