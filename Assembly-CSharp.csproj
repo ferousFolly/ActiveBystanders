@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Chase.cs" />
     <Compile Include="Assets\Scripts\DamagePlayer.cs" />
     <Compile Include="Assets\Scripts\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\InteractiveAction.cs" />
     <Compile Include="Assets\Scripts\PickWeapon.cs" />
     <Compile Include="Assets\Scripts\PortalCamera.cs" />
     <Compile Include="Assets\Scripts\PortalTeleporter.cs" />
