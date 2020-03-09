@@ -12,7 +12,7 @@ public class PickWeapon : MonoBehaviour
     [SerializeField]
     GameObject weapon;
 
-    public GameObject inventory;
+    public Transform frontDoor;
 
     void Update()
     {
@@ -38,7 +38,16 @@ public class PickWeapon : MonoBehaviour
             buttonE.SetActive(false);
         }
 
-        inventory.SetActive(Input.GetKey(KeyCode.Space));
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Open")
+        {
+            if (Input.GetKeyDown(KeyCode.E)) { 
+            other.GetComponent<Animator>().SetBool("Open", true);
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,14 +56,11 @@ public class PickWeapon : MonoBehaviour
             isShowingButton = true;
             weapon = other.transform.parent.gameObject;
         }
-
-        if (other.tag == "Open") {
-            other.GetComponentInParent<Animator>().SetBool("Open",true);
+        if (other.tag == "Teleport")
+        {
+            transform.position = frontDoor.position;
         }
     }
-
-
-
 
     private void OnTriggerExit(Collider other)
     {
