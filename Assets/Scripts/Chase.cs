@@ -59,8 +59,8 @@ public class Chase : MonoBehaviour
                     {
                         direction = waypoints[currentWP].transform.position - transform.position;
                         this.transform.rotation = Quaternion.Slerp(transform.rotation,
-                                           Quaternion.LookRotation(direction), rotSpeed * Time.deltaTime);
-
+                                           Quaternion.LookRotation(direction), rotSpeed * Time.deltaTime);
+
                         
 
                         this.transform.Translate(0, 0, Time.deltaTime * speed);
@@ -94,14 +94,14 @@ public class Chase : MonoBehaviour
                         this.transform.Translate(0, 0, Time.deltaTime * speed);
                         anim.SetBool("isWalking", true);
                         anim.SetBool("isAttacking", false);
-                        this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
+                        this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
                                                    Quaternion.LookRotation(direction), 0.1f);
                     }
                     else
                     {
                         anim.SetBool("isAttacking", true);
                         anim.SetBool("isWalking", false);
-                        this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
+                        this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
                                                    Quaternion.LookRotation(direction), 0.1f);
                     }
                 }

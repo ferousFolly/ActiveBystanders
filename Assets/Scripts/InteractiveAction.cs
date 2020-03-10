@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class PickWeapon : MonoBehaviour
+public class InteractiveAction : MonoBehaviour
 {
 
     public GameObject buttonE;
