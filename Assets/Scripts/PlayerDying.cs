@@ -11,35 +11,27 @@ public class PlayerDying : MonoBehaviour
     public Image Injured;
     public Image dying;
 
-
     private bool enterColider = false;
     public float MaxsHealth = 100.0f;
     public float MaxHealth = 100f;
     public float CurrentHealth = 0f;
 
+    float colorInjury = 0f;
+    float colorDying = 0f;
+
     public bool alive = true;
-    // Start is called before the first frame update
     private void Start()
     {
         alive = true; //player strts off as alive 
         CurrentHealth = MaxHealth;
 
-
+        colorInjury = Injured.color.a;
+        colorDying = dying.color.a;
     }
 
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-            enterColider = true;
+ 
 
-        Debug.Log("im hit");
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-            enterColider = false;
-    }
+ 
 
     public void TakeDamage(float amount)
     {
@@ -49,13 +41,20 @@ public class PlayerDying : MonoBehaviour
             return;
         }
 
-        if (CurrentHealth <= 0)
+        if (CurrentHealth <= 0) //Die
         {
             CurrentHealth = 0;
             alive = false;
-            gameObject.SetActive(false);
         }
 
+        if (CurrentHealth <= 20)
+        {
+            colorDying = 1;
+        }
+        colorInjury = 1;
+
+        Injured.color = new Color(1,1,1,colorInjury);
+        dying.color = new Color(1, 1, 1, colorDying);
 
         CurrentHealth -= amount;
 
@@ -64,40 +63,27 @@ public class PlayerDying : MonoBehaviour
 
     public void Update()
     {
-        //HEALTH COUNT DOWN
-        if (MaxHealth > 0 && enterColider == true)
+        if (CurrentHealth > MaxsHealth)
         {
-            MaxHealth -= Time.deltaTime;
+            CurrentHealth = MaxsHealth;
         }
 
-        if (MaxHealth >= 0 && enterColider == false)
+        if (colorInjury > 0) {
+            colorInjury -= Time.deltaTime * 1.1f;
+        }
+        if (colorDying > 0)
         {
-            MaxHealth += Time.deltaTime;
+            colorDying -= Time.deltaTime * 1.1f;
         }
 
-        if (MaxHealth > MaxsHealth)
-        {
-            MaxHealth = MaxsHealth;
-        }
+        Injured.color = new Color(1, 1, 1, colorInjury);
+        dying.color = new Color(1, 1, 1, colorDying);
+
     }
 
 }
 
 
-//public void OnGUI()
-//{
-//    if (MaxHealth <= 100)
-//    {
-//        UI.DrawTexture(Rect(0, 0, Screen.width, Screen.height), Injured);
-//    }
-
-//    if (MaxHealth <= 50)
-//    {
-//        GUI.DrawTexture(Rect(0, 0, Screen.width, Screen.height), dying);
-
-//    }
-
-    // Update is called once per frame
 
 
 
