@@ -63,15 +63,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Audio\ADAD.cs" />
-    <Compile Include="Assets\Scripts\AI_Damage.cs" />
-    <Compile Include="Assets\Scripts\AI_Health.cs" />
+    <Compile Include="Assets\Scripts\AIDying.cs" />
     <Compile Include="Assets\Scripts\Chase.cs" />
+    <Compile Include="Assets\Scripts\DamageAI.cs" />
     <Compile Include="Assets\Scripts\DamagePlayer.cs" />
-    <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ButtonFunc.cs" />
     <Compile Include="Assets\Scripts\MainMenu\LightControl.cs" />
     <Compile Include="Assets\Scripts\MainMenu\UI_Button.cs" />
     <Compile Include="Assets\Scripts\PickWeapon.cs" />
+    <Compile Include="Assets\Scripts\PlayerDying.cs" />
     <Compile Include="Assets\Scripts\PortalCamera.cs" />
     <Compile Include="Assets\Scripts\PortalTeleporter.cs" />
     <Compile Include="Assets\Scripts\Sender.cs" />
@@ -81,37 +81,37 @@
     <None Include="Assets\Shader\twoSide.shader" />
     <None Include="Assets\Material\ScreenCutoutShader.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/charb/OneDrive/Desktop/ActiveBystanders/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>E:/ActiveBystanders/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/charb/OneDrive/Desktop/ActiveBystanders/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>E:/ActiveBystanders/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Recorder.Editor">
-      <HintPath>C:/Users/charb/OneDrive/Desktop/ActiveBystanders/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+      <HintPath>E:/ActiveBystanders/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/charb/OneDrive/Desktop/ActiveBystanders/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>E:/ActiveBystanders/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Recorder">
-      <HintPath>C:/Users/charb/OneDrive/Desktop/ActiveBystanders/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
+      <HintPath>E:/ActiveBystanders/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/charb/OneDrive/Desktop/ActiveBystanders/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>E:/ActiveBystanders/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/charb/OneDrive/Desktop/ActiveBystanders/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>E:/ActiveBystanders/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/charb/OneDrive/Desktop/ActiveBystanders/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>E:/ActiveBystanders/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/charb/OneDrive/Desktop/ActiveBystanders/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>E:/ActiveBystanders/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/charb/OneDrive/Desktop/ActiveBystanders/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:/ActiveBystanders/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/charb/OneDrive/Desktop/ActiveBystanders/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>E:/ActiveBystanders/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

@@ -5,18 +5,18 @@ using UnityEngine;
 public class DamagePlayer : MonoBehaviour
 {
 
-    public int PlayerHealth = 30;
-    int Damage = 10;
-
-    // Start is called before the first frame update
-    void Start()
+    public float DamageAmount = 10f;
+    public void OnTriggerEnter(Collider other)
     {
-        print(PlayerHealth);
-    }
+        if (other.gameObject.tag == "Player") {
+            other.GetComponent<PlayerDying>().TakeDamage(DamageAmount);
+
+            Debug.Log("ssss");
+        }
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        other.gameObject.GetComponent<HealthBar>().TakeDamage(Damage);
+       
+
+
     }
 }
