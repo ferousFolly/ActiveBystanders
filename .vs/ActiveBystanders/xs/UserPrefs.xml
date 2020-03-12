@@ -1,17 +1,25 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Vi/SoundManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Vi/DialogueSystem.cs">
     <Files>
       <File FileName="Assets/Scripts/Vi/GameAssetManager.cs" Line="39" Column="1" />
-      <File FileName="Assets/Scripts/Vi/SoundManager.cs" Line="44" Column="1" />
+      <File FileName="Assets/Scripts/Vi/SoundManager.cs" />
+      <File FileName="Assets/Scripts/Vi/DialogueSystem.cs" Line="138" Column="34" />
+      <File FileName="../../Unity/Project_StickFigure1_HitBox/Assets/Scripts/CutScene/CutsceneDialogue.cs" />
+      <File FileName="Assets/Scripts/Vi/MainMenu/ButtonFunc.cs" Line="47" Column="35" />
+      <File FileName="Assets/Scripts/Vi/MainMenu/UI_Button.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ActiveBystanders" expanded="True">
             <Node name="Assets" expanded="True">
+              <Node name="FirstPersion AIO Pack" expanded="True">
+                <Node name="FirstPersonAIO" expanded="True" />
+              </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="Vi" expanded="True">
-                  <Node name="SoundManager.cs" selected="True" />
+                  <Node name="MainMenu" expanded="True" />
+                  <Node name="DialogueSystem.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
@@ -22,7 +30,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="76be3527-6faa-4fc6-a0d0-4e6694d41ee0" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c23b57b5-fafa-4578-b9c0-5e274a98c717" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

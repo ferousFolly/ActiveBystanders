@@ -7,6 +7,7 @@ public class ButtonFunc : MonoBehaviour
 {
     public UI_Button[] buttons;
     public LightControl[] lights;
+    public GameObject blackPanel;
 
     bool isOptoin;
 
@@ -21,7 +22,7 @@ public class ButtonFunc : MonoBehaviour
             light.isFlickering = true;
         }
 
-        Invoke("ChangeScene",2f);
+        Invoke("StartDialogue", 2f);
         
     }
 
@@ -38,7 +39,11 @@ public class ButtonFunc : MonoBehaviour
         SoundManager.PlaySound(SoundManager.UI_SoundEffects.UI_Back);
     }
 
-    void ChangeScene() {
+    void StartDialogue() {
+        blackPanel.SetActive(true);
+    }
+
+    public void ChangeScene() {
         SceneManager.LoadScene(1);
     }
 }
