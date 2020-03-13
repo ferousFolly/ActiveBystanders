@@ -9,8 +9,11 @@ public class DialogueText {
     [TextArea(3, 30)]
     public string dialogueText;
     public float duration = 3f;
+    public AudioClip voiceLine;
+    public bool isPlaying;
 }
 
+[RequireComponent(typeof(AudioSource))]
 public class DialogueSystem : MonoBehaviour
 {
     public enum ObjectiveActive
@@ -46,6 +49,8 @@ public class DialogueSystem : MonoBehaviour
     public List<DialogueText> sentences = new List<DialogueText>();
     private int currentSentenceIndex;
 
+    //AudioSetting
+    private AudioSource voiceActing;
 
     private void Awake()
     {
@@ -53,6 +58,13 @@ public class DialogueSystem : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
         dialogueText.color = new Color(1, 1, 1, 0);
+        for (int i = 0; i < sentences.Count; i++)
+        {
+            if (sentences[i].voiceLine != null) {
+                sentences[i].duration = sentences[i].voiceLine.length;
+            }
+        }
+        voiceActing = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -73,6 +85,16 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
+    void PlayDialogue() {
+        if (!sentences[currentSentenceIndex].isPlaying)
+        {
+            dialogueText.color = new Color(1, 1, 1, 1);
+            dialogueText.text = sentences[currentSentenceIndex].dialogueText;
+            voiceActing.PlayOneShot(sentences[currentSentenceIndex].voiceLine);
+            sentences[currentSentenceIndex].isPlaying = true;
+        }
+    }
+
     void UpdateText() {
         if (isDelayToStart)
         {
@@ -83,32 +105,29 @@ public class DialogueSystem : MonoBehaviour
             else
             {
                 delayTime = -1;
-                dialogueText.color = new Color(1, 1, 1, 1);
-                dialogueText.text = sentences[currentSentenceIndex].dialogueText;
+                PlayDialogue();
             }
         }
         else {
-            dialogueText.color = new Color(1, 1, 1, 1);
-            dialogueText.text = sentences[currentSentenceIndex].dialogueText;
+            PlayDialogue();
         }
-      
 
-        for (int i = 0; i < sentences.Count-1; i++)
+        if (sentences[currentSentenceIndex].isPlaying)
         {
-            if(dialogueText.text == sentences[currentSentenceIndex].dialogueText){
-                if (sentences[currentSentenceIndex].duration > 0)
+            if (sentences[currentSentenceIndex].duration >= 0)
+            {
+                sentences[currentSentenceIndex].duration -= Time.deltaTime;
+            }
+            else
+            {
+                if (currentSentenceIndex < sentences.Count - 1)
                 {
-                    sentences[currentSentenceIndex].duration -= Time.deltaTime;
+                    currentSentenceIndex += 1;
                 }
-                else {
-                    if (currentSentenceIndex < sentences.Count - 1)
-                    {
-                        currentSentenceIndex += 1;
-                    }
-                    else {
-                        dialogueText.color = new Color(1, 1, 1, 0);
-                        Destroy(gameObject,0.5f);
-                    }
+                else
+                {
+                    dialogueText.color = new Color(1, 1, 1, 0);
+                    Destroy(gameObject, 0.5f);
                 }
             }
         }
