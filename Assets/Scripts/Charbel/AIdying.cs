@@ -1,68 +1,78 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using UnityEngine.Animations;
 
-public class AIdying : MonoBehaviour
+
+
+public class AIDying : MonoBehaviour
 {
 
-    public Text AI_H;
-    public float AI_MaxH = 200f;
-    public float AI_CurH = 0f;
-    public bool AI_alive = true;
-    // Start is called before the first frame update
-    void Start()
-    {
-        AI_alive = true;
-        AI_CurH = AI_MaxH;
-        SetHealthBar();
+    private Animator _animation;
 
+    public float MaxHealth = 100f;
+    public float CurrentHealth = 0f;
+    public bool alive = true;
+
+    public void Awake()
+    {
+        
     }
 
-    private void Update()
+     public void Hurt(AIDying HurtINFO)
     {
-        AI_H.text = "AI_H" + AI_MaxH.ToString();
-        if ( AI_MaxH >= 0)
-        {
-           
-            SceneManager.LoadScene("Winner");
-        }
+
+    }
+    private void Start()
+    {
+        _animation = GetComponent<Animator>();
+        alive = true; //player strts off as alive 
+        CurrentHealth = MaxHealth;
+        
     }
 
-
-
-    public void TakeDamage(float amount)
+    public void TakeDamageAI(float amount)
     {
 
-        if (!AI_alive)
+        if (!alive)
         {
             return;
         }
 
-        if (AI_CurH <= 0)
+        if (CurrentHealth <= 0)
         {
-            AI_CurH = 0;
-            AI_alive = false;
-            gameObject.SetActive(false);
+            CurrentHealth = 0;
+            alive = false;
+            GetComponent<Animator>().enabled = false;
+
         }
 
 
-        AI_CurH -= amount;
-        SetHealthBar();
+            if (CurrentHealth <= 20)
+        {
+            _animation.Play("Damage", 0, 0);
+
+        }
+       
+         CurrentHealth -= amount;
+
 
     }
 
-    // Update is called once per frame
-    void SetHealthBar()
+   
+
+    public void Update()
     {
-        float my_health = AI_CurH / AI_MaxH;
-        AI_H.transform.localScale = new Vector3(Mathf.Clamp(my_health, 0f, 1f), AI_H.transform.localScale.y, AI_H.transform.localScale.x);
+      
 
+        Debug.Log(CurrentHealth);
+        //HEALTH COUNT DOWN
+
+        if (CurrentHealth > MaxHealth)
+        {
+            CurrentHealth = MaxHealth;
+        }
 
     }
-
-
-
 
 }

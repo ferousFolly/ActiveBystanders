@@ -29,6 +29,7 @@ public class PlayerDying : MonoBehaviour
 
         colorInjury = Injured.color.a;
         colorDying = dying.color.a;
+        colorGameOver = GameOver.color.a;
         
     }
 
@@ -42,24 +43,29 @@ public class PlayerDying : MonoBehaviour
 
         if (!alive)
         {
-            return;
-        }
 
+
+            return;
+
+      
+        }
         if (CurrentHealth <= 0) //Die
         {
-            colorGameOver = 1;
-            alive = false;
-
             
-        }
+            alive = false;   
+            colorGameOver = 1;
 
+        }
         if (CurrentHealth <= 60)
         {
             colorDying = 1;
+
+
         }
         else if(CurrentHealth > 60)
         {
-        colorInjury = 1;
+
+            colorInjury = 1;
 
         }
 
@@ -87,14 +93,9 @@ public class PlayerDying : MonoBehaviour
             colorDying -= Time.deltaTime * 1.1f;
         }
         
-
-        
-
-
-
         Injured.color = new Color(1, 1, 1, colorInjury);
         dying.color = new Color(1, 1, 1, colorDying);
-        GameOver.color = new Color(1, 1, 1, colorGameOver);
+        
 
 
     }
