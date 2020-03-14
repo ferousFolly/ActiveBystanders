@@ -28,12 +28,12 @@ public class DialogueSystem : MonoBehaviour
     public bool isDelayToStart;
     public float delayTime;
     public UnityEvent OnSentenceFinished;
+    private float textAlpha;
 
     [Header("ActiveByPosition setting")]
     public bool isActiveByPosition;
     public float radius;
     public Color positionColor;
-
     private bool isEnterArea;
 
     [Header("ActiveByObjective setting")]
@@ -88,6 +88,7 @@ public class DialogueSystem : MonoBehaviour
     void PlayDialogue() {
         if (!sentences[currentSentenceIndex].isPlaying)
         {
+            textAlpha = 1f;
             dialogueText.color = new Color(1, 1, 1, 1);
             dialogueText.text = sentences[currentSentenceIndex].dialogueText;
             voiceActing.PlayOneShot(sentences[currentSentenceIndex].voiceLine);
@@ -126,8 +127,11 @@ public class DialogueSystem : MonoBehaviour
                 }
                 else
                 {
-                    dialogueText.color = new Color(1, 1, 1, 0);
-                    Destroy(gameObject, 0.5f);
+                    textAlpha -= Time.deltaTime;
+                    dialogueText.color = new Color(1, 1, 1, textAlpha);
+
+                    if (textAlpha <= 0) 
+                    Destroy(gameObject);
                 }
             }
         }
