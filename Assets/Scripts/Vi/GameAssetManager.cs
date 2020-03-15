@@ -20,7 +20,9 @@ public class GameAssetManager : MonoBehaviour
 
     public SoundClip[] soundClipArray;
     public UI_SoundClip[] UI_SoundClipArray;
+    public Text dialogueText;
     //public VisualEffect[] visualEffectArray;
+
 
     [System.Serializable]
     public class SoundClip
