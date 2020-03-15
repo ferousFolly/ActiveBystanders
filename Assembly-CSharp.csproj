@@ -77,11 +77,15 @@
     <Compile Include="Assets\Scripts\TextureSetup.cs" />
     <Compile Include="Assets\Scripts\Vi\DialogueSystem.cs" />
     <Compile Include="Assets\Scripts\Vi\GameAssetManager.cs" />
+    <Compile Include="Assets\Scripts\Vi\GameEventManager.cs" />
+    <Compile Include="Assets\Scripts\Vi\GizmosDisplay.cs" />
+    <Compile Include="Assets\Scripts\Vi\InGameAssetManager.cs" />
     <Compile Include="Assets\Scripts\Vi\MainMenu\ButtonFunc.cs" />
     <Compile Include="Assets\Scripts\Vi\MainMenu\LightControl.cs" />
     <Compile Include="Assets\Scripts\Vi\MainMenu\SettingManager.cs" />
     <Compile Include="Assets\Scripts\Vi\MainMenu\UI_Button.cs" />
     <Compile Include="Assets\Scripts\Vi\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\Vi\Tutorial.cs" />
     <Compile Include="Assets\Scripts\WEapon.cs" />
     <None Include="Assets\Shader\PortalShader.shader" />
     <None Include="Assets\FirstPersion AIO Pack\DemoScene\Working Materials\GlassBumpedDistort.shader" />

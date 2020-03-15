@@ -21,9 +21,8 @@ public class DialogueSystem : MonoBehaviour
 
     }
     private Transform player;
-    [Header("Common Setting")]
-    [SerializeField]
     private Text dialogueText;
+    [Header("Common Setting")]
     public bool isInGame;
     public bool isDelayToStart;
     public float delayTime;
@@ -55,8 +54,9 @@ public class DialogueSystem : MonoBehaviour
     private void Awake()
     {
         if (isInGame) {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+            player = InGameAssetManager.i.player.transform;
         }
+        dialogueText = GameAssetManager.i.dialogueText;
         dialogueText.color = new Color(1, 1, 1, 0);
         for (int i = 0; i < sentences.Count; i++)
         {
