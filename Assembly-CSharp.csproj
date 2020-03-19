@@ -63,14 +63,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\FirstPersion AIO Pack\DemoScene\MiscScripts\Doors.cs" />
     <Compile Include="Assets\FirstPersion AIO Pack\FirstPersonAIO\FirstPersonAIO.cs" />
-    <Compile Include="Assets\Scripts\AI_Chase.cs" />
-    <Compile Include="Assets\Scripts\AI_Damage.cs" />
-    <Compile Include="Assets\Scripts\AIdying.cs" />
-    <Compile Include="Assets\Scripts\Chase.cs" />
+    <Compile Include="Assets\Scripts\Charbel\AIdying.cs" />
+    <Compile Include="Assets\Scripts\Charbel\Chase.cs" />
+    <Compile Include="Assets\Scripts\Charbel\DamageAI.cs" />
+    <Compile Include="Assets\Scripts\Charbel\DamagePlayer.cs" />
+    <Compile Include="Assets\Scripts\Charbel\Gun.cs" />
+    <Compile Include="Assets\Scripts\Charbel\GunSwitch.cs" />
+    <Compile Include="Assets\Scripts\Charbel\PlayerDying.cs" />
+    <Compile Include="Assets\Scripts\Charbel\Target.cs" />
     <Compile Include="Assets\Scripts\InteractiveAction.cs" />
-    <Compile Include="Assets\Scripts\PlayerDying.cs" />
     <Compile Include="Assets\Scripts\PortalCamera.cs" />
     <Compile Include="Assets\Scripts\PortalTeleporter.cs" />
     <Compile Include="Assets\Scripts\Sender.cs" />
@@ -88,7 +90,7 @@
     <Compile Include="Assets\Scripts\Vi\Tutorial.cs" />
     <Compile Include="Assets\Scripts\WEapon.cs" />
     <None Include="Assets\Shader\PortalShader.shader" />
-    <None Include="Assets\FirstPersion AIO Pack\DemoScene\Working Materials\GlassBumpedDistort.shader" />
+    <None Include="Assets\FirstPersion AIO Pack\Working Materials\GlassBumpedDistort.shader" />
     <None Include="Assets\FirstPersion AIO Pack\README.txt" />
     <None Include="Assets\Material\ScreenCutoutShader.shader" />
     <Reference Include="Unity.Timeline.Editor">
