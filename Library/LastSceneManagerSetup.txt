@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/_Scenes/Main.unity
+=======
+- path: Assets/_Scenes/MainMenu.unity
+>>>>>>> Vincent
   isLoaded: 1
   isActive: 1
   isSubScene: 0
