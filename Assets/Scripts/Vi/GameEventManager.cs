@@ -4,8 +4,9 @@ using UnityEngine;
 
 public static class GameEventManager
 {
-    private static int doorsHasBeenOpened = -1;
-    private static int flashLighHasBeenUsed = -1;
+    private static int doorsHasBeenOpened = 0;
+    private static int flashLighHasBeenUsed = 0;
+    public static bool canUseFlashLight;
 
     public static void IncreaseOpeningDoorNumbers() {
         doorsHasBeenOpened += 1;

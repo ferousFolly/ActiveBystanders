@@ -50,14 +50,18 @@ public class InteractiveAction : MonoBehaviour
     }
 
     void ActiveFlashLight() {
-        if (Input.GetKeyDown(KeyCode.F)) {
-            if (!isFlashLightOpening)
+        if (GameEventManager.canUseFlashLight) {
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                GameEventManager.IncreaseFlashLightUsedNumber();
-                isFlashLightOpening = true;
-            }
-            else {
-                isFlashLightOpening = false;
+                if (!isFlashLightOpening)
+                {
+                    GameEventManager.IncreaseFlashLightUsedNumber();
+                    isFlashLightOpening = true;
+                }
+                else
+                {
+                    isFlashLightOpening = false;
+                }
             }
         }
         InGameAssetManager.i.flashLight.enabled = isFlashLightOpening;
