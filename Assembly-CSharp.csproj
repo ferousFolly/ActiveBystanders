@@ -74,8 +74,8 @@
     <Compile Include="Assets\Scripts\Charbel\PlayerDying.cs" />
     <Compile Include="Assets\Scripts\Charbel\Restart.cs" />
     <Compile Include="Assets\Scripts\Charbel\Target.cs" />
-    <Compile Include="Assets\Scripts\CollectItems.cs" />
     <Compile Include="Assets\Scripts\InteractiveAction.cs" />
+    <Compile Include="Assets\Scripts\Jordan\CollectItems.cs" />
     <Compile Include="Assets\Scripts\Jordan\ObjectCounter.cs" />
     <Compile Include="Assets\Scripts\PortalCamera.cs" />
     <Compile Include="Assets\Scripts\PortalTeleporter.cs" />
@@ -86,10 +86,12 @@
     <Compile Include="Assets\Scripts\Vi\GameEventManager.cs" />
     <Compile Include="Assets\Scripts\Vi\GizmosDisplay.cs" />
     <Compile Include="Assets\Scripts\Vi\InGameAssetManager.cs" />
+    <Compile Include="Assets\Scripts\Vi\IntroManager.cs" />
     <Compile Include="Assets\Scripts\Vi\MainMenu\ButtonFunc.cs" />
     <Compile Include="Assets\Scripts\Vi\MainMenu\LightControl.cs" />
     <Compile Include="Assets\Scripts\Vi\MainMenu\SettingManager.cs" />
     <Compile Include="Assets\Scripts\Vi\MainMenu\UI_Button.cs" />
+    <Compile Include="Assets\Scripts\Vi\SceneController.cs" />
     <Compile Include="Assets\Scripts\Vi\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Vi\Tutorial.cs" />
     <Compile Include="Assets\Scripts\WEapon.cs" />

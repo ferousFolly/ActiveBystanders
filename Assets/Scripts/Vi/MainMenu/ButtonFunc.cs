@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ButtonFunc : MonoBehaviour
 {
@@ -22,7 +21,7 @@ public class ButtonFunc : MonoBehaviour
             light.isFlickering = true;
         }
 
-        Invoke("StartDialogue", 2f);
+        Invoke("ChangeScene", 2f);
         
     }
 
@@ -39,11 +38,7 @@ public class ButtonFunc : MonoBehaviour
         SoundManager.PlaySound(SoundManager.UI_SoundEffects.UI_Back);
     }
 
-    void StartDialogue() {
-        blackPanel.SetActive(true);
-    }
-
     public void ChangeScene() {
-        SceneManager.LoadScene(1);
+        SceneControlle.NextScene();
     }
 }
