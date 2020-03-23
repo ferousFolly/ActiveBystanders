@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Charbel/Gun.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Charbel/AIDemon.cs">
     <Files>
       <File FileName="Assets/Scripts/Charbel/Gun.cs" Line="20" Column="21" />
       <File FileName="Assets/Scripts/Charbel/AIDemon.cs" Line="46" Column="18" />
+      <File FileName="Assets/Scripts/Charbel/PlayerDying.cs" Line="15" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,7 +22,7 @@
               </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="Charbel" expanded="True">
-                  <Node name="Gun.cs" selected="True" />
+                  <Node name="AIDemon.cs" selected="True" />
                 </Node>
                 <Node name="Jordan" expanded="True" />
               </Node>
@@ -33,7 +34,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f82ca473-7cf7-43cc-83ba-942ab9aacb3f" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1423b5f6-11b2-495c-b997-046f521d6945" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -66,7 +66,6 @@
     <Compile Include="Assets\FirstPersion AIO Pack\FirstPersonAIO\FirstPersonAIO.cs" />
     <Compile Include="Assets\PlayerBodyGun\Reichsrevolver\Reichsrevolver_M1879\Scripts\RevolverController.cs" />
     <Compile Include="Assets\Scripts\Charbel\AIDemon.cs" />
-    <Compile Include="Assets\Scripts\Charbel\AIDying.cs" />
     <Compile Include="Assets\Scripts\Charbel\Chase.cs" />
     <Compile Include="Assets\Scripts\Charbel\DamagePlayer.cs" />
     <Compile Include="Assets\Scripts\Charbel\Gun.cs" />

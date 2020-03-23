@@ -10,17 +10,13 @@ public class PlayerDying : MonoBehaviour
 {
     public Image Injured;
     public Image dying;
-    public Image GameOver;
+    public GameObject GameOver;
 
-    private bool enterColider = false;
-  
     public float MaxHealth = 100f;
     public float CurrentHealth = 0f;
 
     float colorInjury = 0f;
     float colorDying = 0f;
-    float colorGameOver = 0f;
-    float colorPlayAgain = 0f;
 
     public bool alive = true;
     private void Start()
@@ -30,7 +26,6 @@ public class PlayerDying : MonoBehaviour
 
         colorInjury = Injured.color.a;
         colorDying = dying.color.a;
-        colorGameOver = GameOver.color.a;
     }
 
     public void TakeDamage(float amount)
@@ -44,15 +39,13 @@ public class PlayerDying : MonoBehaviour
         }
         if (CurrentHealth <= 0) //Die
         {
-            
+            GameOver.SetActive(true);
             alive = false;   
-            colorGameOver = 1;
 
         }
         if(CurrentHealth <=0)
         {
             alive = false;
-            colorPlayAgain = 1;
         }
 
         if (CurrentHealth <= 60)
@@ -71,10 +64,6 @@ public class PlayerDying : MonoBehaviour
 
         Injured.color = new Color(1,1,1,colorInjury);
         dying.color = new Color(1, 1, 1, colorDying);
-        GameOver.color = new Color(1, 1, 1, colorGameOver);
-
-
-
     }
 
     public void Update()
@@ -94,8 +83,6 @@ public class PlayerDying : MonoBehaviour
         
         Injured.color = new Color(1, 1, 1, colorInjury);
         dying.color = new Color(1, 1, 1, colorDying);
-        
-
 
     }
 
