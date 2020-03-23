@@ -1,18 +1,28 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PickWeapon.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/InteractiveAction.cs">
     <Files>
-      <File FileName="Assets/Scripts/PickWeapon.cs" Line="37" Column="10" />
-      <File FileName="Assets/Scripts/PortalCamera.cs" />
-      <File FileName="Assets/Scripts/TextureSetup.cs" />
-      <File FileName="Assets/Scripts/WEapon.cs" Line="7" Column="1" />
+      <File FileName="Assets/Scripts/Vi/SoundManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Vi/DialogueSystem.cs" Line="26" Column="5" />
+      <File FileName="Assets/Scripts/Vi/MainMenu/ButtonFunc.cs" />
+      <File FileName="Assets/Scripts/Vi/Tutorial.cs" Line="14" Column="5" />
+      <File FileName="Assets/Scripts/Vi/InGameAssetManager.cs" Line="26" Column="33" />
+      <File FileName="Assets/Scripts/Vi/GizmosDisplay.cs" Line="13" Column="26" />
+      <File FileName="Assets/Scripts/Vi/GameEventManager.cs" Line="23" Column="37" />
+      <File FileName="Assets/Scripts/InteractiveAction.cs" Line="18" Column="52" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ActiveBystanders" expanded="True">
             <Node name="Assets" expanded="True">
+              <Node name="FirstPersion AIO Pack" expanded="True">
+                <Node name="FirstPersonAIO" expanded="True" />
+              </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="PickWeapon.cs" selected="True" />
+                <Node name="Vi" expanded="True">
+                  <Node name="MainMenu" expanded="True" />
+                </Node>
+                <Node name="InteractiveAction.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -22,7 +32,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3e45f679-5631-4ab0-ae9a-9c85db9608dd" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="52c96ec2-6ddd-4610-9c84-c5bdc31f2b10" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
