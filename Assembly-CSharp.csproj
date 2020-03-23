@@ -64,7 +64,6 @@
   <ItemGroup>
     <Compile Include="Assets\FirstPersion AIO Pack\DemoScene\MiscScripts\Doors.cs" />
     <Compile Include="Assets\FirstPersion AIO Pack\FirstPersonAIO\FirstPersonAIO.cs" />
-    <Compile Include="Assets\Scripts\AIDying.cs" />
     <Compile Include="Assets\Scripts\Charbel\AIdying.cs" />
     <Compile Include="Assets\Scripts\Charbel\Chase.cs" />
     <Compile Include="Assets\Scripts\Charbel\DamageAI.cs" />
@@ -74,11 +73,7 @@
     <Compile Include="Assets\Scripts\Charbel\PlayerDying.cs" />
     <Compile Include="Assets\Scripts\Charbel\Restart.cs" />
     <Compile Include="Assets\Scripts\Charbel\Target.cs" />
-    <Compile Include="Assets\Scripts\Chase.cs" />
-    <Compile Include="Assets\Scripts\DamageAI.cs" />
-    <Compile Include="Assets\Scripts\DamagePlayer.cs" />
     <Compile Include="Assets\Scripts\InteractiveAction.cs" />
-    <Compile Include="Assets\Scripts\PlayerDying.cs" />
     <Compile Include="Assets\Scripts\PortalCamera.cs" />
     <Compile Include="Assets\Scripts\PortalTeleporter.cs" />
     <Compile Include="Assets\Scripts\Sender.cs" />
