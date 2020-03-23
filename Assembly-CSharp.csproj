@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\FirstPersion AIO Pack\FirstPersonAIO\FirstPersonAIO.cs" />
+    <Compile Include="Assets\PlayerBodyGun\Reichsrevolver\Reichsrevolver_M1879\Scripts\RevolverController.cs" />
     <Compile Include="Assets\Scripts\Charbel\AIdying.cs" />
     <Compile Include="Assets\Scripts\Charbel\Chase.cs" />
     <Compile Include="Assets\Scripts\Charbel\DamageAI.cs" />
@@ -71,8 +72,11 @@
     <Compile Include="Assets\Scripts\Charbel\Gun.cs" />
     <Compile Include="Assets\Scripts\Charbel\GunSwitch.cs" />
     <Compile Include="Assets\Scripts\Charbel\PlayerDying.cs" />
+    <Compile Include="Assets\Scripts\Charbel\Restart.cs" />
     <Compile Include="Assets\Scripts\Charbel\Target.cs" />
+    <Compile Include="Assets\Scripts\CollectItems.cs" />
     <Compile Include="Assets\Scripts\InteractiveAction.cs" />
+    <Compile Include="Assets\Scripts\Jordan\ObjectCounter.cs" />
     <Compile Include="Assets\Scripts\PortalCamera.cs" />
     <Compile Include="Assets\Scripts\PortalTeleporter.cs" />
     <Compile Include="Assets\Scripts\Sender.cs" />

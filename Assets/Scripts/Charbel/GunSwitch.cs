@@ -33,7 +33,7 @@ public class GunSwitch : MonoBehaviour
 
         if (previousSelectedWeapon != selectedWeapon)
         {
-            SelectedWeapon();
+            SelectedWeapon();       
         }
     }
 
