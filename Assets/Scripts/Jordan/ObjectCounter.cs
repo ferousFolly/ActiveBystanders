@@ -17,8 +17,7 @@ public class ObjectCounter : MonoBehaviour
 
     private void Start()
     {
-        objecttiveBG.color = new Color(0,0,0,0);
-        ObjectiveText.color = new Color(0,0,0,0);
+        objecttiveBG.gameObject.SetActive(false);
     }
 
     void Update()
@@ -28,6 +27,7 @@ public class ObjectCounter : MonoBehaviour
 
     void UpdateText() {
         if (isCollected) {
+            objecttiveBG.gameObject.SetActive(true);
             ObjectiveText.GetComponent<Text>().text = "Collect Ritual Items: " + theScore + "/4";
             objecttiveBG.color = BGColor;
             ObjectiveText.color = textColor;
@@ -44,6 +44,7 @@ public class ObjectCounter : MonoBehaviour
                     currentShowingTimer = 0;
                     BGColor.a = 1;
                     textColor.a = 1;
+                    objecttiveBG.gameObject.SetActive(false);
                     isCollected = false;
                 }
             }
