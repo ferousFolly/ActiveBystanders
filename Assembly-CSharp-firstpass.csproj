@@ -146,6 +146,9 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>E:/ActiveBystanders/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>C:/Users/charb/OneDrive/Desktop/ActiveBystanders/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>E:/ActiveBystanders/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
