@@ -5,49 +5,60 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
 
+    Animator anim;
+
     public float damage = 10f;
     public float range = 100f;
     public float impactForce = 30f;
     public float fireRate = 15f;
+    public LayerMask enemyBody;
+    public LayerMask enemyHead;
+    public GameObject hitEffect;
 
-    public ParticleSystem muzzleFlash;
-    public GameObject impactEffect;
-    public Camera fpsCam;
+    private Camera fpsCam;
+    public float nextTimeToFire = 1f;
+    float currentTimeToFire;
 
-    private float nextTimeToFire = 0f;
-    // Start is called before the first frame update
-    void update()
+    private void Start()
     {
-        if(Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
+        anim = GetComponent<Animator>();
+        fpsCam = Camera.main;
+    }
+
+    void Update()
+    {
+        if (currentTimeToFire <= nextTimeToFire) {
+            currentTimeToFire += Time.deltaTime;
+        }
+        if (Input.GetButtonDown("Fire1") && currentTimeToFire >= nextTimeToFire)
         {
-            nextTimeToFire = Time.time + 1f / fireRate;
+            Debug.Log("sss");
+            currentTimeToFire = 0;
             shoot();
         }
     }
 
-    // Update is called once per frame
     void shoot()
     {
-
-        muzzleFlash.Play();
+        anim.SetTrigger("Shot1");
         RaycastHit hit;
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, enemyBody))
         {
-            Debug.Log(hit.transform.name);
-
-            Target target = hit.transform.GetComponent<Target>();
-            if (target != null)
-            {
-                target.TakeDamage(damage);
+            AIDemon AI = hit.transform.GetComponentInParent<AIDemon>();
+            if (AI != null && !AI._isDead) {
+                AI.GetHit(10);
+                GameObject o = Instantiate(hitEffect,hit.point,hitEffect.transform.rotation);
+                Destroy(o,2f);
             }
-
-            if (hit.rigidbody != null)
+    
+        } else if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, enemyHead)) {
+            AIDemon AI = hit.transform.GetComponentInParent<AIDemon>();
+            if (AI != null && !AI._isDead)
             {
-                hit.rigidbody.AddForce(-hit.normal * impactForce);
+                AI.GetHit(20);
+                GameObject o = Instantiate(hitEffect, hit.point, hitEffect.transform.rotation);
+                Destroy(o, 2f);
             }
-
-            GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactGO, 2f);
         }
     }
 }
