@@ -112,10 +112,17 @@ MonoBehaviour:
     y: 30
     width: 1440
     height: 723
+<<<<<<< HEAD
   m_MinSize: {x: 679, y: 613}
   m_MaxSize: {x: 14002, y: 18063}
   vertical: 0
   controlID: 120
+=======
+  m_MinSize: {x: 678, y: 613}
+  m_MaxSize: {x: 14001, y: 18063}
+  vertical: 0
+  controlID: 492
+>>>>>>> Vincent
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +147,11 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 613}
   m_MaxSize: {x: 10001, y: 18063}
   vertical: 1
+<<<<<<< HEAD
   controlID: 121
+=======
+  controlID: 493
+>>>>>>> Vincent
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +176,11 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 342}
   m_MaxSize: {x: 8003, y: 8042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 122
+=======
+  controlID: 647
+>>>>>>> Vincent
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -185,8 +200,13 @@ MonoBehaviour:
     y: 0
     width: 252
     height: 450
+<<<<<<< HEAD
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
+=======
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> Vincent
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -216,7 +236,11 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 342}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 18
+=======
+  controlID: 625
+>>>>>>> Vincent
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -236,8 +260,13 @@ MonoBehaviour:
     y: 0
     width: 627
     height: 300
+<<<<<<< HEAD
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
+=======
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> Vincent
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 16}
@@ -264,8 +293,13 @@ MonoBehaviour:
     y: 300
     width: 627
     height: 150
+<<<<<<< HEAD
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
+=======
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> Vincent
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -317,8 +351,13 @@ MonoBehaviour:
     y: 0
     width: 561
     height: 723
+<<<<<<< HEAD
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
+=======
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> Vincent
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -442,9 +481,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: b261feff
       m_LastClickedID: -106062
       m_ExpandedIDs: 3c70feff0271feffa4d60000
+=======
+      m_SelectedIDs: 42f2ffff
+      m_LastClickedID: -3518
+      m_ExpandedIDs: 50f2ffffeef2ffff08f3ffff1cf3ffffa8f8ffff6efbffff
+>>>>>>> Vincent
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -504,7 +549,11 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 0, y: 0, z: 0}
+=======
+    m_Target: {x: 1.3803108, y: 5.6015253, z: 41.129284}
+>>>>>>> Vincent
     speed: 2
     m_Value: {x: 1.3803108, y: 5.6015253, z: 41.129284}
   m_RenderMode: 0
@@ -552,11 +601,19 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< HEAD
     m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
     speed: 2
     m_Value: {x: -0.0068387208, y: 0.9639284, z: -0.024884123, w: -0.26490748}
   m_Size:
     m_Target: 10
+=======
+    m_Target: {x: -0.0068387263, y: 0.9639289, z: -0.024884135, w: -0.2649076}
+    speed: 2
+    m_Value: {x: -0.006838723, y: 0.9639284, z: -0.024884123, w: -0.26490748}
+  m_Size:
+    m_Target: 2.9953253
+>>>>>>> Vincent
     speed: 2
     m_Value: 2.9953253
   m_Ortho:
@@ -625,7 +682,11 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Animation
+<<<<<<< HEAD
     m_Image: {fileID: 1561878555887300916, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: -8967370667835289719, guid: 0000000000000000d000000000000000,
+>>>>>>> Vincent
       type: 0}
     m_Tooltip: 
   m_Pos:
@@ -637,7 +698,11 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
+<<<<<<< HEAD
   m_LastSelectedObjectID: -106062
+=======
+  m_LastSelectedObjectID: -3518
+>>>>>>> Vincent
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -677,20 +742,27 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Scenes
+    - Assets/PlayerBodyGun/Reichsrevolver/Reichsrevolver_M1879/Animation
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/_Scenes
+  - Assets/PlayerBodyGun/Reichsrevolver/Reichsrevolver_M1879/Animation
   m_LastFoldersGridSize: 16
   m_LastProjectPath: /Users/vincent/Documents/GitHub/ActiveBystanders
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 5ecf0000
     m_LastClickedID: 53086
     m_ExpandedIDs: 000000005ccf00005ecf00000ad0000016d0000018d0000000ca9a3b
+=======
+    scrollPos: {x: 0, y: 152}
+    m_SelectedIDs: c03c0000
+    m_LastClickedID: 15552
+    m_ExpandedIDs: 00000000e03b0000e23b0000e43b0000e63b0000e83b0000ea3b0000ec3b0000ee3b0000f03b0000f23b0000b83c000000ca9a3b
+>>>>>>> Vincent
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -718,7 +790,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 
+=======
+    m_ExpandedIDs: 00000000e03b0000e23b0000e43b0000e63b0000e83b0000ea3b0000ec3b0000ee3b0000f03b0000f23b000000ca9a3b
+>>>>>>> Vincent
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
