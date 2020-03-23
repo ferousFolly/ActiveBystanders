@@ -5,12 +5,48 @@ using UnityEngine.UI;
 
 public class ObjectCounter : MonoBehaviour
 {
-    public GameObject ObjectiveText;
+    public Image objecttiveBG;
+    public Text ObjectiveText;
+    public Color BGColor;
+    public Color textColor;
+    public float showingTimer = 2.5f;
+    private float currentShowingTimer;
     public static int theScore;
+    public static bool isCollected;
+
+
+    private void Start()
+    {
+        objecttiveBG.color = new Color(0,0,0,0);
+        ObjectiveText.color = new Color(0,0,0,0);
+    }
 
     void Update()
     {
-        ObjectiveText.GetComponent<Text>().text = "Collect Ritual Items: " + theScore + "/4";
+        UpdateText();
+    }
 
+    void UpdateText() {
+        if (isCollected) {
+            ObjectiveText.GetComponent<Text>().text = "Collect Ritual Items: " + theScore + "/4";
+            objecttiveBG.color = BGColor;
+            ObjectiveText.color = textColor;
+            if (currentShowingTimer < showingTimer)
+            {
+                currentShowingTimer += Time.deltaTime;
+            }
+            else {
+                BGColor.a -= Time.deltaTime;
+                textColor.a -= Time.deltaTime;
+
+                if (BGColor.a <= 0)
+                {
+                    currentShowingTimer = 0;
+                    BGColor.a = 1;
+                    textColor.a = 1;
+                    isCollected = false;
+                }
+            }
+        }
     }
 }

@@ -11,12 +11,6 @@ public class DamagePlayer : MonoBehaviour
         if (other.gameObject.tag == "Player") {
             other.GetComponent<PlayerDying>().TakeDamage(DamageAmount);
 
-            Debug.Log("ssss");
         }
-
-
-       
-
-
     }
 }

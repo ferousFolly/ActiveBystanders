@@ -11,7 +11,6 @@ public class PlayerDying : MonoBehaviour
     public Image Injured;
     public Image dying;
     public Image GameOver;
-    public Image PlayAgain;
 
     private bool enterColider = false;
   
@@ -32,13 +31,7 @@ public class PlayerDying : MonoBehaviour
         colorInjury = Injured.color.a;
         colorDying = dying.color.a;
         colorGameOver = GameOver.color.a;
-        colorPlayAgain = PlayAgain.color.a;
-        
     }
-
- 
-
- 
 
     public void TakeDamage(float amount)
     {
@@ -46,10 +39,7 @@ public class PlayerDying : MonoBehaviour
 
         if (!alive)
         {
-
-
             return;
-
       
         }
         if (CurrentHealth <= 0) //Die
@@ -82,7 +72,6 @@ public class PlayerDying : MonoBehaviour
         Injured.color = new Color(1,1,1,colorInjury);
         dying.color = new Color(1, 1, 1, colorDying);
         GameOver.color = new Color(1, 1, 1, colorGameOver);
-        PlayAgain.color  = new Color(1, 1, 1, colorPlayAgain);
 
 
 

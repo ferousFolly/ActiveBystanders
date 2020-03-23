@@ -28,7 +28,6 @@ public class AIDying : MonoBehaviour
         _animation = GetComponent<Animator>();
         alive = true; //player strts off as alive 
         CurrentHealth = MaxHealth;
-        
     }
 
     public void TakeDamageAI(float amount)
