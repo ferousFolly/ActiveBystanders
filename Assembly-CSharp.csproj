@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\FirstPersion AIO Pack\FirstPersonAIO\FirstPersonAIO.cs" />
+    <Compile Include="Assets\PlayerBodyGun\Reichsrevolver\Reichsrevolver_M1879\Scripts\RevolverController.cs" />
     <Compile Include="Assets\Scripts\Charbel\AIdying.cs" />
     <Compile Include="Assets\Scripts\Charbel\Chase.cs" />
     <Compile Include="Assets\Scripts\Charbel\DamageAI.cs" />
@@ -92,12 +93,10 @@
     <Compile Include="Assets\Scripts\Vi\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Vi\Tutorial.cs" />
     <Compile Include="Assets\Scripts\WEapon.cs" />
-    <Compile Include="Assets\_Scenes\Reichsrevolver_M1879-20200323T031022Z-001\Reichsrevolver_M1879\Scripts\RevolverController.cs" />
     <None Include="Assets\Shader\PortalShader.shader" />
     <None Include="Assets\FirstPersion AIO Pack\Working Materials\GlassBumpedDistort.shader" />
     <None Include="Assets\FirstPersion AIO Pack\README.txt" />
     <None Include="Assets\Material\ScreenCutoutShader.shader" />
-    <None Include="Assets\_Scenes\BodyGuards-20200323T031115Z-001\BodyGuards\ReadMe.txt.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/vincent/Documents/GitHub/ActiveBystanders/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
