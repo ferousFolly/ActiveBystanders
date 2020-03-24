@@ -15,6 +15,7 @@ public class PlayerDying : MonoBehaviour
     public float MaxHealth = 100f;
     public float CurrentHealth = 0f;
 
+    
     float colorInjury = 0f;
     float colorDying = 0f;
 
@@ -26,6 +27,7 @@ public class PlayerDying : MonoBehaviour
 
         colorInjury = Injured.color.a;
         colorDying = dying.color.a;
+       
     }
 
     public void TakeDamage(float amount)
