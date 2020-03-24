@@ -11,7 +11,7 @@ public class Restart : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown("P")) ;
+        if (Input.GetKeyDown(KeyCode.R)) 
 
         {
               SceneManager.LoadScene("ActualMain");
