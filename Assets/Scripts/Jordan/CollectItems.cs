@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class CollectItems : MonoBehaviour
 {
-    public AudioSource collectSound;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player") {
-            collectSound.Play();
+            SoundManager.PlaySound(SoundManager.SoundEffects.ItemPickUp);
             ObjectCounter.theScore += 1;
             ObjectCounter.isCollected = true;
             Destroy(gameObject);
