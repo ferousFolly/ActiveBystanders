@@ -18,6 +18,7 @@ public class AIDemon : MonoBehaviour
     public AIState State;
 
     public Transform player;
+    public SphereCollider attackCollider;
     static Animator anim;
 
     public GameObject[] waypoints;
@@ -39,9 +40,16 @@ public class AIDemon : MonoBehaviour
 
     void Start()
     {
+        attackCollider.enabled = false;
         anim = GetComponent<Animator>();
         CurrentHealth = MaxHealth;
     }
+
+    public void Attacking(int i)
+    {
+        attackCollider.enabled = (i == 0) ? false : true;
+    }
+
 
     void Update()
     {
