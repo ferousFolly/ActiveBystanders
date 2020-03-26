@@ -5,7 +5,10 @@ using UnityEngine;
 public static class SoundManager
 {
     public enum SoundEffects {
-      
+        ItemPickUp,
+        Hearbeat,
+        Player_GetHurt,
+        DoorOpen,
     }
 
     public enum UI_SoundEffects {
