@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Gun : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class Gun : MonoBehaviour
     public float nextTimeToFire = 1f;
     float currentTimeToFire;
 
+    private AudioSource Gunshot;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -29,12 +32,16 @@ public class Gun : MonoBehaviour
     {
         if (currentTimeToFire <= nextTimeToFire) {
             currentTimeToFire += Time.deltaTime;
+           
         }
         if (Input.GetButtonDown("Fire1") && currentTimeToFire >= nextTimeToFire)
         {
-            Debug.Log("sss");
+            
+            Debug.Log("Dead");
+            Gunshot = GetComponent<AudioSource>();
             currentTimeToFire = 0;
             shoot();
+            
         }
     }
 
