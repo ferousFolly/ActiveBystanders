@@ -32,6 +32,7 @@ public class PlayerDying : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        SoundManager.PlaySound(SoundManager.SoundEffects.Player_GetHurt);
         CurrentHealth -= amount;
 
         if (!alive)

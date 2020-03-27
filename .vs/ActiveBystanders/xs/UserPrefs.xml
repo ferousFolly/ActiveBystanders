@@ -1,10 +1,8 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Jordan/ObjectCounter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Vi/InGameAssetManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Charbel/Gun.cs" Line="20" Column="21" />
-      <File FileName="Assets/Scripts/Charbel/AIDemon.cs" Line="46" Column="18" />
-      <File FileName="Assets/Scripts/Charbel/PlayerDying.cs" />
-      <File FileName="Assets/Scripts/Jordan/ObjectCounter.cs" Line="47" Column="60" />
+      <File FileName="Assets/Scripts/Vi/InGameAssetManager.cs" Line="6" Column="42" />
+      <File FileName="Assets/Scripts/Vi/GameAssetManager.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,8 +21,9 @@
               </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="Charbel" expanded="True" />
-                <Node name="Jordan" expanded="True">
-                  <Node name="ObjectCounter.cs" selected="True" />
+                <Node name="Jordan" expanded="True" />
+                <Node name="Vi" expanded="True">
+                  <Node name="InGameAssetManager.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
@@ -35,7 +34,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2a803a75-39b8-4be9-84cb-da6eb05084e2" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9b6bff77-ee24-441e-a5c8-72d10c529aec" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

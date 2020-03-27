@@ -18,7 +18,9 @@ public class AIDemon : MonoBehaviour
     public AIState State;
 
     public Transform player;
-    static Animator anim;
+    public SphereCollider attackCollider;
+    private Animator anim;
+    private AudioSource footStep;
 
     public GameObject[] waypoints;
     int currentWP = 0;
@@ -39,9 +41,17 @@ public class AIDemon : MonoBehaviour
 
     void Start()
     {
+        attackCollider.enabled = false;
         anim = GetComponent<Animator>();
         CurrentHealth = MaxHealth;
+        footStep = GetComponent<AudioSource>();
     }
+
+    public void Attacking(int i)
+    {
+        attackCollider.enabled = (i == 0) ? false : true;
+    }
+
 
     void Update()
     {
@@ -83,6 +93,7 @@ public class AIDemon : MonoBehaviour
 
                                 this.transform.Translate(0, 0, Time.deltaTime * speed);
                                 anim.SetBool("isWalking", true);
+                                PlayFootStep(true);
                                 if (distanceToParolPoint < accuracyWP)
                                 {
                                     currentWP++;
@@ -122,6 +133,7 @@ public class AIDemon : MonoBehaviour
                             if (distanceToPlayer < 5.5f)
                             {
                                 anim.SetBool("isWalking", false);
+                                PlayFootStep(false);
                                 State = AIState.Attack;
                             }
                         }
@@ -145,6 +157,7 @@ public class AIDemon : MonoBehaviour
                         if (distanceToPlayer > 5.5f)
                         {
                             anim.SetBool("isAttacking", false);
+                            PlayFootStep(true);
                             State = AIState.Persuing;
                         }
                     }
@@ -159,6 +172,7 @@ public class AIDemon : MonoBehaviour
                 break;
             case AIState.Hurt:
                 anim.SetBool("isAttacking", false);
+                PlayFootStep(false);
                 if (anim.GetCurrentAnimatorStateInfo(0).IsName("isHurt") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.98f) {
                     isHurt = false;
                     State = AIState.Patrol;
@@ -169,6 +183,7 @@ public class AIDemon : MonoBehaviour
                 anim.SetBool("isAttacking", false);
                 anim.SetBool("isWalking", false);
                 anim.SetTrigger("isDead");
+                PlayFootStep(false);
                 break;
         }
     }
@@ -180,6 +195,16 @@ public class AIDemon : MonoBehaviour
             isHurt = true;
             anim.SetTrigger("isHurt");
             CurrentHealth -= damage;
+        }
+    }
+
+    void PlayFootStep(bool b) {
+        if (!footStep.isPlaying && b) {
+            footStep.Play();
+        }
+        if (!b && footStep.isPlaying)
+        {
+            footStep.Stop();
         }
     }
 }

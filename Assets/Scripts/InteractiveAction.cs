@@ -38,6 +38,7 @@ public class InteractiveAction : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         GameEventManager.IncreaseOpeningDoorNumbers();
+                        SoundManager.PlaySound(SoundManager.SoundEffects.DoorOpen);
                         hit.collider.GetComponentInParent<Animator>().SetBool("Open", true);
                     }
                     break;
