@@ -13,6 +13,11 @@ public class FlickerLights : MonoBehaviour
 
     public AudioSource AS;
     public AudioClip LightAudio;
+
+    public bool LightTurnOn = false;
+    public GameObject Light;
+    public GameObject PointLight;
+    public GameObject pointlight;
     
     void Start()
     {
@@ -22,15 +27,25 @@ public class FlickerLights : MonoBehaviour
     
     void Update()
     {
-        FlickerLight(); 
+        FlickerLight();
+        
     }
 
 
     void FlickerLight()
     {
         if (Timer > 0)
+            
             Timer -= Time.deltaTime;
+        if (LightTurnOn)
+        {
+            LightTurnOn = true;
 
+        }
+        else
+        {
+            LightTurnOn = false;
+        }
 
         if(Timer<=0)
         {
