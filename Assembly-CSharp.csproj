@@ -75,6 +75,8 @@
     <Compile Include="Assets\Scripts\InteractiveAction.cs" />
     <Compile Include="Assets\Scripts\Jordan\CollectItems.cs" />
     <Compile Include="Assets\Scripts\Jordan\ObjectCounter.cs" />
+    <Compile Include="Assets\Scripts\Mercurius\FlickerLights.cs" />
+    <Compile Include="Assets\Scripts\Mercurius\MuzzleFlash.cs" />
     <Compile Include="Assets\Scripts\PortalCamera.cs" />
     <Compile Include="Assets\Scripts\PortalTeleporter.cs" />
     <Compile Include="Assets\Scripts\Sender.cs" />

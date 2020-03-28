@@ -14,6 +14,7 @@ public class Gun : MonoBehaviour
     public LayerMask enemyBody;
     public LayerMask enemyHead;
     public GameObject hitEffect;
+    public ParticleSystem muzzleFlash;
 
     private Camera fpsCam;
     public float nextTimeToFire = 1f;
@@ -35,6 +36,10 @@ public class Gun : MonoBehaviour
             Debug.Log("sss");
             currentTimeToFire = 0;
             shoot();
+
+            muzzleFlash.Play();
+
+
         }
     }
 
