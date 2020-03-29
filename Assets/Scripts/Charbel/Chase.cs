@@ -12,7 +12,6 @@ public class Chase : MonoBehaviour
         Persuing,
         Hurt,
         Death
-        
     }
 
 

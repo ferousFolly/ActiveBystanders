@@ -28,13 +28,14 @@ public class Tutorial : MonoBehaviour
                 UI_Run.SetActive(true);
                 UI_Flashlight.SetActive(false);
             }
-            if (GameEventManager.GetOpeningDoorNumbers() == 0)
+            if (GameEventManager.GetOpeningDoorNumbers() == 1)
             {
                 UI_Movement.SetActive(false);
                 UI_Run.SetActive(false);
                 UI_Flashlight.SetActive(true);
+                GameEventManager.canUseFlashLight = true;
             }
-            if (GameEventManager.GetFlashLightUsedNumbers() == 0)
+            if (GameEventManager.GetFlashLightUsedNumbers() == 1)
             {
                 UI_Movement.SetActive(false);
                 UI_Run.SetActive(false);

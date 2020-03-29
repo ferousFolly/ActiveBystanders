@@ -15,7 +15,7 @@ public class GunSwitch : MonoBehaviour
     {
 
         int previousSelectedWeapon = selectedWeapon;
-        if (Input.GetAxis("Mouse Scrollwheel") > 0f)
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             if (selectedWeapon >= transform.childCount - 1)
                 selectedWeapon = 0;
@@ -23,9 +23,9 @@ public class GunSwitch : MonoBehaviour
                 selectedWeapon++;
         }
 
-        if (Input.GetAxis("Mouse Scrollwheel") < 0f)
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
-            if (selectedWeapon >= 0)
+            if (selectedWeapon <= 0)
                 selectedWeapon = transform.childCount - 1;
             else
                 selectedWeapon--;
@@ -33,7 +33,7 @@ public class GunSwitch : MonoBehaviour
 
         if (previousSelectedWeapon != selectedWeapon)
         {
-            SelectedWeapon();
+            SelectedWeapon();       
         }
     }
 
