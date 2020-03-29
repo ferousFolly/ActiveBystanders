@@ -8,6 +8,9 @@ public class InteractiveAction : MonoBehaviour
 {
     private GameObject buttonE;
     private GameObject inventory;
+    FirstPersonAIO AIO;
+
+    public float slowMotionSpeed = 0.05f;
 
     bool isFlashLightOpening;
     bool isOpeningInventory;
@@ -17,6 +20,7 @@ public class InteractiveAction : MonoBehaviour
         buttonE = InGameAssetManager.i.buttonE;
         inventory = InGameAssetManager.i.inventory;
         isFlashLightOpening = InGameAssetManager.i.flashLight.enabled;
+        AIO = GetComponent<FirstPersonAIO>();
     }
 
     void Update()
@@ -72,8 +76,20 @@ public class InteractiveAction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isOpeningInventory = !isOpeningInventory;
+            AIO.lockAndHideCursor = !isOpeningInventory;
         }
+        SlowMotion();
         inventory.SetActive(isOpeningInventory);
     }
 
+    void SlowMotion() {
+        if (isOpeningInventory)
+        {
+            Time.timeScale = slowMotionSpeed;
+        }
+        else {
+            Time.timeScale = 1f;
+        }
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
+    }
 }
