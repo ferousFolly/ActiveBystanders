@@ -36,33 +36,33 @@ public class TextureSetup : MonoBehaviour {
         camera2.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
         camera2Mat.mainTexture = camera2.targetTexture;
 
-        if (camera3.targetTexture != null)
-        {
-            camera3.targetTexture.Release();
-        }
-        camera3.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
-        camera3Mat.mainTexture = camera3.targetTexture;
+        //if (camera3.targetTexture != null)
+        //{
+        //    camera3.targetTexture.Release();
+        //}
+        //camera3.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
+        //camera3Mat.mainTexture = camera3.targetTexture;
 
-        if (camera4.targetTexture != null)
-        {
-            camera4.targetTexture.Release();
-        }
-        camera4.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
-        camera4Mat.mainTexture = camera4.targetTexture;
+        //if (camera4.targetTexture != null)
+        //{
+        //    camera4.targetTexture.Release();
+        //}
+        //camera4.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
+        //camera4Mat.mainTexture = camera4.targetTexture;
 
-        if (camera5.targetTexture != null)
-        {
-            camera5.targetTexture.Release();
-        }
-        camera5.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
-        camera5Mat.mainTexture = camera5.targetTexture;
+        //if (camera5.targetTexture != null)
+        //{
+        //    camera5.targetTexture.Release();
+        //}
+        //camera5.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
+        //camera5Mat.mainTexture = camera5.targetTexture;
 
-        if (camera6.targetTexture != null)
-        {
-            camera6.targetTexture.Release();
-        }
-        camera6.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
-        camera6Mat.mainTexture = camera6.targetTexture;
+        //if (camera6.targetTexture != null)
+        //{
+        //    camera6.targetTexture.Release();
+        //}
+        //camera6.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
+        //camera6Mat.mainTexture = camera6.targetTexture;
     }
 
 }
