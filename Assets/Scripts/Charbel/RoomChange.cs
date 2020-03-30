@@ -5,7 +5,6 @@ using UnityEngine;
 public class RoomChange : MonoBehaviour
 {
     public  Transform player;
-    public GameObject SwapTrigger;
     public bool _LivingRoom = false;
     public bool LivingRoomSwap = false;
 
@@ -14,7 +13,7 @@ public class RoomChange : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (SwapTrigger)
+        if (other. tag  == "player")
         {
             _LivingRoom = true;
         }
@@ -26,12 +25,12 @@ public class RoomChange : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (SwapTrigger)
+        if (other.tag == "player")
         {
-            LivingRoomSwap = true;
+            _LivingRoom = false; 
         }
         else
-            _LivingRoom = false;
+            LivingRoomSwap = true;
        
         
     }
