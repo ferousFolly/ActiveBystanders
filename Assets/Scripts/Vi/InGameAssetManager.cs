@@ -24,4 +24,6 @@ public class InGameAssetManager : GameAssetManager
     public GameObject startPoint;
     public GameObject buttonE;
     public GameObject inventory;
+    public GameObject itemPrefab;
+    public Text bulletText;
 }

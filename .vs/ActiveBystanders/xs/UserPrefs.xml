@@ -1,9 +1,22 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Jordan/CollectItems.cs">
     <Files>
       <File FileName="Assets/Scripts/Vi/InGameAssetManager.cs" Line="6" Column="42" />
       <File FileName="Assets/Scripts/Vi/GameAssetManager.cs" />
       <File FileName="Assets/Scripts/Jordan/CollectItems.cs" Line="13" Column="1" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/InteractiveAction.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Vi/InGameAssetManager.cs" Line="28" Column="28" />
+      <File FileName="Assets/Scripts/Vi/GameAssetManager.cs" Line="23" Column="30" />
+      <File FileName="Assets/Scripts/Charbel/Gun.cs" Line="38" Column="10" />
+      <File FileName="Assets/Scripts/Jordan/ObjectCounter.cs" Line="15" Column="32" />
+      <File FileName="Assets/Scripts/Vi/InventoryManager.cs" Line="58" Column="23" />
+      <File FileName="Assets/Scripts/Jordan/CollectItems.cs" Line="15" Column="47" />
+      <File FileName="Assets/Scripts/InteractiveAction.cs" Line="78" Column="54" />
+      <File FileName="Assets/FirstPersion AIO Pack/FirstPersonAIO/FirstPersonAIO.cs" Line="817" Column="99" />
+>>>>>>> Vincent
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,10 +35,16 @@
               </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="Charbel" expanded="True" />
+<<<<<<< HEAD
                 <Node name="Jordan" expanded="True">
                   <Node name="CollectItems.cs" selected="True" />
                 </Node>
                 <Node name="Vi" expanded="True" />
+=======
+                <Node name="Jordan" expanded="True" />
+                <Node name="Vi" expanded="True" />
+                <Node name="InteractiveAction.cs" selected="True" />
+>>>>>>> Vincent
               </Node>
             </Node>
           </Node>
@@ -35,7 +54,11 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9500ad0a-688f-4689-9188-34c80c9b71ab" />
+=======
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e353d3f9-5e22-4dc7-9223-dbadaef90d54" />
+>>>>>>> Vincent
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

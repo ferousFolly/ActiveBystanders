@@ -16,6 +16,9 @@ public class Gun : MonoBehaviour
     public GameObject hitEffect;
     public ParticleSystem muzzleFlash;
 
+    const int maxBullets = 6;
+    int currentBullets = 3;
+
     private Camera fpsCam;
     public float nextTimeToFire = 1f;
     float currentTimeToFire;
@@ -24,28 +27,27 @@ public class Gun : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         fpsCam = Camera.main;
+        currentBullets = 3;
     }
 
     void Update()
     {
+        InGameAssetManager.i.bulletText.text = currentBullets.ToString() + "/" + maxBullets.ToString();
         if (currentTimeToFire <= nextTimeToFire) {
             currentTimeToFire += Time.deltaTime;
         }
-        if (Input.GetButtonDown("Fire1") && currentTimeToFire >= nextTimeToFire)
+        if (Input.GetButtonDown("Fire1") && currentTimeToFire >= nextTimeToFire && currentBullets > 0)
         {
-            Debug.Log("sss");
             currentTimeToFire = 0;
             shoot();
-
             muzzleFlash.Play();
-
-
         }
     }
 
     void shoot()
     {
         anim.SetTrigger("Shot1");
+        currentBullets -= 1;
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, enemyBody))
         {

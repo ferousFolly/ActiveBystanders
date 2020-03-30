@@ -20,6 +20,7 @@ public class ObjectCounter : MonoBehaviour
 
     private void Start()
     {
+        theScore = 0;
         objecttiveBG.gameObject.SetActive(false);
         colorFadeBlack = FadeBlack.color.a;
     }
@@ -33,7 +34,6 @@ public class ObjectCounter : MonoBehaviour
             colorFadeBlack += Time.deltaTime;
         }
         FadeBlack.color = new Color(1, 1, 1, colorFadeBlack);
-
     }
 
     void UpdateText() {

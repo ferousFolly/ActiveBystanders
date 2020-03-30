@@ -88,6 +88,10 @@
     <Compile Include="Assets\Scripts\Vi\GizmosDisplay.cs" />
     <Compile Include="Assets\Scripts\Vi\InGameAssetManager.cs" />
     <Compile Include="Assets\Scripts\Vi\IntroManager.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Assets\Scripts\Vi\InventoryManager.cs" />
+>>>>>>> Vincent
     <Compile Include="Assets\Scripts\Vi\MainMenu\ButtonFunc.cs" />
     <Compile Include="Assets\Scripts\Vi\MainMenu\LightControl.cs" />
     <Compile Include="Assets\Scripts\Vi\MainMenu\SettingManager.cs" />
@@ -96,6 +100,10 @@
     <Compile Include="Assets\Scripts\Vi\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Vi\Tutorial.cs" />
     <Compile Include="Assets\Scripts\WEapon.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Assets\UIItem.cs" />
+>>>>>>> Vincent
     <None Include="Assets\Shader\PortalShader.shader" />
     <None Include="Assets\FirstPersion AIO Pack\Working Materials\GlassBumpedDistort.shader" />
     <None Include="Assets\FirstPersion AIO Pack\README.txt" />
