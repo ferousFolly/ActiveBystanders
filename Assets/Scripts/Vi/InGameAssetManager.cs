@@ -19,6 +19,15 @@ public class InGameAssetManager : GameAssetManager
         }
     }
 
+    public List<InGame_Music> inGame_Musics = new List<InGame_Music>();
+
+    [System.Serializable]
+    public class InGame_Music
+    {
+        public SoundManager.InGameMusic sound;
+        public AudioClip audioClip;
+    }
+
     public GameObject player;
     public Light flashLight;
     public GameObject startPoint;

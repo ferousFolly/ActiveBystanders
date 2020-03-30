@@ -83,6 +83,7 @@ public class AIDemon : MonoBehaviour
                         }
                         else
                         {
+                            player.GetComponent<PlayerDying>().isbeingTraced = false;
                             if (waypoints.Length > 0)
                             {
                                 direction = waypoints[currentWP].transform.position - transform.position;
@@ -120,6 +121,7 @@ public class AIDemon : MonoBehaviour
                 if (!isDead) {
                     if (!isHurt)
                     {
+                        player.GetComponent<PlayerDying>().isbeingTraced = true;
                         if (distanceToPlayer > 10 || angle > 30)
                         {
                             anim.SetBool("isAttacking", false);
@@ -180,6 +182,7 @@ public class AIDemon : MonoBehaviour
                 break;
 
             case AIState.Death:
+                player.GetComponent<PlayerDying>().isbeingTraced = false;
                 anim.SetBool("isAttacking", false);
                 anim.SetBool("isWalking", false);
                 anim.SetTrigger("isDead");
