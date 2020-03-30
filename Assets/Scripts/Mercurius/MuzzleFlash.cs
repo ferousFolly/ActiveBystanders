@@ -14,16 +14,9 @@ public class MuzzleFlash : MonoBehaviour
     
     void Update()
     {
-        
-    }
-
-
-    void Shoot()
-
-    {
-
         muzzleFlash.Play();
     }
+
 
 
 }

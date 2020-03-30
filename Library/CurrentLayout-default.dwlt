@@ -115,7 +115,11 @@ MonoBehaviour:
   m_MinSize: {x: 880, y: 492}
   m_MaxSize: {x: 16005, y: 14042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 138
+=======
+  controlID: 4606
+>>>>>>> Mercurius
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -135,12 +139,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1120
     height: 723
   m_MinSize: {x: 605, y: 492}
   m_MaxSize: {x: 12005, y: 14042}
   vertical: 1
   controlID: 141
+=======
+    width: 1493
+    height: 947
+  m_MinSize: {x: 604, y: 492}
+  m_MaxSize: {x: 12004, y: 14042}
+  vertical: 1
+  controlID: 4703
+>>>>>>> Mercurius
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -161,12 +174,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1120
     height: 437
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
   controlID: 76
+=======
+    width: 1493
+    height: 573
+  m_MinSize: {x: 604, y: 221}
+  m_MaxSize: {x: 12004, y: 4021}
+  vertical: 0
+  controlID: 4704
+>>>>>>> Mercurius
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -210,8 +232,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 287
     y: 0
+<<<<<<< HEAD
     width: 236
     height: 437
+=======
+    width: 438
+    height: 573
+>>>>>>> Mercurius
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
@@ -235,12 +262,21 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 523
     y: 0
     width: 597
     height: 437
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+    x: 821
+    y: 0
+    width: 672
+    height: 573
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+>>>>>>> Mercurius
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -292,8 +328,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1120
     y: 0
+<<<<<<< HEAD
     width: 320
     height: 723
+=======
+    width: 427
+    height: 947
+>>>>>>> Mercurius
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
@@ -322,10 +363,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 523
     y: 75
     width: 595
     height: 416
+=======
+    x: 821
+    y: 73
+    width: 670
+    height: 552
+>>>>>>> Mercurius
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewsNames: []
   m_SerializedViewsValues: []
@@ -333,7 +381,11 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+<<<<<<< HEAD
   m_TargetSize: {x: 595, y: 395}
+=======
+  m_TargetSize: {x: 670, y: 531}
+>>>>>>> Mercurius
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -347,10 +399,17 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
+<<<<<<< HEAD
     m_HBaseRangeMin: -148.75
     m_HBaseRangeMax: 148.75
     m_VBaseRangeMin: -98.75
     m_VBaseRangeMax: 98.75
+=======
+    m_HBaseRangeMin: -335
+    m_HBaseRangeMax: 335
+    m_VBaseRangeMin: -265.5
+    m_VBaseRangeMax: 265.5
+>>>>>>> Mercurius
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -368,16 +427,24 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
       width: 595
       height: 395
     m_Scale: {x: 2, y: 2}
     m_Translation: {x: 297.5, y: 197.5}
+=======
+      width: 670
+      height: 531
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 335, y: 265.5}
+>>>>>>> Mercurius
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -148.75
       y: -98.75
       width: 297.5
@@ -385,6 +452,15 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 2
   m_LastWindowPixelSize: {x: 1190, y: 832}
+=======
+      x: -335
+      y: -265.5
+      width: 670
+      height: 531
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 670, y: 552}
+>>>>>>> Mercurius
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -419,9 +495,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 4499feff2a9afeff68d20000
+=======
+      m_SelectedIDs: c831ffff
+      m_LastClickedID: -52792
+      m_ExpandedIDs: 72fbffff9c360000
+>>>>>>> Mercurius
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -466,14 +548,21 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 287
     y: 75
     width: 234
     height: 416
+=======
+    x: 383
+    y: 73
+    width: 436
+    height: 552
+>>>>>>> Mercurius
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: 8a28127d5b14e524c99815f28f5498f4
-  m_Gizmos: 1
+  m_Gizmos: 0
   m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 0
@@ -481,9 +570,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: 7.7685204, y: -3.6505098, z: -69.76603}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: 7.7685204, y: -3.6505098, z: -69.76603}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -529,6 +618,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< HEAD
     m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
     speed: 2
     m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
@@ -536,6 +626,15 @@ MonoBehaviour:
     m_Target: 10
     speed: 2
     m_Value: 10
+=======
+    m_Target: {x: -0.0018495074, y: -0.9962795, z: 0.08328139, w: -0.022123713}
+    speed: 2
+    m_Value: {x: -0.001724582, y: -0.99631083, z: 0.08328401, w: -0.020629255}
+  m_Size:
+    m_Target: 106.943634
+    speed: 2
+    m_Value: 111.982864
+>>>>>>> Mercurius
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -553,7 +652,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: 0.0060021887, y: 0.9939977, z: -0.076499075, w: 0.07799032}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -625,20 +724,35 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/_Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
   - Assets/_Scenes
+=======
+    - Assets/Material
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/Material
+>>>>>>> Mercurius
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/vincent/Documents/GitHub/ActiveBystanders
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 75.875244}
     m_SelectedIDs: 1ccd0000
     m_LastClickedID: 52508
     m_ExpandedIDs: 000000001acd000004ce000000ca9a3b
+=======
+    scrollPos: {x: 0, y: 39}
+    m_SelectedIDs: 86550000
+    m_LastClickedID: 21894
+    m_ExpandedIDs: 000000000e55000000ca9a3b
+>>>>>>> Mercurius
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -666,7 +780,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 
+=======
+    m_ExpandedIDs: 000000000e55000000ca9a3b
+>>>>>>> Mercurius
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -776,7 +894,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -105902
+  m_LastSelectedObjectID: -27920
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -855,4 +973,4 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 63
