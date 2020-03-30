@@ -9,6 +9,8 @@ public static class SoundManager
         Hearbeat,
         Player_GetHurt,
         DoorOpen,
+        GunShot,
+
     }
 
     public enum UI_SoundEffects {
@@ -16,6 +18,8 @@ public static class SoundManager
         UI_HighLight,
         UI_Cancel,
         UI_Back,
+        UI_OpenInventory,
+        UI_ESC,
     }
 
     private static GameObject audioObject;

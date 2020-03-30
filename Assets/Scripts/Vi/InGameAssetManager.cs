@@ -24,6 +24,14 @@ public class InGameAssetManager : GameAssetManager
     public GameObject startPoint;
     public GameObject buttonE;
     public GameObject inventory;
+    public GameObject settingPanel;
     public GameObject itemPrefab;
     public Text bulletText;
+    public Image inventoryBG;
+
+    public Gun gunScript;
+
+    public void ExitGame() {
+        SceneControlle.ExitGame();
+    }
 }

@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Charbel\GunSwitch.cs" />
     <Compile Include="Assets\Scripts\Charbel\PlayerDying.cs" />
     <Compile Include="Assets\Scripts\Charbel\Restart.cs" />
+    <Compile Include="Assets\Scripts\Charbel\RoomChange.cs" />
     <Compile Include="Assets\Scripts\Charbel\Target.cs" />
     <Compile Include="Assets\Scripts\InteractiveAction.cs" />
     <Compile Include="Assets\Scripts\Jordan\CollectItems.cs" />
