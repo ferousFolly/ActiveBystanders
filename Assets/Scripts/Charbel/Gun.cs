@@ -61,6 +61,7 @@ public class Gun : MonoBehaviour
                 AI.GetHit(10);
                 GameObject o = Instantiate(hitEffect,hit.point,hitEffect.transform.rotation);
                 Destroy(o,2f);
+                Instantiate(BloodEffect, hit.point, Quaternion.identity);
             }
     
         } else if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, enemyHead)) {
