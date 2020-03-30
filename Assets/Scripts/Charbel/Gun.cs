@@ -42,24 +42,16 @@ public class Gun : MonoBehaviour
         }
         if (Input.GetButtonDown("Fire1") && currentTimeToFire >= nextTimeToFire && currentBullets > 0)
         {
-<<<<<<< HEAD
             currentTimeToFire = 0;
             shoot();
             muzzleFlash.Play();
-=======
-            
-            Debug.Log("Dead");
-            Gunshot = GetComponent<AudioSource>();
-            currentTimeToFire = 0;
-            shoot();
-            
->>>>>>> Charbel
         }
     }
 
     void shoot()
     {
         anim.SetTrigger("Shot1");
+        SoundManager.PlaySound(SoundManager.SoundEffects.GunShot);
         currentBullets -= 1;
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, enemyBody))

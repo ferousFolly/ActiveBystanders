@@ -28,7 +28,6 @@ public class FlickerLights : MonoBehaviour
     void Update()
     {
         FlickerLight();
-        
     }
 
 

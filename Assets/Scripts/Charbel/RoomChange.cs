@@ -4,34 +4,39 @@ using UnityEngine;
 
 public class RoomChange : MonoBehaviour
 {
-    public  Transform player;
-    public bool _LivingRoom = false;
-    public bool LivingRoomSwap = false;
+    Transform player;
+    public GameObject originalLayout;
+    public GameObject newLayout;
+    bool isTrigger;
+    BoxCollider collider;
 
 
-    // Start is called before the first frame update
+    private void Start()
+    {
+        collider = GetComponent<BoxCollider>();
+        collider.enabled = false;
+        player = FindObjectOfType<FirstPersonAIO>().transform;
+    }
+
+    private void Update()
+    {
+        Vector3 posDiff = player.position - transform.position;
+        float dotPos = Vector3.Dot(transform.forward,posDiff);
+        if (dotPos < -2f)
+        {
+            collider.enabled = true;
+        }
+        else if(dotPos > 1)
+        {
+            collider.enabled = false;
+        }
+    }
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other. tag  == "player")
-        {
-            _LivingRoom = true;
+        if (other.tag == "Player") {
+            originalLayout.SetActive(newLayout.activeInHierarchy);
+            newLayout.SetActive(!originalLayout.activeInHierarchy);
         }
-        else
-            LivingRoomSwap = false;
-
-
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "player")
-        {
-            _LivingRoom = false; 
-        }
-        else
-            LivingRoomSwap = true;
-       
-        
     }
 }
