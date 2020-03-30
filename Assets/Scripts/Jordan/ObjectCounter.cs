@@ -31,9 +31,15 @@ public class ObjectCounter : MonoBehaviour
 
         if (theScore >= 4)
         {
-            colorFadeBlack += Time.deltaTime;
+             FadeBlack.color = new Color(1, 1, 1, colorFadeBlack);
+            //colorFadeBlack += Time.deltaTime;
         }
+<<<<<<< HEAD
         FadeBlack.color = new Color(1, 1, 1, colorFadeBlack);
+=======
+       
+
+>>>>>>> Charbel
     }
 
     void UpdateText() {
@@ -43,6 +49,7 @@ public class ObjectCounter : MonoBehaviour
 
             objecttiveBG.color = BGColor;
             ObjectiveText.color = textColor;
+
             if (currentShowingTimer < showingTimer)
             {
                 currentShowingTimer += Time.deltaTime;

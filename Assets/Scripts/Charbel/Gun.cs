@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Gun : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class Gun : MonoBehaviour
     public float nextTimeToFire = 1f;
     float currentTimeToFire;
 
+    private AudioSource Gunshot;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -35,12 +38,22 @@ public class Gun : MonoBehaviour
         InGameAssetManager.i.bulletText.text = currentBullets.ToString() + "/" + maxBullets.ToString();
         if (currentTimeToFire <= nextTimeToFire) {
             currentTimeToFire += Time.deltaTime;
+           
         }
         if (Input.GetButtonDown("Fire1") && currentTimeToFire >= nextTimeToFire && currentBullets > 0)
         {
+<<<<<<< HEAD
             currentTimeToFire = 0;
             shoot();
             muzzleFlash.Play();
+=======
+            
+            Debug.Log("Dead");
+            Gunshot = GetComponent<AudioSource>();
+            currentTimeToFire = 0;
+            shoot();
+            
+>>>>>>> Charbel
         }
     }
 
