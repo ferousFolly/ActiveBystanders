@@ -17,12 +17,12 @@ public class Gun : MonoBehaviour
     public GameObject hitEffect;
     public ParticleSystem muzzleFlash;
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
     const int maxBullets = 6;
     int currentBullets = 3;
-=======
+//=======
     public GameObject BloodEffect;
->>>>>>> Mercurius
+//>>>>>>> Mercurius
 
     private Camera fpsCam;
     public float nextTimeToFire = 1f;
