@@ -12,6 +12,7 @@ public class CutsceneEnter : MonoBehaviour
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         CutsceneCam.SetActive(true);
         thePlayer.SetActive(false);
+        SoundManager.PlaySound(SoundManager.InGameMusic.BeingTraced);
         StartCoroutine(FinishCut());
     }
 

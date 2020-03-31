@@ -176,7 +176,7 @@ public class AIDemon : MonoBehaviour
             case AIState.Hurt:
                 anim.SetBool("isAttacking", false);
                 PlayFootStep(false);
-                if (anim.GetCurrentAnimatorStateInfo(0).IsName("isHurt") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.98f) {
+                if (anim.GetCurrentAnimatorStateInfo(0).IsName("isHurt") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.95f) {
                     isHurt = false;
                     State = AIState.Patrol;
                 }

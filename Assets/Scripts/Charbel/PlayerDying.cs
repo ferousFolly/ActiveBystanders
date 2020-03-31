@@ -100,9 +100,9 @@ public class PlayerDying : MonoBehaviour
             }
         }
 
-        if (isbeingTraced && !isPlayingMusic) {
-            SoundManager.PlaySound(SoundManager.InGameMusic.BeingTraced);
-        }
+        //if (isbeingTraced && !isPlayingMusic) {
+        //    SoundManager.PlaySound(SoundManager.InGameMusic.BeingTraced);
+        //}
      
         
         Injured.color = new Color(1, 1, 1, colorInjury);
