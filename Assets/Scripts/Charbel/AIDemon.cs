@@ -65,7 +65,7 @@ public class AIDemon : MonoBehaviour
         float angle = Vector3.Angle(direction, this.transform.forward);
 
         float distanceToParolPoint = Vector3.Distance(waypoints[currentWP].transform.position, transform.position);
-        float distanceToPlayer = Vector3.Distance(player.position, this.transform.position);
+        float distanceToPlayer = Vector3.Distance(player.position, transform.position); ;
 
         switch (State)
         {
@@ -83,6 +83,7 @@ public class AIDemon : MonoBehaviour
                         }
                         else
                         {
+                            player.GetComponent<PlayerDying>().isbeingTraced = false;
                             if (waypoints.Length > 0)
                             {
                                 direction = waypoints[currentWP].transform.position - transform.position;
@@ -110,16 +111,17 @@ public class AIDemon : MonoBehaviour
                         State = AIState.Hurt;
                     }
                 }
-                else {
+                else
+                {
                     State = AIState.Death;
                 }
-               
                 break;
 
             case AIState.Persuing:
                 if (!isDead) {
                     if (!isHurt)
                     {
+                        player.GetComponent<PlayerDying>().isbeingTraced = true;
                         if (distanceToPlayer > 10 || angle > 30)
                         {
                             anim.SetBool("isAttacking", false);
@@ -166,20 +168,22 @@ public class AIDemon : MonoBehaviour
                         State = AIState.Hurt;
                     }
                 }
-                else {
+                else
+                {
                     State = AIState.Death;
                 }
                 break;
             case AIState.Hurt:
                 anim.SetBool("isAttacking", false);
                 PlayFootStep(false);
-                if (anim.GetCurrentAnimatorStateInfo(0).IsName("isHurt") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.98f) {
+                if (anim.GetCurrentAnimatorStateInfo(0).IsName("isHurt") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.95f) {
                     isHurt = false;
                     State = AIState.Patrol;
                 }
                 break;
 
             case AIState.Death:
+                player.GetComponent<PlayerDying>().isbeingTraced = false;
                 anim.SetBool("isAttacking", false);
                 anim.SetBool("isWalking", false);
                 anim.SetTrigger("isDead");

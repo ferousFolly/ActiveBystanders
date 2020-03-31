@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tutorial : MonoBehaviour
 {
     private float distanceToShowRunUI;
+    [SerializeField]
     private bool firstShow = true;
     public FirstPersonAIO AIO;
     public GameObject UI_Movement;
@@ -12,6 +13,7 @@ public class Tutorial : MonoBehaviour
     public GameObject UI_Flashlight;
     private Vector3 startPoint;
 
+    [SerializeField]
     float runSpeed;
     
     void Start()

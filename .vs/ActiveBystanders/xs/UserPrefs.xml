@@ -1,18 +1,17 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/InteractiveAction.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Charbel/AIDemon.cs">
     <Files>
-      <File FileName="Assets/Scripts/Jordan/ObjectCounter.cs" Line="34" Column="69" />
-      <File FileName="Assets/Scripts/Charbel/Gun.cs" Line="54" Column="65" />
-      <File FileName="Assets/Scripts/Vi/Tutorial.cs" />
-      <File FileName="Assets/Scripts/Vi/InventoryManager.cs" Line="62" Column="2" />
-      <File FileName="Assets/Scripts/Mercurius/FlickerLights.cs" Line="31" Column="6" />
-      <File FileName="Assets/Scripts/Vi/InGameAssetManager.cs" Line="30" Column="30" />
-      <File FileName="Assets/Scripts/InteractiveAction.cs" Line="38" Column="71" />
-      <File FileName="Assets/Scripts/Vi/SoundManager.cs" Line="22" Column="16" />
-      <File FileName="Assets/Scripts/Vi/MainMenu/UI_Button.cs" Line="12" Column="89" />
-      <File FileName="Assets/Scripts/Vi/SceneController.cs" Line="12" Column="24" />
-      <File FileName="Assets/Scripts/Charbel/RoomChange.cs" Line="25" Column="26" />
-      <File FileName="Assets/FirstPersion AIO Pack/FirstPersonAIO/FirstPersonAIO.cs" Line="311" Column="101" />
+      <File FileName="Assets/Scripts/Charbel/Gun.cs" Line="45" Column="32" />
+      <File FileName="Assets/Scripts/Charbel/AIDemon.cs" Line="180" Column="36" />
+      <File FileName="Assets/Scripts/Vi/SoundManager.cs" />
+      <File FileName="Assets/Scripts/Charbel/PlayerDying.cs" Line="102" Column="1" />
+      <File FileName="Assets/Scripts/Vi/InGameAssetManager.cs" />
+      <File FileName="Assets/Scripts/Jordan/ObjectCounter.cs" />
+      <File FileName="Assets/Export Cutscene/CutsceneEnter.cs" Line="15" Column="68" />
+      <File FileName="Assets/Scripts/Charbel/Restart.cs" />
+      <File FileName="Assets/Scripts/Vi/SceneController.cs" />
+      <File FileName="Assets/Scripts/Vi/Tutorial.cs" Line="24" Column="6" />
+      <File FileName="Assets/Scripts/InteractiveAction.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,17 +21,19 @@
               <Node name="Editor" expanded="True">
                 <Node name="CrossPlatformInput" expanded="True" />
               </Node>
+              <Node name="Export Cutscene" expanded="True" />
               <Node name="FirstPersion AIO Pack" expanded="True">
                 <Node name="FirstPersonAIO" expanded="True" />
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="Charbel" expanded="True" />
+                <Node name="Charbel" expanded="True">
+                  <Node name="AIDemon.cs" selected="True" />
+                </Node>
                 <Node name="Jordan" expanded="True" />
                 <Node name="Mercurius" expanded="True" />
                 <Node name="Vi" expanded="True">
                   <Node name="MainMenu" expanded="True" />
                 </Node>
-                <Node name="InteractiveAction.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -42,7 +43,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4d587647-6a45-4a64-9b0f-cbf627890785" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e68bac12-3ea8-4f56-9685-2d8387f74501" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
