@@ -51,6 +51,7 @@ public class PlayerDying : MonoBehaviour
         }
         if(CurrentHealth <=0)
         {
+            GetComponent<FirstPersonAIO>().enabled = false;
             alive = false;
         }
 

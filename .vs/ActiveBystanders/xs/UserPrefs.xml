@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Jordan/ObjectCounter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Charbel/AIDemon.cs">
     <Files>
       <File FileName="Assets/Scripts/Charbel/Gun.cs" Line="45" Column="32" />
-      <File FileName="Assets/Scripts/Charbel/AIDemon.cs" Line="185" Column="73" />
+      <File FileName="Assets/Scripts/Charbel/AIDemon.cs" Line="171" Column="21" />
       <File FileName="Assets/Scripts/Vi/SoundManager.cs" Line="35" Column="10" />
-      <File FileName="Assets/Scripts/Charbel/PlayerDying.cs" Line="102" Column="9" />
-      <File FileName="Assets/Scripts/Vi/InGameAssetManager.cs" Line="24" Column="26" />
+      <File FileName="Assets/Scripts/Charbel/PlayerDying.cs" Line="14" Column="1" />
+      <File FileName="Assets/Scripts/Vi/InGameAssetManager.cs" />
       <File FileName="Assets/Scripts/Jordan/ObjectCounter.cs" Line="52" Column="14" />
     </Files>
     <Pads>
@@ -20,10 +20,10 @@
                 <Node name="FirstPersonAIO" expanded="True" />
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="Charbel" expanded="True" />
-                <Node name="Jordan" expanded="True">
-                  <Node name="ObjectCounter.cs" selected="True" />
+                <Node name="Charbel" expanded="True">
+                  <Node name="AIDemon.cs" selected="True" />
                 </Node>
+                <Node name="Jordan" expanded="True" />
                 <Node name="Mercurius" expanded="True" />
                 <Node name="Vi" expanded="True">
                   <Node name="MainMenu" expanded="True" />
@@ -37,7 +37,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="67e5ded7-b6ae-416b-8f18-c2c048fab292" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2b9c230c-a8a8-4c97-b8be-7cabd4667a1d" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

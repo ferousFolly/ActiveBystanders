@@ -65,7 +65,7 @@ public class AIDemon : MonoBehaviour
         float angle = Vector3.Angle(direction, this.transform.forward);
 
         float distanceToParolPoint = Vector3.Distance(waypoints[currentWP].transform.position, transform.position);
-        float distanceToPlayer = Vector3.Distance(player.position, this.transform.position);
+        float distanceToPlayer = Vector3.Distance(player.position, transform.position); ;
 
         switch (State)
         {
@@ -111,10 +111,10 @@ public class AIDemon : MonoBehaviour
                         State = AIState.Hurt;
                     }
                 }
-                else {
+                else
+                {
                     State = AIState.Death;
                 }
-               
                 break;
 
             case AIState.Persuing:
@@ -168,7 +168,8 @@ public class AIDemon : MonoBehaviour
                         State = AIState.Hurt;
                     }
                 }
-                else {
+                else
+                {
                     State = AIState.Death;
                 }
                 break;
