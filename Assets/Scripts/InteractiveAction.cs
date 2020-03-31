@@ -9,6 +9,7 @@ public class InteractiveAction : MonoBehaviour
     private GameObject buttonE;
     private GameObject inventory;
     FirstPersonAIO AIO;
+    PlayerDying playerState;
 
     public float slowMotionSpeed = 0.05f;
 
@@ -26,6 +27,7 @@ public class InteractiveAction : MonoBehaviour
         AIO = GetComponent<FirstPersonAIO>();
         inventoryBGColor = new Color(0,0,0,0);
         InGameAssetManager.i.inventoryBG.color = inventoryBGColor;
+        playerState = GetComponent<PlayerDying>();
     }
 
     void Update()
@@ -94,7 +96,7 @@ public class InteractiveAction : MonoBehaviour
     }
 
     void SlowMotion() {
-        if (isOpeningInventory || isOpeningSetting)
+        if (isOpeningInventory || isOpeningSetting || playerState.CurrentHealth <= 0f)
         {
             InGameAssetManager.i.gunScript.enabled = false;
             Time.timeScale = slowMotionSpeed;

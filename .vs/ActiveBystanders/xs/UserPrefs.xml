@@ -1,12 +1,17 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Charbel/AIDemon.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Vi/Tutorial.cs">
     <Files>
       <File FileName="Assets/Scripts/Charbel/Gun.cs" Line="45" Column="32" />
       <File FileName="Assets/Scripts/Charbel/AIDemon.cs" Line="171" Column="21" />
       <File FileName="Assets/Scripts/Vi/SoundManager.cs" Line="35" Column="10" />
-      <File FileName="Assets/Scripts/Charbel/PlayerDying.cs" Line="14" Column="1" />
-      <File FileName="Assets/Scripts/Vi/InGameAssetManager.cs" />
+      <File FileName="Assets/Scripts/Charbel/PlayerDying.cs" Line="47" Column="10" />
+      <File FileName="Assets/Scripts/Vi/InGameAssetManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Jordan/ObjectCounter.cs" Line="52" Column="14" />
+      <File FileName="Assets/Export Cutscene/CutsceneEnter.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Charbel/Restart.cs" Line="12" Column="37" />
+      <File FileName="Assets/Scripts/Vi/SceneController.cs" Line="12" Column="34" />
+      <File FileName="Assets/Scripts/Vi/Tutorial.cs" Line="24" Column="6" />
+      <File FileName="Assets/Scripts/InteractiveAction.cs" Line="103" Column="43" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,17 +21,17 @@
               <Node name="Editor" expanded="True">
                 <Node name="CrossPlatformInput" expanded="True" />
               </Node>
+              <Node name="Export Cutscene" expanded="True" />
               <Node name="FirstPersion AIO Pack" expanded="True">
                 <Node name="FirstPersonAIO" expanded="True" />
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="Charbel" expanded="True">
-                  <Node name="AIDemon.cs" selected="True" />
-                </Node>
+                <Node name="Charbel" expanded="True" />
                 <Node name="Jordan" expanded="True" />
                 <Node name="Mercurius" expanded="True" />
                 <Node name="Vi" expanded="True">
                   <Node name="MainMenu" expanded="True" />
+                  <Node name="Tutorial.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
@@ -37,7 +42,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2b9c230c-a8a8-4c97-b8be-7cabd4667a1d" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="434d728b-0aec-4dc0-a181-36dab9a576fe" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

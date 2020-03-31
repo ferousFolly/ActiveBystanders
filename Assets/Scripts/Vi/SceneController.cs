@@ -9,6 +9,10 @@ public class SceneControlle
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public static void ReLoad() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public static void ExitGame()
     {
         Application.Quit();
