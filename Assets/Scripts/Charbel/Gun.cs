@@ -54,21 +54,22 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, enemyBody))
         {
-            AIDemon AI = hit.transform.GetComponentInParent<AIDemon>();
-            if (AI != null && !AI._isDead) {
-                AI.GetHit(10);
-                GameObject o = Instantiate(hitEffect,hit.point,hitEffect.transform.rotation);
-                Destroy(o,2f);
-            }
-    
-        } else if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, enemyHead)) {
-            AIDemon AI = hit.transform.GetComponentInParent<AIDemon>();
-            if (AI != null && !AI._isDead)
+            AI_Base AI = hit.transform.GetComponentInParent<AI_Base>();
+            if (AI != null && !AI.isDead)
             {
-                AI.GetHit(20);
+                AI.GetHit();
                 GameObject o = Instantiate(hitEffect, hit.point, hitEffect.transform.rotation);
                 Destroy(o, 2f);
             }
         }
+        //} else if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, enemyHead)) {
+        //    AIDemon AI = hit.transform.GetComponentInParent<AIDemon>();
+        //    if (AI != null && !AI._isDead)
+        //    {
+        //        AI.GetHit(20);
+        //        GameObject o = Instantiate(hitEffect, hit.point, hitEffect.transform.rotation);
+        //        Destroy(o, 2f);
+        //    }
+        //}
     }
 }

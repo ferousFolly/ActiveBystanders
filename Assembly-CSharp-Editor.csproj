@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Editor\AI_FOVEditor.cs" />
     <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>/Users/vincent/Documents/GitHub/ActiveBystanders/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>

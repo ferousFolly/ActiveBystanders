@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class CutsceneEnter : MonoBehaviour
 {
+    public AI_Base AI;
     public GameObject thePlayer;
     public GameObject CutsceneCam;
 
-    void OnTriggerEnter (Collider other)
+    private void Start()
+    {
+        AI.enabled = false;
+    }
+
+    void OnTriggerEnter(Collider other)
     {
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         CutsceneCam.SetActive(true);
@@ -21,5 +27,8 @@ public class CutsceneEnter : MonoBehaviour
         yield return new WaitForSeconds(16);
         thePlayer.SetActive(true);
         CutsceneCam.SetActive(true);
+        AI.enabled = true;
+        Destroy(transform.parent.gameObject);
+
     }
 }
