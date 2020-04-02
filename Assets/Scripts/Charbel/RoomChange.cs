@@ -5,9 +5,20 @@ using UnityEngine;
 public class RoomChange : MonoBehaviour
 {
     Transform player;
-    public GameObject originalLayout;
-    public GameObject newLayout;
+    public GameObject LivingRoom;
+    public GameObject LivingRoomSwap;
+
+    public GameObject Basement;
+    public GameObject BasementSwap;
+
+    public GameObject BathRoom;
+    public GameObject SmallRoom;
+
+    public GameObject BathRoomSwap;
+    public GameObject SmallRoomSwap;
+
     bool isTrigger;
+
     BoxCollider collider;
 
 
@@ -35,8 +46,27 @@ public class RoomChange : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player") {
-            originalLayout.SetActive(newLayout.activeInHierarchy);
-            newLayout.SetActive(!originalLayout.activeInHierarchy);
+            LivingRoom.SetActive(LivingRoomSwap.activeInHierarchy);
+            LivingRoomSwap.SetActive(!LivingRoom.activeInHierarchy);
         }
+
+        if (other.tag == "Player")
+        {
+            Basement.SetActive(BasementSwap.activeInHierarchy);
+            BasementSwap.SetActive(!Basement.activeInHierarchy);
+        }
+
+        if (other.tag == "Player")
+        {
+            BathRoom.SetActive(SmallRoom.activeInHierarchy);
+            SmallRoom.SetActive(!BathRoom.activeInHierarchy);
+        }
+
+        if (other.tag == "Player")
+        {
+            SmallRoomSwap.SetActive(BathRoomSwap.activeInHierarchy);
+            BathRoomSwap.SetActive(!SmallRoomSwap.activeInHierarchy);
+        }
+
     }
 }
