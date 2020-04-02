@@ -31,7 +31,6 @@ public class ObjectCounter : MonoBehaviour
 
         if (theScore >= 4)
         {
-             //FadeBlack.color = new Color(1, 1, 1, colorFadeBlack);
             colorFadeBlack += Time.deltaTime;
         }
         FadeBlack.color = new Color(1, 1, 1, colorFadeBlack);
@@ -49,11 +48,11 @@ public class ObjectCounter : MonoBehaviour
 
             if (currentShowingTimer < showingTimer)
             {
-                currentShowingTimer += Time.deltaTime;
+                currentShowingTimer += Time.unscaledDeltaTime;
             }
             else {
-                BGColor.a -= Time.deltaTime;
-                textColor.a -= Time.deltaTime;
+                BGColor.a -= Time.unscaledDeltaTime;
+                textColor.a -= Time.unscaledDeltaTime;
 
                 if (BGColor.a <= 0)
                 {
