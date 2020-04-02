@@ -36,6 +36,10 @@ public class AI_Base : MonoBehaviour
 
     private NavMeshAgent agent;
     private AI_FOV fov;
+    private float currentSpeed;
+    float runSpeed;
+    float walkSpeed;
+
 
     [Header("Patrol")]
     public Transform[] patrolPoints;
@@ -48,10 +52,6 @@ public class AI_Base : MonoBehaviour
     private bool _isHurt;
     public bool isHurt { get { return _isHurt; } }
 
-    private float currentSpeed;
-
-
-
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -59,7 +59,8 @@ public class AI_Base : MonoBehaviour
         fov = GetComponent<AI_FOV>();
 
         currentHP = maxHP;
-        currentSpeed = agent.speed;
+        walkSpeed = agent.speed;
+        runSpeed = walkSpeed * 4;
     }
 
     private void Update()
@@ -111,7 +112,7 @@ public class AI_Base : MonoBehaviour
         anim.SetBool("isWalking",false);
         anim.SetBool("isAttacking", false);
         anim.SetBool("isHurt", false);
-
+        anim.SetBool("isRunning", false);
         if (!IsFindTarget()) {
             if (currentstoppTime < stoppingTime)
             {
@@ -134,10 +135,11 @@ public class AI_Base : MonoBehaviour
     }
 
     void Patrol() {
-        agent.speed = currentSpeed;
+        agent.speed = walkSpeed;
         anim.SetBool("isWalking", true);
         anim.SetBool("isAttacking", false);
         anim.SetBool("isHurt", false);
+        anim.SetBool("isRunning", false);
         if (!IsFindTarget())
         {
             float distanceToNextPatrolPoint = Vector3.Distance(transform.position, patrolPoints[nextPatrolPointIndex].position);
@@ -164,10 +166,11 @@ public class AI_Base : MonoBehaviour
     }
 
     void Persuing() {
-        agent.speed = currentSpeed;
-        anim.SetBool("isWalking", true);
+        agent.speed = runSpeed;
+        anim.SetBool("isWalking", false);
         anim.SetBool("isAttacking", false);
         anim.SetBool("isHurt", false);
+        anim.SetBool("isRunning", true);
         float distanceToPlayer = Vector3.Distance(transform.position, PlayerPosition());
         if (PlayerPosition() != Vector3.zero)
         {
@@ -195,6 +198,7 @@ public class AI_Base : MonoBehaviour
         anim.SetBool("isWalking", false);
         anim.SetBool("isAttacking", true);
         anim.SetBool("isHurt", false);
+        anim.SetBool("isRunning", false);
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.95f)
         {
             State = StateBehavior.Persuing;
@@ -206,6 +210,7 @@ public class AI_Base : MonoBehaviour
         anim.SetBool("isWalking", false);
         anim.SetBool("isAttacking", false);
         anim.SetBool("isHurt", true);
+        anim.SetBool("isRunning", false);
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Hurt") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.95f)
         {
             _isHurt = false;

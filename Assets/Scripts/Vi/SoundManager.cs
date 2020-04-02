@@ -10,6 +10,8 @@ public static class SoundManager
         Player_GetHurt,
         DoorOpen,
         GunShot,
+        FlashOn,
+        FlashOff,
     }
 
     public enum UI_SoundEffects {

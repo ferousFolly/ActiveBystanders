@@ -50,13 +50,23 @@ public class InteractiveAction : MonoBehaviour
             switch (hit.collider.tag)
             {
                 case "Open":
+                    Door door = hit.transform.GetComponent<Door>();
                     buttonE.SetActive(true);
-                    if (Input.GetKeyDown(KeyCode.E))
+                    if (Input.GetKeyDown(KeyCode.E) && door.CanOpenDoor())
                     {
+                        door.isOpening = true;
                         GameEventManager.IncreaseOpeningDoorNumbers();
                         SoundManager.PlaySound(SoundManager.SoundEffects.DoorOpen);
                         hit.collider.GetComponentInParent<Animator>().SetBool("Open", true);
                     }
+                    else if (Input.GetKeyDown(KeyCode.E) && door.CanCloseDoor())
+                    {
+                        door.isOpening = false;
+                        GameEventManager.IncreaseOpeningDoorNumbers();
+                        SoundManager.PlaySound(SoundManager.SoundEffects.DoorOpen);
+                        hit.collider.GetComponentInParent<Animator>().SetBool("Open", false);
+                    }
+
                     break;
             }
         }
@@ -72,11 +82,13 @@ public class InteractiveAction : MonoBehaviour
             {
                 if (!isFlashLightOpening)
                 {
+                    SoundManager.PlaySound(SoundManager.SoundEffects.FlashOn);
                     GameEventManager.IncreaseFlashLightUsedNumber();
                     isFlashLightOpening = true;
                 }
                 else
                 {
+                    SoundManager.PlaySound(SoundManager.SoundEffects.FlashOff);
                     isFlashLightOpening = false;
                 }
             }

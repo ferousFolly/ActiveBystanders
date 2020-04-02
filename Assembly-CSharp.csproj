@@ -97,12 +97,13 @@
     <Compile Include="Assets\Scripts\PortalTeleporter.cs" />
     <Compile Include="Assets\Scripts\Sender.cs" />
     <Compile Include="Assets\Scripts\TextureSetup.cs" />
-    <Compile Include="Assets\Scripts\Vi\AIManager.cs" />
     <Compile Include="Assets\Scripts\Vi\AI_Base.cs" />
     <Compile Include="Assets\Scripts\Vi\AI_FOV.cs" />
     <Compile Include="Assets\Scripts\Vi\DialogueSystem.cs" />
+    <Compile Include="Assets\Scripts\Vi\Door.cs" />
     <Compile Include="Assets\Scripts\Vi\GameAssetManager.cs" />
     <Compile Include="Assets\Scripts\Vi\GameEventManager.cs" />
+    <Compile Include="Assets\Scripts\Vi\GameEventObserver.cs" />
     <Compile Include="Assets\Scripts\Vi\GizmosDisplay.cs" />
     <Compile Include="Assets\Scripts\Vi\InGameAssetManager.cs" />
     <Compile Include="Assets\Scripts\Vi\IntroManager.cs" />
