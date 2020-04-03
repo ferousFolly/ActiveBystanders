@@ -5,8 +5,19 @@ using UnityEngine;
 public class RoomChange : MonoBehaviour
 {
     Transform player;
-    public GameObject originalLayout;
-    public GameObject newLayout;
+    public GameObject Livingoom;
+    public GameObject LivingoomSwap;
+
+    public GameObject Bathroom;
+    public GameObject BathroomSwap;
+
+    public GameObject Basement;
+    public GameObject BasementSwap;
+
+    public GameObject SmallBedroom;
+    public GameObject SmallBedroomSwap;
+
+
     bool isTrigger;
     BoxCollider collider;
 
@@ -25,6 +36,8 @@ public class RoomChange : MonoBehaviour
         if (dotPos < -2f)
         {
             collider.enabled = true;
+
+            
         }
         else if(dotPos > 1)
         {
@@ -35,8 +48,23 @@ public class RoomChange : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player") {
-            originalLayout.SetActive(newLayout.activeInHierarchy);
-            newLayout.SetActive(!originalLayout.activeInHierarchy);
+            Livingoom.SetActive(LivingoomSwap.activeInHierarchy);
+            LivingoomSwap.SetActive(!Livingoom.activeInHierarchy);
+        }
+        if (other.tag == "Player")
+        {
+            Bathroom.SetActive(BathroomSwap.activeInHierarchy);
+            BathroomSwap.SetActive(!Bathroom.activeInHierarchy);
+        }
+        if (other.tag == "Player")
+        {
+            Basement.SetActive(BasementSwap.activeInHierarchy);
+            BasementSwap.SetActive(!Basement.activeInHierarchy);
+        }
+        if (other.tag == "Player")
+        {
+            SmallBedroom.SetActive(SmallBedroomSwap.activeInHierarchy);
+            SmallBedroomSwap.SetActive(!SmallBedroom.activeInHierarchy);
         }
     }
 }
