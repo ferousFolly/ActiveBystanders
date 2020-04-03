@@ -9,9 +9,12 @@ public static class SoundManager
         Hearbeat,
         Player_GetHurt,
         DoorOpen,
-        GunShot,
+        Gun_Shot,
         FlashOn,
         FlashOff,
+        Gun_ReloadBullet,
+        Gun_BulletFalling,
+        Gun_CloseReloader,
     }
 
     public enum UI_SoundEffects {
@@ -49,6 +52,27 @@ public static class SoundManager
         audioSource.PlayOneShot(GetAudioClip(sound));
     }
 
+    //public static void PlaySound(SoundEffects sound)
+    //{
+    //    if (audioObject == null)
+    //    {
+    //        audioObject = new GameObject("Sound");
+    //        audioSource = audioObject.AddComponent<AudioSource>();
+    //    }
+        
+    //}
+
+    public static IEnumerator PlaySound(SoundEffects sound,float delayTime) {
+        yield return new WaitForSeconds(delayTime);
+        if (audioObject == null)
+        {
+            audioObject = new GameObject("Sound");
+            audioSource = audioObject.AddComponent<AudioSource>();
+        }
+        audioSource.PlayOneShot(GetAudioClip(sound));
+    }
+
+
     public static void PlaySound(UI_SoundEffects sound)
     {
         if (audioObject == null)
@@ -72,9 +96,6 @@ public static class SoundManager
         }
         _musicAudioSoure.PlayOneShot(GetAudioClip(sound));
     }
-
-
-
 
     private static AudioClip GetAudioClip(SoundEffects sound) {
         foreach (GameAssetManager.SoundClip soundClip in GameAssetManager.i.soundClipArray)

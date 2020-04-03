@@ -38,7 +38,6 @@ public class InteractiveAction : MonoBehaviour
         OpenInventory();
         OpenSettingPanel();
         SlowMotion();
-   
         SetCursorActiveOrNot();
     }
 
@@ -68,6 +67,10 @@ public class InteractiveAction : MonoBehaviour
                     }
 
                     break;
+                case "Collectable":
+                    buttonE.SetActive(true);
+                    break;
+                    
             }
         }
         else

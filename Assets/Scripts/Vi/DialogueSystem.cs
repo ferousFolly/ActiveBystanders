@@ -16,10 +16,6 @@ public class DialogueText {
 [RequireComponent(typeof(AudioSource))]
 public class DialogueSystem : MonoBehaviour
 {
-    public enum ObjectiveActive
-    {
-
-    }
     private Transform player;
     private Text dialogueText;
     [Header("Common Setting")]
@@ -35,14 +31,9 @@ public class DialogueSystem : MonoBehaviour
     public Color positionColor;
     private bool isEnterArea;
 
-    [Header("ActiveByObjective setting")]
-    public bool isActiveByObjectitve;
-    public ObjectiveActive activeByObjective;
-    
-
     [Header("ActiveByOthers setting")]
     public bool isActiveByOthers;
-    public GameObject othersTrigger;
+    public UnityEvent OnSomethingTrigger;
 
     [Header("Text")]
     public List<DialogueText> sentences = new List<DialogueText>();
@@ -72,9 +63,6 @@ public class DialogueSystem : MonoBehaviour
         if (isActiveByPosition)
         {
             PositionFunction();
-        }
-        else if (isActiveByObjectitve)
-        {
         }
         else if (isActiveByOthers)
         {
@@ -150,7 +138,7 @@ public class DialogueSystem : MonoBehaviour
     }
 
     void OthersFunction() {
-        if (othersTrigger.activeInHierarchy) {
+        if (OnSomethingTrigger != null) {
             UpdateText();
         }
     }

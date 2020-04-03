@@ -7,7 +7,7 @@ public class Restart : MonoBehaviour
 {
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R)) 
+        if (Input.GetKeyDown(KeyCode.Q)) 
         {
             SceneControlle.ReLoad();
         }
