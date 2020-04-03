@@ -15,6 +15,9 @@ public class PlayerDying : MonoBehaviour
     public float MaxHealth = 100f;
     public float CurrentHealth = 0f;
 
+    public bool isbeingTraced;
+    bool isPlayingMusic;
+
     
     float colorInjury = 0f;
     float colorDying = 0f;
@@ -48,6 +51,7 @@ public class PlayerDying : MonoBehaviour
         }
         if(CurrentHealth <=0)
         {
+            GetComponent<FirstPersonAIO>().enabled = false;
             alive = false;
         }
 
@@ -83,6 +87,23 @@ public class PlayerDying : MonoBehaviour
         {
             colorDying -= Time.deltaTime * 1.1f;
         }
+
+        if (SoundManager.musicAudioSource != null)
+        {
+            if (!SoundManager.musicAudioSource.isPlaying)
+            {
+                isPlayingMusic = false;
+            }
+            else
+            {
+                isPlayingMusic = true;
+            }
+        }
+
+        //if (isbeingTraced && !isPlayingMusic) {
+        //    SoundManager.PlaySound(SoundManager.InGameMusic.BeingTraced);
+        //}
+     
         
         Injured.color = new Color(1, 1, 1, colorInjury);
         dying.color = new Color(1, 1, 1, colorDying);
