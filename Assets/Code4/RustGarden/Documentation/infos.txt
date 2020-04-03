@@ -1,0 +1,18 @@
+Rust Garden Copyright © 2018-2019 Code4 Studios
+
+For more infos - Support - F.A.Q :
+C4S are French Creative Studios We are available freelance
+Web: https://code4.pro
+Mail: contact@code4.pro
+Discord: https://discordapp.com/invite/s7dx7NW
+Catalogue: https://code4.pro/assetstore.pdf
+Unity Publisher: https://assetstore.unity.com/publishers/37203
+
+This file is FREE .
+The Growing System coming soon.
+
+* Please Review  for more free content *
+
+
+Version 1.0 / 2018-12-12 
+  * Initial release

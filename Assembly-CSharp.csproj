@@ -55,10 +55,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Cutscene\CutsceneEnter.cs" />
-     <Compile Include="Assets\Cutscene\SceneSequence.cs" />
+     <Compile Include="Assets\Export Cutscene\CutsceneEnter.cs" />
+     <Compile Include="Assets\Export Cutscene\SceneSequence.cs" />
      <Compile Include="Assets\FirstPersion AIO Pack\FirstPersonAIO\FirstPersonAIO.cs" />
      <Compile Include="Assets\PlayerBodyGun\Reichsrevolver\Reichsrevolver_M1879\Scripts\RevolverController.cs" />
+     <Compile Include="Assets\PolygonPi\FenceLayout\FenceLayout.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Scenes\OverTheShoulderAim\ActivateOnKeypress.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Scenes\Scripting\ScriptingExample.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Scenes\Trigger volumes\GenericTrigger.cs" />
@@ -71,6 +72,7 @@
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Shared\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Shared\Scripts\PlayerMoveOnSphere.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Shared\Scripts\PlayerMovePhysics.cs" />
+     <Compile Include="Assets\Scripts\Arjun\ShowLog.cs" />
      <Compile Include="Assets\Scripts\Charbel\AIDemon.cs" />
      <Compile Include="Assets\Scripts\Charbel\Chase.cs" />
      <Compile Include="Assets\Scripts\Charbel\DamagePlayer.cs" />
@@ -108,6 +110,7 @@
      <None Include="Assets\FirstPersion AIO Pack\README.txt" />
      <None Include="Assets\Font\feast-of-flesh-bb\fontinfo.txt" />
      <None Include="Assets\Material\ScreenCutoutShader.shader" />
+     <None Include="Assets\Code4\RustGarden\Documentation\infos.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/arjun/Desktop/ActiveBystanders/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
