@@ -1,13 +1,11 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/InteractiveAction.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Vi/AI_Base.cs">
     <Files>
-      <File FileName="Assets/Scripts/Vi/Door.cs" Line="12" Column="5" />
-      <File FileName="Assets/Scripts/Vi/DialogueSystem.cs" />
-      <File FileName="Assets/Scripts/Charbel/Gun.cs" />
-      <File FileName="Assets/Scripts/Vi/SoundManager.cs" />
-      <File FileName="Assets/Scripts/Vi/InGameAssetManager.cs" />
-      <File FileName="Assets/Scripts/Vi/GameAssetManager.cs" Line="28" Column="27" />
-      <File FileName="Assets/Scripts/InteractiveAction.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Vi/GameEventManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Vi/GameEventObserver.cs" />
+      <File FileName="Assets/Scripts/Vi/AI_Demon.cs" Line="30" Column="6" />
+      <File FileName="Assets/Scripts/Vi/AI_Base.cs" Line="276" Column="18" />
+      <File FileName="Assets/Scripts/Charbel/PlayerDying.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,8 +25,8 @@
                 <Node name="Mercurius" expanded="True" />
                 <Node name="Vi" expanded="True">
                   <Node name="MainMenu" expanded="True" />
+                  <Node name="AI_Base.cs" selected="True" />
                 </Node>
-                <Node name="InteractiveAction.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -38,7 +36,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a1230e98-37d5-4241-b8a4-a4f85086f1cf" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bc769cc9-2bc1-44d6-ae52-ebb9459245f5" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

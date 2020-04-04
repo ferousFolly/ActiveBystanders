@@ -29,6 +29,5 @@ public class CutsceneEnter : MonoBehaviour
         CutsceneCam.SetActive(true);
         AI.enabled = true;
         Destroy(transform.parent.gameObject);
-
     }
 }

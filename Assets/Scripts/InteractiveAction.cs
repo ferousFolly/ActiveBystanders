@@ -68,7 +68,7 @@ public class InteractiveAction : MonoBehaviour
 
                     break;
                 case "Collectable":
-                    buttonE.SetActive(true);
+                    
                     break;
                     
             }

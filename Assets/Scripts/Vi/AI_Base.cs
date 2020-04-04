@@ -26,7 +26,7 @@ public class AI_Base : MonoBehaviour
     [Range(1,5)]
     public float attackArea = 3f;
     public Vector3 attackOffset;
-    [Range(4f,6)]
+    [Range(4f,20)]
     public float attackDistance = 4.5f;
     public float attackDamage = 35f;
   
@@ -42,17 +42,25 @@ public class AI_Base : MonoBehaviour
 
 
     [Header("Patrol")]
+    public bool isRoute;
     public Transform[] patrolPoints;
     public float stoppingTime = 2f;
     float currentstoppTime;
     int nextPatrolPointIndex = 0;
+
+    private NavMeshPath path;
+    public Vector2 randomAreaX;
+    public Vector2 randomAreaZ;
+    public float findPathTime;
+    bool isFinding;
+    bool vaildPath;
 
     private bool _isDead;
     public bool isDead { get { return _isDead; } }
     private bool _isHurt;
     public bool isHurt { get { return _isHurt; } }
 
-    private void Start()
+    protected virtual void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
@@ -61,6 +69,7 @@ public class AI_Base : MonoBehaviour
         currentHP = maxHP;
         walkSpeed = agent.speed;
         runSpeed = walkSpeed * 4;
+        path = new NavMeshPath();
     }
 
     private void Update()
@@ -73,7 +82,13 @@ public class AI_Base : MonoBehaviour
                     Idle();
                     break;
                 case StateBehavior.Patrol:
-                    Patrol();
+                    if (isRoute)
+                    {
+                        Patrol_Route();
+                    }
+                    else {
+                        Patrol_RANDOM();
+                    }
                     break;
                 case StateBehavior.Persuing:
                     Persuing();
@@ -134,7 +149,8 @@ public class AI_Base : MonoBehaviour
         }
     }
 
-    void Patrol() {
+    void Patrol_Route()
+    {
         agent.speed = walkSpeed;
         anim.SetBool("isWalking", true);
         anim.SetBool("isAttacking", false);
@@ -156,7 +172,8 @@ public class AI_Base : MonoBehaviour
                 }
             }
         }
-        else {
+        else
+        {
             State = StateBehavior.Persuing;
         }
         if (_isHurt)
@@ -165,7 +182,56 @@ public class AI_Base : MonoBehaviour
         }
     }
 
-    void Persuing() {
+    Vector3 GetNewRandomPath() {
+        float x = Random.Range(randomAreaX.x,randomAreaX.y);
+        float z = Random.Range(randomAreaZ.x,randomAreaZ.y);
+
+        Vector3 newPos = new Vector3(x,transform.position.y,z);
+        return newPos;
+    }
+
+    void Patrol_RANDOM()
+    {
+        agent.isStopped = false;
+        agent.speed = walkSpeed;
+        anim.SetBool("isWalking", true);
+        anim.SetBool("isAttacking", false);
+        anim.SetBool("isHurt", false);
+        anim.SetBool("isRunning", false);
+        if (!IsFindTarget())
+        {
+            if (!isFinding) {
+                StartCoroutine(FindNewPath());
+            }
+        }
+        else
+        {
+            State = StateBehavior.Persuing;
+        }
+        if (_isHurt)
+        {
+            State = StateBehavior.Hurt;
+        }
+    }
+
+    IEnumerator FindNewPath() {
+        isFinding = true;
+        agent.SetDestination(GetNewRandomPath());
+        vaildPath = agent.CalculatePath(GetNewRandomPath(), path);
+        yield return new WaitForSeconds(findPathTime);
+        if (!vaildPath) {
+            Debug.Log("NotVaild");
+        }
+        while (!vaildPath) {
+            agent.SetDestination(GetNewRandomPath());
+            vaildPath = agent.CalculatePath(GetNewRandomPath(), path);
+        }
+        isFinding = false;
+    }
+
+
+    protected virtual void Persuing() {
+        agent.isStopped = false;
         agent.speed = runSpeed;
         anim.SetBool("isWalking", false);
         anim.SetBool("isAttacking", false);
@@ -194,7 +260,9 @@ public class AI_Base : MonoBehaviour
 
     void Attack()
     {
-        agent.speed = 0;
+        Vector3 newPos = new Vector3(PlayerPosition().x,transform.position.y,PlayerPosition().z);
+        transform.LookAt(newPos);
+        agent.isStopped = true;
         anim.SetBool("isWalking", false);
         anim.SetBool("isAttacking", true);
         anim.SetBool("isHurt", false);
@@ -206,7 +274,7 @@ public class AI_Base : MonoBehaviour
     }
 
     void Hurt() {
-        agent.speed = 0;
+        agent.isStopped = true;
         anim.SetBool("isWalking", false);
         anim.SetBool("isAttacking", false);
         anim.SetBool("isHurt", true);
@@ -223,7 +291,7 @@ public class AI_Base : MonoBehaviour
     }
 
     void Die() {
-
+        
     }
 
     public void AttackDetect() {

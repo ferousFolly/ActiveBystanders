@@ -50,8 +50,12 @@ public class Gun : MonoBehaviour
             muzzleFlash.Play();
         }
 
+
         if (Input.GetKeyDown(KeyCode.R) && maxBullets > 0 && !isReloading)
         {
+            anim.SetTrigger("OpenReloader");
+            isReloading = true;
+        } else if (currentBullets == 0 && maxBullets > 0 && !isReloading) {
             anim.SetTrigger("OpenReloader");
             isReloading = true;
         }

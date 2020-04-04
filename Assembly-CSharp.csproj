@@ -98,7 +98,9 @@
     <Compile Include="Assets\Scripts\Sender.cs" />
     <Compile Include="Assets\Scripts\TextureSetup.cs" />
     <Compile Include="Assets\Scripts\Vi\AI_Base.cs" />
+    <Compile Include="Assets\Scripts\Vi\AI_Demon.cs" />
     <Compile Include="Assets\Scripts\Vi\AI_FOV.cs" />
+    <Compile Include="Assets\Scripts\Vi\DialogueObject.cs" />
     <Compile Include="Assets\Scripts\Vi\DialogueSystem.cs" />
     <Compile Include="Assets\Scripts\Vi\Door.cs" />
     <Compile Include="Assets\Scripts\Vi\GameAssetManager.cs" />

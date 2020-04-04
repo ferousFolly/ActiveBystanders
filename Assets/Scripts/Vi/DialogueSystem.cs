@@ -31,9 +31,9 @@ public class DialogueSystem : MonoBehaviour
     public Color positionColor;
     private bool isEnterArea;
 
-    [Header("ActiveByOthers setting")]
-    public bool isActiveByOthers;
-    public UnityEvent OnSomethingTrigger;
+    [Header("ActiveByDialogueObject setting")]
+    public bool isActiveByDialogueObject;
+    public DialogueObject dialogueObject;
 
     [Header("Text")]
     public List<DialogueText> sentences = new List<DialogueText>();
@@ -64,7 +64,7 @@ public class DialogueSystem : MonoBehaviour
         {
             PositionFunction();
         }
-        else if (isActiveByOthers)
+        else if (isActiveByDialogueObject)
         {
             OthersFunction();
         }
@@ -138,7 +138,7 @@ public class DialogueSystem : MonoBehaviour
     }
 
     void OthersFunction() {
-        if (OnSomethingTrigger != null) {
+        if (dialogueObject.isTrigger) {
             UpdateText();
         }
     }
