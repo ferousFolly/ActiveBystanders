@@ -28,8 +28,9 @@ public class PlayerDying : MonoBehaviour
         alive = true; //player strts off as alive 
         CurrentHealth = MaxHealth;
 
+         colorDying = dying.color.a;
         colorInjury = Injured.color.a;
-        colorDying = dying.color.a;
+        
        
     }
 
@@ -100,11 +101,12 @@ public class PlayerDying : MonoBehaviour
             }
         }
 
-        //if (isbeingTraced && !isPlayingMusic) {
-        //    SoundManager.PlaySound(SoundManager.InGameMusic.BeingTraced);
-        //}
-     
-        
+        if (isbeingTraced && !isPlayingMusic)
+        {
+            SoundManager.PlaySound(SoundManager.InGameMusic.BeingTraced);
+        }
+
+
         Injured.color = new Color(1, 1, 1, colorInjury);
         dying.color = new Color(1, 1, 1, colorDying);
 
