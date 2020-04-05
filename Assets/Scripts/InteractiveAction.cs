@@ -58,6 +58,17 @@ public class InteractiveAction : MonoBehaviour
                         hit.collider.GetComponentInParent<Animator>().SetBool("Open", true);
                     }
                     break;
+                case "Collectable":
+                    buttonE.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        SoundManager.PlaySound(SoundManager.SoundEffects.ItemPickUp);
+                        ObjectCounter.theScore += 1;
+                        ObjectCounter.isCollected = true;
+                        Destroy(hit.collider.gameObject);
+
+                    }
+                    break;
             }
         }
         else
