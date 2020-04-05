@@ -3,7 +3,17 @@ guid: 10485a8cf80c3b54f949b2bb0cbefd11
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - LivingRoom: {instanceID: 0}
+  - LivingRoomSwap: {instanceID: 0}
+  - Bathroom: {instanceID: 0}
+  - BathroomSwap: {instanceID: 0}
+  - Basement: {instanceID: 0}
+  - BasementSwap: {instanceID: 0}
+  - SmallBedroom: {instanceID: 0}
+  - SmallBedroomSwap: {instanceID: 0}
+  - Dinningroom: {instanceID: 0}
+  - DinningroomSwap: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

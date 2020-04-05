@@ -19,7 +19,7 @@ public class AI_FOV : MonoBehaviour
 
     void Start()
     {
-        //StartCoroutine("FindTargetsWithDelay", 0.1f);
+       // StartCoroutine("FindTargetsWithDelay", 0.1f);
     }
 
     private void Update()
@@ -51,7 +51,7 @@ public class AI_FOV : MonoBehaviour
             }
         }
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
-        //TargetInSameHeight();
+        TargetInSameHeight();
 
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {

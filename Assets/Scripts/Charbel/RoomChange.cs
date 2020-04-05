@@ -20,8 +20,11 @@ public class RoomChange : MonoBehaviour
     public GameObject SmallBedroom;
     public GameObject SmallBedroomSwap;
 
+    public GameObject Dinningroom;
+    public GameObject DinningroomSwap;
 
 
+     public bool PlayerIsStraight;
     bool isTrigger;
 
     BoxCollider collider;
@@ -32,19 +35,19 @@ public class RoomChange : MonoBehaviour
         collider = GetComponent<BoxCollider>();
         collider.enabled = false;
         player = FindObjectOfType<FirstPersonAIO>().transform;
+       
     }
 
     private void Update()
     {
         Vector3 posDiff = player.position - transform.position;
-        float dotPos = Vector3.Dot(transform.forward,posDiff);
+        float dotPos = Vector3.Dot(transform.forward, posDiff);
         if (dotPos < -2f)
         {
             collider.enabled = true;
-
-            
         }
-        else if(dotPos > 1)
+
+        else if (dotPos > 1)
         {
             collider.enabled = false;
         }
@@ -73,8 +76,13 @@ public class RoomChange : MonoBehaviour
             SmallBedroom.SetActive(SmallBedroomSwap.activeInHierarchy);
             SmallBedroomSwap.SetActive(!SmallBedroom.activeInHierarchy);
         }
-  
-      
+        if (other.tag == "Player")
+        {
+            Dinningroom.SetActive(DinningroomSwap.activeInHierarchy);
+            DinningroomSwap.SetActive(!Dinningroom.activeInHierarchy);
+        }
+
+
 
     }
 }
