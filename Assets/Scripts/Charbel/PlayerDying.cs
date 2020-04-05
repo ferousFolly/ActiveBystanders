@@ -37,7 +37,6 @@ public class PlayerDying : MonoBehaviour
     {
         SoundManager.PlaySound(SoundManager.SoundEffects.Player_GetHurt);
         CurrentHealth -= amount;
-
         if (!alive)
         {
             return;
@@ -45,14 +44,10 @@ public class PlayerDying : MonoBehaviour
         }
         if (CurrentHealth <= 0) //Die
         {
+            GetComponent<FirstPersonAIO>().enabled = false;
             GameOver.SetActive(true);
             alive = false;   
 
-        }
-        if(CurrentHealth <=0)
-        {
-            GetComponent<FirstPersonAIO>().enabled = false;
-            alive = false;
         }
 
         if (CurrentHealth <= 60)
