@@ -68,7 +68,11 @@ public class InteractiveAction : MonoBehaviour
 
                     break;
                 case "Collectable":
-                    
+                    buttonE.SetActive(true);
+                    SoundManager.PlaySound(SoundManager.SoundEffects.ItemPickUp);
+                    ObjectCounter.theScore += 1;
+                    ObjectCounter.isCollected = true;
+                    Destroy(hit.collider.gameObject);
                     break;
                     
             }
