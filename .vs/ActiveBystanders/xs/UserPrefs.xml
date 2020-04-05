@@ -1,17 +1,15 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Charbel/AIDemon.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/UIItem.cs">
     <Files>
-      <File FileName="Assets/Scripts/Charbel/Gun.cs" Line="45" Column="32" />
-      <File FileName="Assets/Scripts/Charbel/AIDemon.cs" Line="180" Column="36" />
-      <File FileName="Assets/Scripts/Vi/SoundManager.cs" />
-      <File FileName="Assets/Scripts/Charbel/PlayerDying.cs" Line="102" Column="1" />
+      <File FileName="Assets/Scripts/InteractiveAction.cs" Line="126" Column="86" />
+      <File FileName="Assets/Scripts/Vi/AI_Base.cs" />
+      <File FileName="Assets/Scripts/Vi/AI_FOV.cs" />
       <File FileName="Assets/Scripts/Vi/InGameAssetManager.cs" />
-      <File FileName="Assets/Scripts/Jordan/ObjectCounter.cs" />
-      <File FileName="Assets/Export Cutscene/CutsceneEnter.cs" Line="15" Column="68" />
-      <File FileName="Assets/Scripts/Charbel/Restart.cs" />
-      <File FileName="Assets/Scripts/Vi/SceneController.cs" />
-      <File FileName="Assets/Scripts/Vi/Tutorial.cs" Line="24" Column="6" />
-      <File FileName="Assets/Scripts/InteractiveAction.cs" />
+      <File FileName="Assets/Scripts/Charbel/Gun.cs" />
+      <File FileName="Assets/Editor/AI_FOVEditor.cs" />
+      <File FileName="Assets/Export Cutscene/CutsceneEnter.cs" />
+      <File FileName="Assets/Scripts/Vi/AIManager.cs" />
+      <File FileName="Assets/UIItem.cs" Line="13" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,15 +24,14 @@
                 <Node name="FirstPersonAIO" expanded="True" />
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="Charbel" expanded="True">
-                  <Node name="AIDemon.cs" selected="True" />
-                </Node>
+                <Node name="Charbel" expanded="True" />
                 <Node name="Jordan" expanded="True" />
                 <Node name="Mercurius" expanded="True" />
                 <Node name="Vi" expanded="True">
                   <Node name="MainMenu" expanded="True" />
                 </Node>
               </Node>
+              <Node name="UIItem.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -43,7 +40,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e68bac12-3ea8-4f56-9685-2d8387f74501" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9a3bd827-f8ff-4d38-9fa7-70d2a4c4d8a4" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -11,7 +11,8 @@ public class InteractiveAction : MonoBehaviour
     FirstPersonAIO AIO;
     PlayerDying playerState;
 
-    public float slowMotionSpeed = 0.05f;
+    public float slowMotionSpeed = 0f;
+    public float rayCastDis = 2f;
 
     bool isFlashLightOpening;
     bool isOpeningInventory;
@@ -35,19 +36,16 @@ public class InteractiveAction : MonoBehaviour
         ButtonE_Function();
         ActiveFlashLight();
         OpenInventory();
+        OpenSettingPanel();
         SlowMotion();
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            SoundManager.PlaySound(SoundManager.UI_SoundEffects.UI_ESC);
-            isOpeningSetting = true;
-        }
-        InGameAssetManager.i.settingPanel.SetActive(isOpeningSetting);
+   
         SetCursorActiveOrNot();
     }
 
     void ButtonE_Function() {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 1.5f))
+        if (Physics.Raycast(ray, out hit, rayCastDis))
         {
             switch (hit.collider.tag)
             {
@@ -86,6 +84,15 @@ public class InteractiveAction : MonoBehaviour
         InGameAssetManager.i.flashLight.enabled = isFlashLightOpening;
     }
 
+    void OpenSettingPanel() {
+        if (Input.GetKeyDown(KeyCode.Escape) && !isOpeningSetting)
+        {
+            SoundManager.PlaySound(SoundManager.UI_SoundEffects.UI_ESC);
+            isOpeningSetting = true;
+        }
+        InGameAssetManager.i.settingPanel.SetActive(isOpeningSetting);
+    }
+
     void OpenInventory() {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -114,13 +121,9 @@ public class InteractiveAction : MonoBehaviour
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
     }
 
-    public void CloseESC() {
-        isOpeningSetting = false;
-    }
-
     void SetCursorActiveOrNot()
     {
-        if (isOpeningInventory || isOpeningSetting)
+        if (isOpeningInventory || isOpeningSetting || playerState.CurrentHealth <= 0f)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -129,6 +132,11 @@ public class InteractiveAction : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+    }
 
+
+    public void CloseESC()
+    {
+        isOpeningSetting = false;
     }
 }

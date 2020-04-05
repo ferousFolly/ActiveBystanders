@@ -38,7 +38,7 @@ public class Tutorial : MonoBehaviour
             else {
                 AIO.sprintSpeed = AIO.walkSpeed;
             }
-            if (GameEventManager.GetOpeningDoorNumbers() == 1)
+            if (GameEventManager.GetOpeningDoorNumbers() >= 1)
             {
                 UI_Movement.SetActive(false);
                 UI_Run.SetActive(false);
@@ -57,6 +57,7 @@ public class Tutorial : MonoBehaviour
             UI_Movement.SetActive(false);
             UI_Run.SetActive(false);
             UI_Flashlight.SetActive(false);
+            AIO.sprintSpeed = runSpeed;
         }
     }
 }
