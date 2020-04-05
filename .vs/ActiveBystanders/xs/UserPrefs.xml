@@ -1,11 +1,14 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Vi/AI_Base.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Charbel/Gun.cs">
     <Files>
       <File FileName="Assets/Scripts/Vi/GameEventManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Vi/GameEventObserver.cs" />
-      <File FileName="Assets/Scripts/Vi/AI_Demon.cs" Line="30" Column="6" />
+      <File FileName="Assets/Scripts/Vi/AI_Demon.cs" />
       <File FileName="Assets/Scripts/Vi/AI_Base.cs" Line="276" Column="18" />
       <File FileName="Assets/Scripts/Charbel/PlayerDying.cs" />
+      <File FileName="Assets/Scripts/Vi/InGameAssetManager.cs" Line="27" Column="24" />
+      <File FileName="Assets/Scripts/Vi/SoundManager.cs" Line="19" Column="25" />
+      <File FileName="Assets/Scripts/Charbel/Gun.cs" Line="50" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,12 +23,13 @@
                 <Node name="FirstPersonAIO" expanded="True" />
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="Charbel" expanded="True" />
+                <Node name="Charbel" expanded="True">
+                  <Node name="Gun.cs" selected="True" />
+                </Node>
                 <Node name="Jordan" expanded="True" />
                 <Node name="Mercurius" expanded="True" />
                 <Node name="Vi" expanded="True">
                   <Node name="MainMenu" expanded="True" />
-                  <Node name="AI_Base.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
@@ -36,7 +40,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bc769cc9-2bc1-44d6-ae52-ebb9459245f5" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9851341b-cdd0-4260-be44-5ebf79de85cf" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -48,7 +48,10 @@ public class Gun : MonoBehaviour
             currentTimeToFire = 0;
             shoot();
             muzzleFlash.Play();
+        } else if (Input.GetButtonDown("Fire1")  && currentBullets <= 0 && !isReloading) {
+            SoundManager.PlaySound(SoundManager.SoundEffects.Gun_EmptyBullet);
         }
+       
 
 
         if (Input.GetKeyDown(KeyCode.R) && maxBullets > 0 && !isReloading)
