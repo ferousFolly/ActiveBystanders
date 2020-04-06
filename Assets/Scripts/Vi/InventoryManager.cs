@@ -21,7 +21,6 @@ public class ItemType {
         Gun,
         FlashLight,
     }
-    [HideInInspector]
     public string itemName;
     public type typeOfItem;
     public Sprite itemSpriteIcon;
@@ -47,10 +46,6 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < items.Count; i++)
-        {
-            items[i].itemName = items[i].typeOfItem.ToString();
-        }
         UpdateInventory(ItemType.type.Gun);
         UpdateInventory(ItemType.type.FlashLight);
     }
