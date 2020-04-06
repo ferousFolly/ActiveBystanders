@@ -12,7 +12,8 @@ public class UIItem : MonoBehaviour/*, IPointerEnterHandler*/
     public GameObject Flask;
     public float fadeText;
     public bool FlaskDes;
-
+    public GameObject Cross;
+    public GameObject Candle;
     public void Start()
     {
         myText = GameObject.Find("Text").GetComponent<Text>();

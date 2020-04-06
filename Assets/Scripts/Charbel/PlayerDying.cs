@@ -18,68 +18,7 @@ public class PlayerDying : MonoBehaviour
     public bool isbeingTraced;
     bool isPlayingMusic;
 
-<<<<<<< HEAD
-    
-    float colorInjury = 0f;
-    float colorDying = 0f;
 
-    public bool alive = true;
-    private void Start()
-    {
-        alive = true; //player strts off as alive 
-        CurrentHealth = MaxHealth;
-
-         colorDying = dying.color.a;
-        colorInjury = Injured.color.a;
-        
-       
-    }
-
-    public void TakeDamage(float amount)
-    {
-        SoundManager.PlaySound(SoundManager.SoundEffects.Player_GetHurt);
-        CurrentHealth -= amount;
-
-        if (!alive)
-        {
-            return;
-      
-        }
-        if (CurrentHealth <= 0) //Die
-        {
-            GameOver.SetActive(true);
-            alive = false;   
-
-        }
-        if(CurrentHealth <=0)
-        {
-            GetComponent<FirstPersonAIO>().enabled = false;
-            alive = false;
-        }
-
-        if (CurrentHealth <= 60)
-        {
-            colorDying = 1;
-
-
-        }
-        else if(CurrentHealth > 60)
-        {
-
-            colorInjury = 1;
-
-        }
-
-
-        Injured.color = new Color(1,1,1,colorInjury);
-        dying.color = new Color(1, 1, 1, colorDying);
-    }
-
-    public void Update()
-    {
-        if (CurrentHealth > MaxHealth)
-=======
-    
     float colorInjury = 0f;
     float colorDying = 0f;
 
@@ -91,7 +30,7 @@ public class PlayerDying : MonoBehaviour
 
         colorInjury = Injured.color.a;
         colorDying = dying.color.a;
-       
+
     }
 
     public void TakeDamage(float amount)
@@ -101,13 +40,13 @@ public class PlayerDying : MonoBehaviour
         if (!alive)
         {
             return;
-      
+
         }
         if (CurrentHealth <= 0) //Die
         {
             GetComponent<FirstPersonAIO>().enabled = false;
             GameOver.SetActive(true);
-            alive = false;   
+            alive = false;
 
         }
 
@@ -117,13 +56,27 @@ public class PlayerDying : MonoBehaviour
 
 
         }
-        else if(CurrentHealth > 60)
->>>>>>> Master3.7
+        else if (CurrentHealth > 60)
+        {
+
+            colorInjury = 1;
+
+        }
+
+
+        Injured.color = new Color(1, 1, 1, colorInjury);
+        dying.color = new Color(1, 1, 1, colorDying);
+    }
+
+    public void Update()
+    {
+        if (CurrentHealth > MaxHealth)
         {
             CurrentHealth = MaxHealth;
         }
 
-        if (colorInjury > 0) {
+        if (colorInjury > 0)
+        {
             colorInjury -= Time.deltaTime * 1.1f;
         }
         if (colorDying > 0)
@@ -143,10 +96,9 @@ public class PlayerDying : MonoBehaviour
             }
         }
 
-        if (isbeingTraced && !isPlayingMusic)
-        {
-            SoundManager.PlaySound(SoundManager.InGameMusic.BeingTraced);
-        }
+        //if (isbeingTraced && !isPlayingMusic) {
+        //    SoundManager.PlaySound(SoundManager.InGameMusic.BeingTraced);
+        //}
 
 
         Injured.color = new Color(1, 1, 1, colorInjury);
@@ -155,9 +107,6 @@ public class PlayerDying : MonoBehaviour
     }
 
 }
-
-
-
 
 
 
