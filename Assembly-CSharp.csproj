@@ -62,6 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Atomm Inventory System\Scripts\AtommContainer.cs" />
+    <Compile Include="Assets\Atomm Inventory System\Scripts\AtommDocument.cs" />
+    <Compile Include="Assets\Atomm Inventory System\Scripts\AtommInventory.cs" />
+    <Compile Include="Assets\Atomm Inventory System\Scripts\AtommItem.cs" />
     <Compile Include="Assets\Export Cutscene\SceneSequence.cs" />
     <Compile Include="Assets\FirstPersion AIO Pack\FirstPersonAIO\FirstPersonAIO.cs" />
     <Compile Include="Assets\PlayerBodyGun\Reichsrevolver\Reichsrevolver_M1879\Scripts\RevolverController.cs" />
