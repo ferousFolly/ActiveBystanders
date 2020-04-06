@@ -12,7 +12,8 @@ public class InteractiveAction : MonoBehaviour
     PlayerDying playerState;
 
     public float slowMotionSpeed = 0f;
-    public float rayCastDis = 2f;
+    public float Door_rayCastDistance = 4f;
+    public float Item_rayCastDistance = 6f;
 
     bool isFlashLightOpening;
     bool isOpeningInventory;
@@ -44,7 +45,7 @@ public class InteractiveAction : MonoBehaviour
     void ButtonE_Function() {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, rayCastDis))
+        if (Physics.Raycast(ray, out hit, Door_rayCastDistance))
         {
             switch (hit.collider.tag)
             {
@@ -67,18 +68,38 @@ public class InteractiveAction : MonoBehaviour
                     }
 
                     break;
-                case "Collectable":
-                    buttonE.SetActive(true);
-                    SoundManager.PlaySound(SoundManager.SoundEffects.ItemPickUp);
-                    ObjectCounter.theScore += 1;
-                    ObjectCounter.isCollected = true;
-                    Destroy(hit.collider.gameObject);
-                    break;
-                    
+
             }
         }
         else
         {
+            buttonE.SetActive(false);
+        }
+        if (Physics.Raycast(ray, out hit, Item_rayCastDistance))
+        {
+            switch (hit.collider.tag)
+            {
+                case "Note":
+                    buttonE.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        SoundManager.PlaySound(SoundManager.SoundEffects.ItemPickUp);
+                        Destroy(hit.collider.gameObject);
+                    }
+                    break;
+                case "Ritual":
+                    buttonE.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        SoundManager.PlaySound(SoundManager.SoundEffects.ItemPickUp);
+                        ObjectCounter.theScore += 1;
+                        ObjectCounter.isCollected = true;
+                        Destroy(hit.collider.gameObject);
+                    }
+                    break;
+            }
+        }
+        else {
             buttonE.SetActive(false);
         }
     }
@@ -115,10 +136,12 @@ public class InteractiveAction : MonoBehaviour
     void OpenInventory() {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            InGameAssetManager.i.detailDescriptionPanel.SetActive(false);
             SoundManager.PlaySound(SoundManager.UI_SoundEffects.UI_OpenInventory);
             isOpeningInventory = !isOpeningInventory;
         }
         inventory.SetActive(isOpeningInventory);
+
     }
 
     void SlowMotion() {

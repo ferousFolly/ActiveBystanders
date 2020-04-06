@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Charbel\DamagePlayer.cs" />
     <Compile Include="Assets\Scripts\Charbel\Gun.cs" />
     <Compile Include="Assets\Scripts\Charbel\GunSwitch.cs" />
+    <Compile Include="Assets\Scripts\Charbel\NEWinventory.cs" />
     <Compile Include="Assets\Scripts\Charbel\PlayerDying.cs" />
     <Compile Include="Assets\Scripts\Charbel\Restart.cs" />
     <Compile Include="Assets\Scripts\Charbel\RoomChange.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Assets\Scripts\Vi\AI_Base.cs" />
     <Compile Include="Assets\Scripts\Vi\AI_Demon.cs" />
     <Compile Include="Assets\Scripts\Vi\AI_FOV.cs" />
+    <Compile Include="Assets\Scripts\Vi\CreditScrollView.cs" />
     <Compile Include="Assets\Scripts\Vi\DialogueObject.cs" />
     <Compile Include="Assets\Scripts\Vi\DialogueSystem.cs" />
     <Compile Include="Assets\Scripts\Vi\Door.cs" />
@@ -106,8 +108,8 @@
     <Compile Include="Assets\Scripts\Vi\SceneController.cs" />
     <Compile Include="Assets\Scripts\Vi\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Vi\Tutorial.cs" />
+    <Compile Include="Assets\Scripts\Vi\UIItem.cs" />
     <Compile Include="Assets\Scripts\WEapon.cs" />
-    <Compile Include="Assets\UIItem.cs" />
     <None Include="Assets\Shader\PortalShader.shader" />
     <None Include="Assets\FirstPersion AIO Pack\README.txt" />
     <None Include="Assets\Font\feast-of-flesh-bb\fontinfo.txt" />

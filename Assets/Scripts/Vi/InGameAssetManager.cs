@@ -38,6 +38,14 @@ public class InGameAssetManager : GameAssetManager
     public Text bulletText;
     public Image inventoryBG;
 
+    public GameObject text3D;
+    public Text itemName_InInventory;
+
+    public GameObject detailDescriptionPanel;
+    public Text itemName_Detail;
+    public Text itemDescription_Deatil;
+    public Image itemSprite_Detail;
+
     public Gun gunScript;
 
     public void ExitGame() {

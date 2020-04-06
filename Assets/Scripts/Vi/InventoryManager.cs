@@ -15,14 +15,18 @@ public class ItemType {
         Note6,
         Note7,
         Flare,
-        RituralItem1,
-        RituralItem2,
-        RituralItem3,
-        RituralItem4,
+        Candelabra,
+        Cross,
+        Blood_flask,
+        Gun,
+        FlashLight,
     }
-
+    public string itemName;
     public type typeOfItem;
-    public Sprite itemSprite;
+    public Sprite itemSpriteIcon;
+    [TextArea(3,10)]
+    public string Description;
+    public Sprite itemWholeSprite;
 }
 
 public class InventoryManager : MonoBehaviour
@@ -40,13 +44,22 @@ public class InventoryManager : MonoBehaviour
     public List<ItemType> items = new List<ItemType>();
     public Transform slots;
 
+    private void Start()
+    {
+        UpdateInventory(ItemType.type.Gun);
+        UpdateInventory(ItemType.type.FlashLight);
+    }
+
     public void UpdateInventory(ItemType.type _type) {
         GameObject o = Instantiate(InGameAssetManager.i.itemPrefab);
         for (int i = 0; i < items.Count; i++)
         {
             if (items[i].typeOfItem == _type)
             {
-                o.GetComponent<Image>().sprite = items[i].itemSprite;
+                o.GetComponent<Image>().sprite = items[i].itemSpriteIcon;
+                o.GetComponent<UIItem>().itemName = items[i].itemName;
+                o.GetComponent<UIItem>().itemDescription = items[i].Description;
+                o.GetComponent<UIItem>().itemWholeImage = items[i].itemWholeSprite;
             }
         }
         for (int i = 0; i < slots.childCount; i++)

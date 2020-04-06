@@ -32,8 +32,8 @@ public class Gun : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         fpsCam = Camera.main;
-        maxBullets = 3;
-        currentBullets = 3;
+        maxBullets = 2;
+        currentBullets = 6;
     }
 
     void Update()
@@ -52,8 +52,6 @@ public class Gun : MonoBehaviour
             SoundManager.PlaySound(SoundManager.SoundEffects.Gun_EmptyBullet);
         }
        
-
-
         if (Input.GetKeyDown(KeyCode.R) && maxBullets > 0 && !isReloading)
         {
             anim.SetTrigger("OpenReloader");

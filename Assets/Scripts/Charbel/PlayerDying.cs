@@ -18,7 +18,7 @@ public class PlayerDying : MonoBehaviour
     public bool isbeingTraced;
     bool isPlayingMusic;
 
-    
+
     float colorInjury = 0f;
     float colorDying = 0f;
 
@@ -30,7 +30,7 @@ public class PlayerDying : MonoBehaviour
 
         colorInjury = Injured.color.a;
         colorDying = dying.color.a;
-       
+
     }
 
     public void TakeDamage(float amount)
@@ -40,13 +40,13 @@ public class PlayerDying : MonoBehaviour
         if (!alive)
         {
             return;
-      
+
         }
         if (CurrentHealth <= 0) //Die
         {
             GetComponent<FirstPersonAIO>().enabled = false;
             GameOver.SetActive(true);
-            alive = false;   
+            alive = false;
 
         }
 
@@ -56,7 +56,7 @@ public class PlayerDying : MonoBehaviour
 
 
         }
-        else if(CurrentHealth > 60)
+        else if (CurrentHealth > 60)
         {
 
             colorInjury = 1;
@@ -64,7 +64,7 @@ public class PlayerDying : MonoBehaviour
         }
 
 
-        Injured.color = new Color(1,1,1,colorInjury);
+        Injured.color = new Color(1, 1, 1, colorInjury);
         dying.color = new Color(1, 1, 1, colorDying);
     }
 
@@ -75,7 +75,8 @@ public class PlayerDying : MonoBehaviour
             CurrentHealth = MaxHealth;
         }
 
-        if (colorInjury > 0) {
+        if (colorInjury > 0)
+        {
             colorInjury -= Time.deltaTime * 1.1f;
         }
         if (colorDying > 0)
@@ -98,17 +99,14 @@ public class PlayerDying : MonoBehaviour
         //if (isbeingTraced && !isPlayingMusic) {
         //    SoundManager.PlaySound(SoundManager.InGameMusic.BeingTraced);
         //}
-     
-        
+
+
         Injured.color = new Color(1, 1, 1, colorInjury);
         dying.color = new Color(1, 1, 1, colorDying);
 
     }
 
 }
-
-
-
 
 
 
