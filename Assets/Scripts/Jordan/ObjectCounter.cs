@@ -15,6 +15,8 @@ public class ObjectCounter : MonoBehaviour
     public static int theScore;
     public static bool isCollected;
 
+  
+
     float colorFadeBlack = 0f;
 
 
@@ -37,6 +39,7 @@ public class ObjectCounter : MonoBehaviour
        
 
     }
+
 
     void UpdateText() {
         if (isCollected) {
