@@ -1,37 +1,39 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/UIItem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/InteractiveAction.cs">
     <Files>
-      <File FileName="Assets/Scripts/InteractiveAction.cs" Line="126" Column="86" />
+      <File FileName="Assets/Scripts/Vi/GameEventManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Vi/GameEventObserver.cs" />
+      <File FileName="Assets/Scripts/Vi/AI_Demon.cs" />
       <File FileName="Assets/Scripts/Vi/AI_Base.cs" />
-      <File FileName="Assets/Scripts/Vi/AI_FOV.cs" />
+      <File FileName="Assets/Scripts/Charbel/PlayerDying.cs" />
       <File FileName="Assets/Scripts/Vi/InGameAssetManager.cs" />
+      <File FileName="Assets/Scripts/Vi/SoundManager.cs" />
       <File FileName="Assets/Scripts/Charbel/Gun.cs" />
-      <File FileName="Assets/Editor/AI_FOVEditor.cs" />
-      <File FileName="Assets/Export Cutscene/CutsceneEnter.cs" />
-      <File FileName="Assets/Scripts/Vi/AIManager.cs" />
-      <File FileName="Assets/UIItem.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/Vi/DialogueSystem.cs" />
+      <File FileName="Assets/Scripts/Vi/GameAssetManager.cs" Line="23" Column="30" />
+      <File FileName="Assets/Scripts/InteractiveAction.cs" Line="71" Column="45" />
+      <File FileName="Assets/Scripts/Jordan/ObjectCounter.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Jordan/CollectItems.cs" Line="12" Column="11" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ActiveBystanders" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Editor" expanded="True">
-                <Node name="CrossPlatformInput" expanded="True" />
-              </Node>
-              <Node name="Export Cutscene" expanded="True" />
+              <Node name="Editor" expanded="True" />
               <Node name="FirstPersion AIO Pack" expanded="True">
                 <Node name="FirstPersonAIO" expanded="True" />
               </Node>
               <Node name="Scripts" expanded="True">
+                <Node name="Arjun" expanded="True" />
                 <Node name="Charbel" expanded="True" />
                 <Node name="Jordan" expanded="True" />
                 <Node name="Mercurius" expanded="True" />
                 <Node name="Vi" expanded="True">
                   <Node name="MainMenu" expanded="True" />
                 </Node>
+                <Node name="InteractiveAction.cs" selected="True" />
               </Node>
-              <Node name="UIItem.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -40,7 +42,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9a3bd827-f8ff-4d38-9fa7-70d2a4c4d8a4" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a8a1b88d-8c8f-4448-b504-50644ba3f706" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

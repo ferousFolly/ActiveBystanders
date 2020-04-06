@@ -18,6 +18,7 @@ public class PlayerDying : MonoBehaviour
     public bool isbeingTraced;
     bool isPlayingMusic;
 
+<<<<<<< HEAD
     
     float colorInjury = 0f;
     float colorDying = 0f;
@@ -77,6 +78,47 @@ public class PlayerDying : MonoBehaviour
     public void Update()
     {
         if (CurrentHealth > MaxHealth)
+=======
+    
+    float colorInjury = 0f;
+    float colorDying = 0f;
+
+    public bool alive = true;
+    private void Start()
+    {
+        alive = true; //player strts off as alive 
+        CurrentHealth = MaxHealth;
+
+        colorInjury = Injured.color.a;
+        colorDying = dying.color.a;
+       
+    }
+
+    public void TakeDamage(float amount)
+    {
+        SoundManager.PlaySound(SoundManager.SoundEffects.Player_GetHurt);
+        CurrentHealth -= amount;
+        if (!alive)
+        {
+            return;
+      
+        }
+        if (CurrentHealth <= 0) //Die
+        {
+            GetComponent<FirstPersonAIO>().enabled = false;
+            GameOver.SetActive(true);
+            alive = false;   
+
+        }
+
+        if (CurrentHealth <= 60)
+        {
+            colorDying = 1;
+
+
+        }
+        else if(CurrentHealth > 60)
+>>>>>>> Master3.7
         {
             CurrentHealth = MaxHealth;
         }
