@@ -8,6 +8,10 @@ public class UI_Button : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,
 {
     public UnityEvent onButtonClick;
 
+    void Start() {
+        GetComponentInChildren<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         GetComponentInChildren<Animator>().SetBool("HighLight",true);

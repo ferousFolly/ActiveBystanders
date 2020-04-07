@@ -8,6 +8,7 @@ public static class GameEventManager
     private static int flashLighHasBeenUsed = 0;
     public static bool canUseFlashLight;
 
+
     public static void IncreaseOpeningDoorNumbers() {
         doorsHasBeenOpened += 1;
     }

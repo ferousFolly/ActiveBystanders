@@ -4,35 +4,84 @@ using UnityEngine;
 
 public class RoomChange : MonoBehaviour
 {
-    public  Transform player;
-    public GameObject SwapTrigger;
-    public bool _LivingRoom = false;
-    public bool LivingRoomSwap = false;
+    Transform player;
+
+    public GameObject LivingRoom;
+    public GameObject LivingRoomSwap;
+
+    public GameObject Bathroom;
+    public GameObject BathroomSwap;
 
 
-    // Start is called before the first frame update
+    public GameObject Basement;
+    public GameObject BasementSwap;
+
+
+    public GameObject SmallBedroom;
+    public GameObject SmallBedroomSwap;
+
+    public GameObject Dinningroom;
+    public GameObject DinningroomSwap;
+
+
+     public bool PlayerIsStraight;
+
+    BoxCollider collider;
+
+
+    private void Start()
+    {
+        collider = GetComponent<BoxCollider>();
+        collider.enabled = false;
+        player = FindObjectOfType<FirstPersonAIO>().transform;
+       
+    }
+
+    private void Update()
+    {
+        Vector3 posDiff = player.position - transform.position;
+        float dotPos = Vector3.Dot(transform.forward, posDiff);
+        if (dotPos < -2f)
+        {
+            collider.enabled = true;
+        }
+
+        else if (dotPos > 1)
+        {
+            collider.enabled = false;
+        }
+    }
 
     public void OnTriggerEnter(Collider other)
     {
-        if (SwapTrigger)
-        {
-            _LivingRoom = true;
+        if (other.tag == "Player") {
+
+            LivingRoom.SetActive(LivingRoomSwap.activeInHierarchy);
+            LivingRoomSwap.SetActive(!LivingRoom.activeInHierarchy);
         }
-        else
-            LivingRoomSwap = false;
-
-
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (SwapTrigger)
+        if (other.tag == "Player")
         {
-            LivingRoomSwap = true;
+            Bathroom.SetActive(BathroomSwap.activeInHierarchy);
+            BathroomSwap.SetActive(!Bathroom.activeInHierarchy);
         }
-        else
-            _LivingRoom = false;
-       
-        
+        if (other.tag == "Player")
+        {
+            Basement.SetActive(BasementSwap.activeInHierarchy);
+            BasementSwap.SetActive(!Basement.activeInHierarchy);
+
+        }
+        if (other.tag == "Player")
+        {
+            SmallBedroom.SetActive(SmallBedroomSwap.activeInHierarchy);
+            SmallBedroomSwap.SetActive(!SmallBedroom.activeInHierarchy);
+        }
+        if (other.tag == "Player")
+        {
+            Dinningroom.SetActive(DinningroomSwap.activeInHierarchy);
+            DinningroomSwap.SetActive(!Dinningroom.activeInHierarchy);
+        }
+
+
+
     }
 }

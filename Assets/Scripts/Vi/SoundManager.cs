@@ -9,6 +9,14 @@ public static class SoundManager
         Hearbeat,
         Player_GetHurt,
         DoorOpen,
+        Gun_Shot,
+        FlashOn,
+        FlashOff,
+        Gun_ReloadBullet,
+        Gun_BulletFalling,
+        Gun_CloseReloader,
+        Demon_Scream,
+        Gun_EmptyBullet,
     }
 
     public enum UI_SoundEffects {
@@ -16,10 +24,23 @@ public static class SoundManager
         UI_HighLight,
         UI_Cancel,
         UI_Back,
+        UI_OpenInventory,
+        UI_ESC,
+    }
+
+    public enum InGameMusic {
+        BeingTraced,
     }
 
     private static GameObject audioObject;
+    private static GameObject musicAudioObject;
     private static AudioSource audioSource;
+    private static AudioSource _musicAudioSoure;
+    public static AudioSource musicAudioSource {
+        get {
+            return _musicAudioSoure;
+        }
+    }
 
     public static void PlaySound(SoundEffects sound) {
         if (audioObject == null)
@@ -33,6 +54,31 @@ public static class SoundManager
         audioSource.PlayOneShot(GetAudioClip(sound));
     }
 
+
+    public static void PlaySoundOnceInUpdate(SoundEffects sound)
+    {
+        if (audioObject == null)
+        {
+            audioObject = new GameObject("Sound");
+            audioSource = audioObject.AddComponent<AudioSource>();
+            //if (SettingManager.i.GetSoundEffectAudioMixer() != null) {
+            //    audioSource.outputAudioMixerGroup = SettingManager.i.GetSoundEffectAudioMixer();
+            //}
+        }
+        audioSource.PlayOneShot(GetAudioClip(sound));
+    }
+
+    public static IEnumerator PlaySound(SoundEffects sound,float delayTime) {
+        yield return new WaitForSeconds(delayTime);
+        if (audioObject == null)
+        {
+            audioObject = new GameObject("Sound");
+            audioSource = audioObject.AddComponent<AudioSource>();
+        }
+        audioSource.PlayOneShot(GetAudioClip(sound));
+    }
+
+
     public static void PlaySound(UI_SoundEffects sound)
     {
         if (audioObject == null)
@@ -45,10 +91,19 @@ public static class SoundManager
             //}
         }
         audioSource.PlayOneShot(GetAudioClip(sound));
-
     }
 
-    private static AudioClip GetAudioClip(SoundEffects sound) {
+    public static void PlaySound(InGameMusic sound)
+    {
+        if (musicAudioObject == null)
+        {
+            musicAudioObject = new GameObject("Music");
+            _musicAudioSoure = musicAudioObject.AddComponent<AudioSource>();
+        }
+        _musicAudioSoure.PlayOneShot(GetAudioClip(sound));
+    }
+
+    public static AudioClip GetAudioClip(SoundEffects sound) {
         foreach (GameAssetManager.SoundClip soundClip in GameAssetManager.i.soundClipArray)
         {
             if (soundClip.sound == sound) {
@@ -64,6 +119,19 @@ public static class SoundManager
         foreach (GameAssetManager.UI_SoundClip soundClip in GameAssetManager.i.UI_SoundClipArray)
         {
             if (soundClip.UI_sound == sound)
+            {
+                return soundClip.audioClip;
+            }
+        }
+        Debug.LogError("AudioClip Not Found");
+        return null;
+    }
+
+    private static AudioClip GetAudioClip(InGameMusic sound)
+    {
+        foreach (InGameAssetManager.InGame_Music soundClip in InGameAssetManager.i.inGame_Musics)
+        {
+            if (soundClip.sound == sound)
             {
                 return soundClip.audioClip;
             }
