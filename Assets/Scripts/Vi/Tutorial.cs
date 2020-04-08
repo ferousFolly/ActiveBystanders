@@ -13,14 +13,14 @@ public class Tutorial : MonoBehaviour
     public GameObject UI_Flashlight;
     private Vector3 startPoint;
 
-    [SerializeField]
     float runSpeed;
-    
+
     void Start()
     {
         startPoint = InGameAssetManager.i.startPoint.transform.position;
         distanceToShowRunUI = InGameAssetManager.i.startPoint.GetComponent<GizmosDisplay>().radius;
         runSpeed = AIO.sprintSpeed;
+        firstShow = (GameEventManager.loadSceneTime > 0) ? false : true;
     }
 
     void Update()
