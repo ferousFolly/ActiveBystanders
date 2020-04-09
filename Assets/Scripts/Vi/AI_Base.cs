@@ -21,9 +21,11 @@ public class AI_Base : MonoBehaviour
     protected float currentHP;
     public float maxHP = 100;
 
+    public float walkSpeed = 3.5f;
+    public float runSpeed = 14f;
     public bool isShowingAttackArea;
 
-    [Range(1,5)]
+    [Range(1,10)]
     public float attackArea = 3f;
     public Vector3 attackOffset;
     [Range(4f,20)]
@@ -36,10 +38,7 @@ public class AI_Base : MonoBehaviour
 
     private NavMeshAgent agent;
     private AI_FOV fov;
-    private float currentSpeed;
-    float runSpeed;
-    float walkSpeed;
-
+   
 
     [Header("Patrol")]
     public bool isRoute;
@@ -67,8 +66,7 @@ public class AI_Base : MonoBehaviour
         fov = GetComponent<AI_FOV>();
 
         currentHP = maxHP;
-        walkSpeed = agent.speed;
-        runSpeed = walkSpeed * 4;
+        agent.speed = walkSpeed;
         path = new NavMeshPath();
     }
 

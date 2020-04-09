@@ -21,7 +21,6 @@ public class ItemType {
         Gun,
         FlashLight,
     }
-    [HideInInspector]
     public string itemName;
     public type typeOfItem;
     public Sprite itemSpriteIcon;
@@ -44,13 +43,11 @@ public class InventoryManager : MonoBehaviour
 
     public List<ItemType> items = new List<ItemType>();
     public Transform slots;
+    public List<UIItem> itemInInventory = new List<UIItem>();
+
 
     private void Start()
     {
-        for (int i = 0; i < items.Count; i++)
-        {
-            items[i].itemName = items[i].typeOfItem.ToString();
-        }
         UpdateInventory(ItemType.type.Gun);
         UpdateInventory(ItemType.type.FlashLight);
     }
@@ -73,8 +70,76 @@ public class InventoryManager : MonoBehaviour
             {
                 Transform emptySlot = slots.GetChild(i);
                 o.transform.SetParent(emptySlot, false);
+                itemInInventory.Add(o.GetComponent<UIItem>());
                 break;
             }
         }
+    }
+    public bool IsReadFirst3Note()
+    {
+        List<UIItem> first3Notes = new List<UIItem>();
+        int isClickNumber = 0;
+        for (int i = 0; i < itemInInventory.Count; i++)
+        {
+            switch (itemInInventory[i].itemName) {
+                case "Note1":
+                case "Note2":
+                case "Note3":
+                    if (!first3Notes.Contains(itemInInventory[i]))
+                    {
+                        first3Notes.Add(itemInInventory[i]);
+                    }
+                    break;
+            }
+        }
+        if (first3Notes.Count == 3) {
+            for (int i = 0; i < first3Notes.Count; i++)
+            {
+                if (first3Notes[i].isClick) {
+                    isClickNumber += 1;
+                }
+            }
+        }
+        if (isClickNumber >= 3) {
+            return true;
+        }
+        return false;
+    }
+
+    public bool IsReadLast4Notes()
+    {
+        List<UIItem> last4Notes = new List<UIItem>();
+        int isClickNumber = 0;
+        for (int i = 0; i < itemInInventory.Count; i++)
+        {
+            switch (itemInInventory[i].itemName)
+            {
+                case "Note4":
+                case "Note5":
+                case "Note6":
+                case "Note7":
+                    if (!last4Notes.Contains(itemInInventory[i]))
+                    {
+                        last4Notes.Add(itemInInventory[i]);
+                    }
+                    break;
+            }
+        }
+        if (last4Notes.Count == 4)
+        {
+            for (int i = 0; i < last4Notes.Count; i++)
+            {
+                if (last4Notes[i].isClick)
+                {
+                    isClickNumber += 1;
+                }
+            }
+        }
+        if (isClickNumber >= 4)
+        {
+            return true;
+        }
+        return false;
+
     }
 }

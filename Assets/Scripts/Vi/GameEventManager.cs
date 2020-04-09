@@ -7,6 +7,10 @@ public static class GameEventManager
     private static int doorsHasBeenOpened = 0;
     private static int flashLighHasBeenUsed = 0;
     public static bool canUseFlashLight;
+    public static int loadSceneTime = 0;
+
+    public static bool isEncounterDemon = true;
+
 
     public static void IncreaseOpeningDoorNumbers() {
         doorsHasBeenOpened += 1;
@@ -23,7 +27,5 @@ public static class GameEventManager
     public static int GetFlashLightUsedNumbers() {
         return flashLighHasBeenUsed;
     }
-
-   
 }
 

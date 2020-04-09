@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class GameEventObserver : MonoBehaviour
 {
+    private static GameEventObserver _i;
+    public static GameEventObserver i
+    {
+        get
+        {
+            if (_i == null)
+            {
+                _i = FindObjectOfType<GameEventObserver>();
+            }
+            return _i;
+        }
+    }
+
     [Header("Demon")]
     public bool enableRandomPosition;
     public Transform[] demonAppearPoints;
@@ -13,9 +26,15 @@ public class GameEventObserver : MonoBehaviour
     public float disAppearTime;
     bool isVanishing;
 
+    [Header("EventForDialogue")]
+    [SerializeField]
+    private List<DialogueSystem> dialogues = new List<DialogueSystem>();
+    bool isTalking;
+
     private void Start()
     {
         demon = FindObjectOfType<AI_Demon>().gameObject;
+        GameEventManager.isEncounterDemon = false;
     }
 
     private void Update()
@@ -23,6 +42,7 @@ public class GameEventObserver : MonoBehaviour
         if (enableRandomPosition) {
             RandomSpawn();
         }
+        AcitveDialogue();
     }
 
     void RandomSpawn() {
@@ -46,4 +66,42 @@ public class GameEventObserver : MonoBehaviour
         isVanishing = false;
     }
 
+    void AcitveDialogue() {
+        if (!isTalking) {
+            if (InventoryManager.i.IsReadFirst3Note() && GetDialogue(DialogueEventType.After3Notes) != null)
+            {
+                GetDialogue(DialogueEventType.After3Notes).SetActive(true);
+                isTalking = true;
+            }
+            if (InventoryManager.i.IsReadLast4Notes() && GetDialogue(DialogueEventType.DestroyRitualItemCanKillDemon) != null) {
+                GetDialogue(DialogueEventType.DestroyRitualItemCanKillDemon).SetActive(true);
+                isTalking = true;
+            }
+            if (GameEventManager.isEncounterDemon && GetDialogue(DialogueEventType.FirstMeetDemon)!=null) {
+                GetDialogue(DialogueEventType.FirstMeetDemon).SetActive(true);
+                isTalking = true;
+            }
+        }
+      
+    }
+
+    GameObject GetDialogue(DialogueEventType dialogue)
+    {
+        foreach (DialogueSystem D in dialogues)
+        {
+            if (D.type == dialogue) {
+                return D.gameObject;
+            }
+        }
+        return null;
+    }
+
+    public void AddToEventDialogue(DialogueSystem system) {
+        dialogues.Add(system);
+    }
+
+    public void RemoveEventDialogue(DialogueSystem system) {
+        isTalking = false;
+        dialogues.Remove(system);
+    }
 }
