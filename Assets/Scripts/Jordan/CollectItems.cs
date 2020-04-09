@@ -10,11 +10,11 @@ public class CollectItems : MonoBehaviour
     public float text3DPopup_Height;
     private GameObject text3D;
 
+
     private void Start()
     {
         text3D = InGameAssetManager.i.text3D;
     }
-
 
     private void OnMouseEnter()
     {
@@ -30,10 +30,12 @@ public class CollectItems : MonoBehaviour
         text3D.GetComponentInChildren<TextMesh>().text = null;
     }
 
-    private void OnDestroy()
-    {
+    public void DisableText() {
         text3D.SetActive(false);
         text3D.GetComponentInChildren<TextMesh>().text = null;
         InventoryManager.i.UpdateInventory(type);
     }
+
+ 
+
 }

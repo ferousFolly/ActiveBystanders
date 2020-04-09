@@ -9,6 +9,7 @@ public class Restart : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q)) 
         {
+            GameEventManager.loadSceneTime += 1;
             SceneControlle.ReLoad();
         }
     }

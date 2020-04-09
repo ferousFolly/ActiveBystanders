@@ -40,7 +40,6 @@ public class AI_Base : MonoBehaviour
     private AI_FOV fov;
    
 
-
     [Header("Patrol")]
     public bool isRoute;
     public Transform[] patrolPoints;
