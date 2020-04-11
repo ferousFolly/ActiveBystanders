@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\Mercurius\FlickerLights.cs" />
     <Compile Include="Assets\Scripts\Mercurius\LevelBoundary.cs" />
     <Compile Include="Assets\Scripts\Mercurius\MuzzleFlash.cs" />
+    <Compile Include="Assets\Scripts\Mercurius\Teleporting.cs" />
     <Compile Include="Assets\Scripts\PortalCamera.cs" />
     <Compile Include="Assets\Scripts\PortalTeleporter.cs" />
     <Compile Include="Assets\Scripts\Sender.cs" />
