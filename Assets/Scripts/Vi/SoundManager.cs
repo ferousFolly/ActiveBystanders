@@ -17,6 +17,7 @@ public static class SoundManager
         Gun_CloseReloader,
         Demon_Scream,
         Gun_EmptyBullet,
+        PaperPickUp,
     }
 
     public enum UI_SoundEffects {

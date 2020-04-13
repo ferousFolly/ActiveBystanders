@@ -11,9 +11,12 @@ public class UIItem : MonoBehaviour,IPointerEnterHandler,IPointerClickHandler,IP
     [TextArea(3,10)]
     public string itemDescription;
     public Sprite itemWholeImage;
+    public bool isClick;
+
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        isClick = true;
         ShowDetail();
     }
 
@@ -35,7 +38,6 @@ public class UIItem : MonoBehaviour,IPointerEnterHandler,IPointerClickHandler,IP
     {
         DisableFunction();
     }
-
   
     private void OnDisable()
     {
@@ -46,7 +48,6 @@ public class UIItem : MonoBehaviour,IPointerEnterHandler,IPointerClickHandler,IP
     {
         InGameAssetManager.i.itemName_InInventory.text = null;
         transform.parent.GetComponent<Image>().color = Color.white;
-
     }
 }
 

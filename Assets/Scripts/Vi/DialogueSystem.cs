@@ -10,7 +10,17 @@ public class DialogueText {
     public string dialogueText;
     public float duration = 3f;
     public AudioClip voiceLine;
+    [HideInInspector]
     public bool isPlaying;
+}
+
+public enum DialogueEventType
+{
+    After3Notes,
+    FirstMeetDemon,
+    DestroyRitualItemCanKillDemon,
+    FirstItemisBurnt,
+    Final,
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -35,11 +45,14 @@ public class DialogueSystem : MonoBehaviour
     public bool isActiveByDialogueObject;
     public DialogueObject dialogueObject;
 
+    [Header("ActiveByEvent")]
+    public bool isActiveByEvent;
+    public DialogueEventType type;
+
     [Header("Text")]
     public List<DialogueText> sentences = new List<DialogueText>();
     private int currentSentenceIndex;
 
-    //AudioSetting
     private AudioSource voiceActing;
 
     private void Awake()
@@ -55,6 +68,12 @@ public class DialogueSystem : MonoBehaviour
                 sentences[i].duration = sentences[i].voiceLine.length;
             }
         }
+        if (isActiveByEvent)
+        {
+            GameEventObserver.i.AddToEventDialogue(this);
+            OnSentenceFinished.AddListener(()=>GameEventObserver.i.RemoveEventDialogue(this));
+            gameObject.SetActive(false);
+        }
         voiceActing = GetComponent<AudioSource>();
     }
 
@@ -68,7 +87,11 @@ public class DialogueSystem : MonoBehaviour
         {
             OthersFunction();
         }
-        else {
+        else if (isActiveByEvent) {
+            UpdateText();
+        }
+        else
+        {
             Debug.LogError("Didnt assign the type of diagloue");
         }
     }
