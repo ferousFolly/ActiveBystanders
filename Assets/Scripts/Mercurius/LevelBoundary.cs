@@ -8,12 +8,17 @@ public class LevelBoundary : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        blockText.SetActive(true);
+        if (other.tag == "Player") {
+            blockText.SetActive(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        blockText.SetActive(false);
+        if (other.tag == "Player")
+        {
+            blockText.SetActive(false);
+        }
     }
 
 }
