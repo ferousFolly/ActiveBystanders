@@ -15,8 +15,8 @@ public class ObjectCounter : MonoBehaviour
     public static int theScore;
     public static bool isCollected;
 
+    private bool isshowingText;
   
-
     float colorFadeBlack = 0f;
 
 
@@ -30,22 +30,33 @@ public class ObjectCounter : MonoBehaviour
     void Update()
     {
         UpdateText();
-
-        if (theScore >= 4)
+        FadeOutText();
+        if (GameEventObserver.i.isEnding)
         {
             colorFadeBlack += Time.deltaTime;
         }
+        if (colorFadeBlack >= 1)
+        {
+            SceneControlle.NextScene();
+        }
         FadeBlack.color = new Color(1, 1, 1, colorFadeBlack);
-       
-
     }
 
 
     void UpdateText() {
         if (isCollected) {
             objecttiveBG.gameObject.SetActive(true);
-            ObjectiveText.GetComponent<Text>().text = "Collect Ritual Items: " + theScore + "/4";
+            ObjectiveText.GetComponent<Text>().text = "Collect Ritual Items: " + theScore + "/3";
+        }
+        if (GameEventObserver.i.isBurningItems && !isshowingText) {
+            objecttiveBG.gameObject.SetActive(true);
+            ObjectiveText.GetComponent<Text>().text = "Escape from the house!";
+            isshowingText = true;
+        }
+    }
 
+    void FadeOutText() {
+        if (objecttiveBG.gameObject.activeSelf) {
             objecttiveBG.color = BGColor;
             ObjectiveText.color = textColor;
 
@@ -53,7 +64,8 @@ public class ObjectCounter : MonoBehaviour
             {
                 currentShowingTimer += Time.unscaledDeltaTime;
             }
-            else {
+            else
+            {
                 BGColor.a -= Time.unscaledDeltaTime;
                 textColor.a -= Time.unscaledDeltaTime;
 

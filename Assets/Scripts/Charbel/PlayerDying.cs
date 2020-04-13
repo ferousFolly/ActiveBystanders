@@ -18,7 +18,7 @@ public class PlayerDying : MonoBehaviour
     public bool isbeingTraced;
     bool isPlayingMusic;
 
-    
+
     float colorInjury = 0f;
     float colorDying = 0f;
 
@@ -28,32 +28,26 @@ public class PlayerDying : MonoBehaviour
         alive = true; //player strts off as alive 
         CurrentHealth = MaxHealth;
 
-         colorDying = dying.color.a;
         colorInjury = Injured.color.a;
-        
-       
+        colorDying = dying.color.a;
+
     }
 
     public void TakeDamage(float amount)
     {
         SoundManager.PlaySound(SoundManager.SoundEffects.Player_GetHurt);
         CurrentHealth -= amount;
-
         if (!alive)
         {
             return;
-      
+
         }
         if (CurrentHealth <= 0) //Die
         {
-            GameOver.SetActive(true);
-            alive = false;   
-
-        }
-        if(CurrentHealth <=0)
-        {
             GetComponent<FirstPersonAIO>().enabled = false;
+            GameOver.SetActive(true);
             alive = false;
+
         }
 
         if (CurrentHealth <= 60)
@@ -62,7 +56,7 @@ public class PlayerDying : MonoBehaviour
 
 
         }
-        else if(CurrentHealth > 60)
+        else if (CurrentHealth > 60)
         {
 
             colorInjury = 1;
@@ -70,7 +64,7 @@ public class PlayerDying : MonoBehaviour
         }
 
 
-        Injured.color = new Color(1,1,1,colorInjury);
+        Injured.color = new Color(1, 1, 1, colorInjury);
         dying.color = new Color(1, 1, 1, colorDying);
     }
 
@@ -81,7 +75,8 @@ public class PlayerDying : MonoBehaviour
             CurrentHealth = MaxHealth;
         }
 
-        if (colorInjury > 0) {
+        if (colorInjury > 0)
+        {
             colorInjury -= Time.deltaTime * 1.1f;
         }
         if (colorDying > 0)
@@ -101,10 +96,9 @@ public class PlayerDying : MonoBehaviour
             }
         }
 
-        if (isbeingTraced && !isPlayingMusic)
-        {
-            SoundManager.PlaySound(SoundManager.InGameMusic.BeingTraced);
-        }
+        //if (isbeingTraced && !isPlayingMusic) {
+        //    SoundManager.PlaySound(SoundManager.InGameMusic.BeingTraced);
+        //}
 
 
         Injured.color = new Color(1, 1, 1, colorInjury);
@@ -113,9 +107,6 @@ public class PlayerDying : MonoBehaviour
     }
 
 }
-
-
-
 
 
 

@@ -10,16 +10,22 @@ public class DialogueText {
     public string dialogueText;
     public float duration = 3f;
     public AudioClip voiceLine;
+    [HideInInspector]
     public bool isPlaying;
+}
+
+public enum DialogueEventType
+{
+    After3Notes,
+    FirstMeetDemon,
+    DestroyRitualItemCanKillDemon,
+    FirstItemisBurnt,
+    Final,
 }
 
 [RequireComponent(typeof(AudioSource))]
 public class DialogueSystem : MonoBehaviour
 {
-    public enum ObjectiveActive
-    {
-
-    }
     private Transform player;
     private Text dialogueText;
     [Header("Common Setting")]
@@ -35,20 +41,18 @@ public class DialogueSystem : MonoBehaviour
     public Color positionColor;
     private bool isEnterArea;
 
-    [Header("ActiveByObjective setting")]
-    public bool isActiveByObjectitve;
-    public ObjectiveActive activeByObjective;
-    
+    [Header("ActiveByDialogueObject setting")]
+    public bool isActiveByDialogueObject;
+    public DialogueObject dialogueObject;
 
-    [Header("ActiveByOthers setting")]
-    public bool isActiveByOthers;
-    public GameObject othersTrigger;
+    [Header("ActiveByEvent")]
+    public bool isActiveByEvent;
+    public DialogueEventType type;
 
     [Header("Text")]
     public List<DialogueText> sentences = new List<DialogueText>();
     private int currentSentenceIndex;
 
-    //AudioSetting
     private AudioSource voiceActing;
 
     private void Awake()
@@ -64,7 +68,19 @@ public class DialogueSystem : MonoBehaviour
                 sentences[i].duration = sentences[i].voiceLine.length;
             }
         }
+      
         voiceActing = GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        if (isActiveByEvent)
+        {
+            GameEventObserver.i.AddToEventDialogue(this);
+            OnSentenceFinished.AddListener(() => GameEventObserver.i.RemoveEventDialogue(this));
+            gameObject.SetActive(false);
+        }
+
     }
 
     private void Update()
@@ -73,14 +89,15 @@ public class DialogueSystem : MonoBehaviour
         {
             PositionFunction();
         }
-        else if (isActiveByObjectitve)
-        {
-        }
-        else if (isActiveByOthers)
+        else if (isActiveByDialogueObject)
         {
             OthersFunction();
         }
-        else {
+        else if (isActiveByEvent) {
+            UpdateText();
+        }
+        else
+        {
             Debug.LogError("Didnt assign the type of diagloue");
         }
     }
@@ -117,7 +134,7 @@ public class DialogueSystem : MonoBehaviour
         {
             if (sentences[currentSentenceIndex].duration >= 0)
             {
-                sentences[currentSentenceIndex].duration -= Time.deltaTime;
+                sentences[currentSentenceIndex].duration -= Time.unscaledDeltaTime;
             }
             else
             {
@@ -127,7 +144,7 @@ public class DialogueSystem : MonoBehaviour
                 }
                 else
                 {
-                    textAlpha -= Time.deltaTime;
+                    textAlpha -= Time.unscaledDeltaTime;
                     dialogueText.color = new Color(1, 1, 1, textAlpha);
 
                     if (textAlpha <= 0) 
@@ -150,7 +167,7 @@ public class DialogueSystem : MonoBehaviour
     }
 
     void OthersFunction() {
-        if (othersTrigger.activeInHierarchy) {
+        if (dialogueObject.isTrigger) {
             UpdateText();
         }
     }

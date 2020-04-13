@@ -12,12 +12,15 @@ public class InteractiveAction : MonoBehaviour
     PlayerDying playerState;
 
     public float slowMotionSpeed = 0f;
-    public float rayCastDis = 2f;
+    public float Door_rayCastDistance = 4f;
+    public float Item_rayCastDistance = 6f;
 
     bool isFlashLightOpening;
     bool isOpeningInventory;
     bool isOpeningSetting;
 
+    bool canBurnArea;
+    bool canInteractive;
     Color inventoryBGColor;
 
     private void Start()
@@ -38,24 +41,35 @@ public class InteractiveAction : MonoBehaviour
         OpenInventory();
         OpenSettingPanel();
         SlowMotion();
-   
         SetCursorActiveOrNot();
     }
 
     void ButtonE_Function() {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, rayCastDis))
+        if (Physics.Raycast(ray, out hit, Door_rayCastDistance))
         {
             switch (hit.collider.tag)
             {
                 case "Open":
-                    buttonE.SetActive(true);
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        GameEventManager.IncreaseOpeningDoorNumbers();
-                        SoundManager.PlaySound(SoundManager.SoundEffects.DoorOpen);
-                        hit.collider.GetComponentInParent<Animator>().SetBool("Open", true);
+                    Door door = hit.transform.GetComponent<Door>();
+                    canInteractive = true;
+                    if (Input.GetKeyDown(KeyCode.E)) {
+                        if (door.canOpen)
+                        {
+                            if (door.CanOpenDoor())
+                            {
+                                GameEventManager.IncreaseOpeningDoorNumbers();
+                                door.OpenDoor(true);
+                            }
+                            else if (door.CanCloseDoor())
+                            {
+                                door.OpenDoor(false);
+                            }
+                        }
+                        else {
+                            SoundManager.PlaySound(SoundManager.SoundEffects.DoorLock);
+                        }
                     }
                     break;
                 case "Collectable":
@@ -73,8 +87,51 @@ public class InteractiveAction : MonoBehaviour
         }
         else
         {
-            buttonE.SetActive(false);
+            if (canBurnArea)
+            {
+                canInteractive = true;
+            }
+            else {
+                canInteractive = false;
+            }
         }
+        if (Physics.Raycast(ray, out hit, Item_rayCastDistance))
+        {
+            switch (hit.collider.tag)
+            {
+                case "Note":
+                    canInteractive = true;
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        SoundManager.PlaySound(SoundManager.SoundEffects.PaperPickUp);
+                        hit.transform.GetComponent<CollectItems>().DisableText();
+                        Destroy(hit.collider.gameObject);
+                    }
+                    break;
+                case "Ritual":
+                    canInteractive = true;
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        SoundManager.PlaySound(SoundManager.SoundEffects.ItemPickUp);
+                        ObjectCounter.theScore += 1;
+                        ObjectCounter.isCollected = true;
+                        hit.transform.GetComponent<CollectItems>().DisableText();
+                        Destroy(hit.collider.gameObject);
+                    }
+                    break;
+            }
+        }
+        else {
+            if (canBurnArea)
+            {
+                canInteractive = true;
+            }
+            else
+            {
+                canInteractive = false;
+            }
+        }
+        buttonE.SetActive(canInteractive);
     }
 
     void ActiveFlashLight() {
@@ -83,11 +140,13 @@ public class InteractiveAction : MonoBehaviour
             {
                 if (!isFlashLightOpening)
                 {
+                    SoundManager.PlaySound(SoundManager.SoundEffects.FlashOn);
                     GameEventManager.IncreaseFlashLightUsedNumber();
                     isFlashLightOpening = true;
                 }
                 else
                 {
+                    SoundManager.PlaySound(SoundManager.SoundEffects.FlashOff);
                     isFlashLightOpening = false;
                 }
             }
@@ -107,10 +166,12 @@ public class InteractiveAction : MonoBehaviour
     void OpenInventory() {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            InGameAssetManager.i.detailDescriptionPanel.SetActive(false);
             SoundManager.PlaySound(SoundManager.UI_SoundEffects.UI_OpenInventory);
             isOpeningInventory = !isOpeningInventory;
         }
         inventory.SetActive(isOpeningInventory);
+
     }
 
     void SlowMotion() {
@@ -149,5 +210,44 @@ public class InteractiveAction : MonoBehaviour
     public void CloseESC()
     {
         isOpeningSetting = false;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Fire" && ObjectCounter.theScore >= 3 && !GameEventObserver.i.isBurningItems)
+        {
+            canBurnArea = true;
+        }
+        if (other.tag == "CloseDoorTrigger") {
+            GameEventObserver.i.isClosingFrontDoor = true;
+            Destroy(other.gameObject);
+        }
+        if (other.tag == "Ending") {
+            GameEventObserver.i.isEnding = true;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Fire" && ObjectCounter.theScore >= 3 && !GameEventObserver.i.isBurningItems)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                //InventoryManager.i.BurnRitualItems();
+                InventoryManager.i.RemoveFromInventory(ItemType.type.Cross);
+                InventoryManager.i.RemoveFromInventory(ItemType.type.Candelabra);
+                InventoryManager.i.RemoveFromInventory(ItemType.type.Blood_flask);
+                GameEventObserver.i.isBurningItems = true;
+                canBurnArea = false;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Fire" && ObjectCounter.theScore >= 3 && !GameEventObserver.i.isBurningItems)
+        {
+            canBurnArea = false;
+
+        }
     }
 }

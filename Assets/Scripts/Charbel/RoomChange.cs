@@ -25,7 +25,6 @@ public class RoomChange : MonoBehaviour
 
 
      public bool PlayerIsStraight;
-    bool isTrigger;
 
     BoxCollider collider;
 

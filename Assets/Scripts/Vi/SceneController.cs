@@ -13,8 +13,13 @@ public class SceneControlle
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public static void JumpScene(int i) {
+        SceneManager.LoadScene(i);
+    }
+
     public static void ExitGame()
     {
         Application.Quit();
     }
+
 }
