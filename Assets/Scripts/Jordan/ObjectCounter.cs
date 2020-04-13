@@ -31,14 +31,14 @@ public class ObjectCounter : MonoBehaviour
     {
         UpdateText();
 
-        if (theScore >= 3)
-        {
-            colorFadeBlack += Time.deltaTime;
-        }
-        if (colorFadeBlack>=1) {
-            SceneControlle.NextScene();
-        }
-        FadeBlack.color = new Color(1, 1, 1, colorFadeBlack);
+        //if (theScore >= 3)
+        //{
+        //    colorFadeBlack += Time.deltaTime;
+        //}
+        //if (colorFadeBlack>=1) {
+        //    SceneControlle.NextScene();
+        //}
+        //FadeBlack.color = new Color(1, 1, 1, colorFadeBlack);
     }
 
 

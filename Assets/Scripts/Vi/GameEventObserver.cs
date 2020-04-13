@@ -31,10 +31,19 @@ public class GameEventObserver : MonoBehaviour
     private List<DialogueSystem> dialogues = new List<DialogueSystem>();
     bool isTalking;
 
+    [Header("SomeEvents")]
+    public bool isBurningItems;
+
+    public bool isClosingFrontDoor;
+    public Door frontDoor;
+
     private void Start()
     {
-        demon = FindObjectOfType<AI_Demon>().gameObject;
+        if (enableRandomPosition) {
+            demon = FindObjectOfType<AI_Demon>().gameObject;
+        }
         GameEventManager.isEncounterDemon = false;
+        isBurningItems = false;
     }
 
     private void Update()
@@ -43,6 +52,13 @@ public class GameEventObserver : MonoBehaviour
             RandomSpawn();
         }
         AcitveDialogue();
+        if (isClosingFrontDoor) {
+            frontDoor.OpenDoor(false);
+            frontDoor.canOpen = false;
+            frontDoor.canClose = false;
+            isClosingFrontDoor = false;
+        }
+      
     }
 
     void RandomSpawn() {
