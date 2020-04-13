@@ -36,6 +36,9 @@ public class GameEventObserver : MonoBehaviour
 
     public bool isClosingFrontDoor;
     public Door frontDoor;
+    public GameObject endingTrigger;
+    public GameObject policeSiren;
+    public bool isEnding;
 
     private void Start()
     {
@@ -58,7 +61,11 @@ public class GameEventObserver : MonoBehaviour
             frontDoor.canClose = false;
             isClosingFrontDoor = false;
         }
-      
+        if (isBurningItems) {
+            frontDoor.canOpen = true;
+            endingTrigger.SetActive(true);
+            policeSiren.SetActive(true);
+        }
     }
 
     void RandomSpawn() {

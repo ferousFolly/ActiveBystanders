@@ -1,14 +1,8 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Vi/GameEventObserver.cs">
     <Files>
-      <File FileName="Assets/Scripts/Vi/GameEventObserver.cs" Line="35" Column="32" />
-      <File FileName="Assets/Scripts/Vi/Door.cs" Line="25" Column="32" />
-      <File FileName="Assets/Scripts/InteractiveAction.cs" Line="73" Column="22" />
-      <File FileName="Assets/Scripts/Vi/DialogueSystem.cs" Line="81" Column="13" />
-      <File FileName="Assets/Scripts/Vi/InventoryManager.cs" Line="74" Column="69" />
-      <File FileName="Assets/Scripts/Vi/GameEventManager.cs" Line="15" Column="24" />
-      <File FileName="Assets/Scripts/Vi/UIItem.cs" Line="27" Column="62" />
-      <File FileName="Assets/Scripts/Vi/SoundManager.cs" Line="21" Column="18" />
+      <File FileName="Assets/Scripts/Jordan/ObjectCounter.cs" Line="20" Column="5" />
+      <File FileName="Assets/Scripts/Vi/GameEventObserver.cs" Line="67" Column="39" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -37,7 +31,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a5059f46-bca4-43d6-ba12-67b3fb61a656" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="12e2013b-1118-4398-876c-a91b9224dadc" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

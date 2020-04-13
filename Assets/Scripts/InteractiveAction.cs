@@ -210,6 +210,9 @@ public class InteractiveAction : MonoBehaviour
             GameEventObserver.i.isClosingFrontDoor = true;
             Destroy(other.gameObject);
         }
+        if (other.tag == "Ending") {
+            GameEventObserver.i.isEnding = true;
+        }
     }
 
     private void OnTriggerStay(Collider other)
