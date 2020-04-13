@@ -43,16 +43,16 @@ public class Gun : MonoBehaviour
             currentTimeToFire += Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Fire1") && currentTimeToFire >= nextTimeToFire && currentBullets > 0 && !isReloading)
+        if (Input.GetMouseButtonDown(0) && currentTimeToFire >= nextTimeToFire && currentBullets > 0 && !isReloading)
         {
             currentTimeToFire = 0;
             shoot();
             muzzleFlash.Play();
-        } else if (Input.GetButtonDown("Fire1")  && currentBullets <= 0 && !isReloading) {
+        } else if (Input.GetMouseButtonDown(0)  && currentBullets <= 0 && !isReloading) {
             SoundManager.PlaySound(SoundManager.SoundEffects.Gun_EmptyBullet);
         }
        
-        if (Input.GetKeyDown(KeyCode.R) && maxBullets > 0 && !isReloading)
+        if (Input.GetKeyDown(KeyCode.R) && maxBullets > 0 && !isReloading && currentBullets < 6)
         {
             anim.SetTrigger("OpenReloader");
             isReloading = true;
@@ -95,7 +95,7 @@ public class Gun : MonoBehaviour
 
     void Reload()
     {
-        if (maxBullets > 0)
+        if (maxBullets > 0 && currentBullets < 6)
         {
             if (currentReloadTime < reload1BulletTime)
             {

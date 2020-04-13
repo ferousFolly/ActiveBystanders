@@ -83,7 +83,8 @@ public class InteractiveAction : MonoBehaviour
                     buttonE.SetActive(true);
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        SoundManager.PlaySound(SoundManager.SoundEffects.ItemPickUp);
+                        SoundManager.PlaySound(SoundManager.SoundEffects.PaperPickUp);
+                        hit.transform.GetComponent<CollectItems>().DisableText();
                         Destroy(hit.collider.gameObject);
                     }
                     break;
@@ -94,6 +95,7 @@ public class InteractiveAction : MonoBehaviour
                         SoundManager.PlaySound(SoundManager.SoundEffects.ItemPickUp);
                         ObjectCounter.theScore += 1;
                         ObjectCounter.isCollected = true;
+                        hit.transform.GetComponent<CollectItems>().DisableText();
                         Destroy(hit.collider.gameObject);
                     }
                     break;
@@ -181,4 +183,6 @@ public class InteractiveAction : MonoBehaviour
     {
         isOpeningSetting = false;
     }
+
+    
 }

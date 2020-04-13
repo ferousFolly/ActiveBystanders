@@ -28,4 +28,6 @@ public class AI_Demon : AI_Base
 
         base.Persuing();
     }
+
+   
 }
