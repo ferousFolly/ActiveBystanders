@@ -33,7 +33,7 @@ public class CollectItems : MonoBehaviour
     public void DisableText() {
         text3D.SetActive(false);
         text3D.GetComponentInChildren<TextMesh>().text = null;
-        InventoryManager.i.UpdateInventory(type);
+        InventoryManager.i.AddInnventory(type);
     }
 
  

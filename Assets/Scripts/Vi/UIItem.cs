@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UIItem : MonoBehaviour,IPointerEnterHandler,IPointerClickHandler,IPointerExitHandler
 {
     public Color mouseoverColor;
+    public ItemType.type type;
     public string itemName;
     [TextArea(3,10)]
     public string itemDescription;
@@ -30,7 +31,7 @@ public class UIItem : MonoBehaviour,IPointerEnterHandler,IPointerClickHandler,IP
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        InGameAssetManager.i.itemName_InInventory.text = itemName;
+        InGameAssetManager.i.itemName_InInventory.text = type.ToString();
         transform.parent.GetComponent<Image>().color = mouseoverColor;
     }
 

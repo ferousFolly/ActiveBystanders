@@ -20,12 +20,17 @@ public class ItemType {
         Blood_flask,
         Gun,
         FlashLight,
+        OptionalNote_1,
+        OptionalNote_2,
+        OptionalNote_3,
     }
     public string itemName;
     public type typeOfItem;
     public Sprite itemSpriteIcon;
     [TextArea(3,10)]
     public string Description;
+    [TextArea(3, 10)]
+    public string textCanBeHighlighted;
     public Sprite itemWholeSprite;
 }
 
@@ -48,18 +53,25 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        UpdateInventory(ItemType.type.Gun);
-        UpdateInventory(ItemType.type.FlashLight);
+        AddInnventory(ItemType.type.Gun);
+        AddInnventory(ItemType.type.FlashLight);
     }
 
-    public void UpdateInventory(ItemType.type _type) {
+    public void AddInnventory(ItemType.type _type) {
         GameObject o = Instantiate(InGameAssetManager.i.itemPrefab);
+
         for (int i = 0; i < items.Count; i++)
         {
             if (items[i].typeOfItem == _type)
             {
+                if (items[i].textCanBeHighlighted != "")
+                {
+                    items[i].Description = items[i].Description.Replace(items[i].textCanBeHighlighted, NewLighHighText(items[i].textCanBeHighlighted));
+                }
+              
                 o.GetComponent<Image>().sprite = items[i].itemSpriteIcon;
                 o.GetComponent<UIItem>().itemName = items[i].itemName;
+                o.GetComponent<UIItem>().type = items[i].typeOfItem;
                 o.GetComponent<UIItem>().itemDescription = items[i].Description;
                 o.GetComponent<UIItem>().itemWholeImage = items[i].itemWholeSprite;
             }
@@ -75,6 +87,23 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
+
+    public void RemoveFromInventory(ItemType.type _item) {
+        for (int i = 0; i < itemInInventory.Count; i++)
+        {
+            if (itemInInventory[i].type == _item) {
+                Destroy(itemInInventory[i].gameObject);
+                itemInInventory.Remove(itemInInventory[i]);
+            }
+        }
+    }
+
+    string NewLighHighText(string s)
+    {
+        return $"<color=red>{s}</color>";
+    }
+
+
     public bool IsReadFirst3Note()
     {
         List<UIItem> first3Notes = new List<UIItem>();
@@ -140,6 +169,23 @@ public class InventoryManager : MonoBehaviour
             return true;
         }
         return false;
+    }
 
+    public void BurnRitualItems() {
+        for (int i = 0; i < itemInInventory.Count; i++)
+        {
+            switch (itemInInventory[i].itemName)
+            {
+                case "Candelabra":
+                case "Cross":
+                case "Blood Flask":
+                    if (itemInInventory.Contains(itemInInventory[i]))
+                    {
+                        Destroy(itemInInventory[i].gameObject);
+                        itemInInventory.Remove(itemInInventory[i]);
+                    }
+                    break;
+            }
+        }
     }
 }

@@ -62,6 +62,7 @@ public class SettingManager : MonoBehaviour
             resolutionDisplay.AddOptions(optionsText);
             resolutionDisplay.value = currentResolutionIndex;
             resolutionDisplay.RefreshShownValue();
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 

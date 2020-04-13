@@ -1,18 +1,8 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Vi/GameEventObserver.cs">
     <Files>
-      <File FileName="Assets/Scripts/Vi/InventoryManager.cs" Line="105" Column="10" />
-      <File FileName="Assets/Scripts/Jordan/CollectItems.cs" Line="33" Column="32" />
-      <File FileName="Assets/Scripts/Vi/Tutorial.cs" Line="28" Column="23" />
-      <File FileName="Assets/Scripts/Vi/GameEventObserver.cs" Line="107" Column="2" />
-      <File FileName="Assets/Scripts/Vi/GameEventManager.cs" Line="12" Column="48" />
-      <File FileName="Assets/Scripts/Vi/AI_Base.cs" Line="112" Column="25" />
-      <File FileName="Assets/Scripts/Vi/AI_FOV.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Vi/DialogueSystem.cs" Line="74" Column="1" />
-      <File FileName="Assets/Scripts/InteractiveAction.cs" Line="187" Column="5" />
-      <File FileName="Assets/Scripts/Vi/AI_Demon.cs" Line="32" Column="4" />
-      <File FileName="Assets/Scripts/Vi/Door.cs" Line="27" Column="2" />
-      <File FileName="Assets/Scripts/Vi/DemonOnly.cs" Line="8" Column="6" />
+      <File FileName="Assets/Scripts/Jordan/ObjectCounter.cs" Line="20" Column="5" />
+      <File FileName="Assets/Scripts/Vi/GameEventObserver.cs" Line="67" Column="39" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,6 +17,7 @@
                 <Node name="Arjun" expanded="True" />
                 <Node name="Charbel" expanded="True" />
                 <Node name="Jordan" expanded="True" />
+                <Node name="Mercurius" expanded="True" />
                 <Node name="Vi" expanded="True">
                   <Node name="MainMenu" expanded="True" />
                   <Node name="GameEventObserver.cs" selected="True" />
@@ -40,7 +31,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="62866b83-0927-47c5-8a17-fc9623c58783" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="12e2013b-1118-4398-876c-a91b9224dadc" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

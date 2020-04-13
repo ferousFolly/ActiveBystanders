@@ -68,13 +68,19 @@ public class DialogueSystem : MonoBehaviour
                 sentences[i].duration = sentences[i].voiceLine.length;
             }
         }
+      
+        voiceActing = GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
         if (isActiveByEvent)
         {
             GameEventObserver.i.AddToEventDialogue(this);
-            OnSentenceFinished.AddListener(()=>GameEventObserver.i.RemoveEventDialogue(this));
+            OnSentenceFinished.AddListener(() => GameEventObserver.i.RemoveEventDialogue(this));
             gameObject.SetActive(false);
         }
-        voiceActing = GetComponent<AudioSource>();
+
     }
 
     private void Update()
@@ -128,7 +134,7 @@ public class DialogueSystem : MonoBehaviour
         {
             if (sentences[currentSentenceIndex].duration >= 0)
             {
-                sentences[currentSentenceIndex].duration -= Time.deltaTime;
+                sentences[currentSentenceIndex].duration -= Time.unscaledDeltaTime;
             }
             else
             {
@@ -138,7 +144,7 @@ public class DialogueSystem : MonoBehaviour
                 }
                 else
                 {
-                    textAlpha -= Time.deltaTime;
+                    textAlpha -= Time.unscaledDeltaTime;
                     dialogueText.color = new Color(1, 1, 1, textAlpha);
 
                     if (textAlpha <= 0) 
