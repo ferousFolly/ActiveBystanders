@@ -19,6 +19,8 @@ public class InteractiveAction : MonoBehaviour
     bool isOpeningInventory;
     bool isOpeningSetting;
 
+    bool canBurnArea;
+    bool canInteractive;
     Color inventoryBGColor;
 
     private void Start()
@@ -51,36 +53,43 @@ public class InteractiveAction : MonoBehaviour
             {
                 case "Open":
                     Door door = hit.transform.GetComponent<Door>();
-                    buttonE.SetActive(true);
-                    if (Input.GetKeyDown(KeyCode.E) && door.CanOpenDoor())
-                    {
-                        door.isOpening = true;
-                        GameEventManager.IncreaseOpeningDoorNumbers();
-                        SoundManager.PlaySound(SoundManager.SoundEffects.DoorOpen);
-                        hit.collider.GetComponentInParent<Animator>().SetBool("Open", true);
+                    canInteractive = true;
+                    if (Input.GetKeyDown(KeyCode.E)) {
+                        if (door.canOpen)
+                        {
+                            if (door.CanOpenDoor())
+                            {
+                                GameEventManager.IncreaseOpeningDoorNumbers();
+                                door.OpenDoor(true);
+                            }
+                            else if (door.CanCloseDoor())
+                            {
+                                door.OpenDoor(false);
+                            }
+                        }
+                        else {
+                            SoundManager.PlaySound(SoundManager.SoundEffects.DoorLock);
+                        }
                     }
-                    else if (Input.GetKeyDown(KeyCode.E) && door.CanCloseDoor())
-                    {
-                        door.isOpening = false;
-                        GameEventManager.IncreaseOpeningDoorNumbers();
-                        SoundManager.PlaySound(SoundManager.SoundEffects.DoorOpen);
-                        hit.collider.GetComponentInParent<Animator>().SetBool("Open", false);
-                    }
-
                     break;
-
             }
         }
         else
         {
-            buttonE.SetActive(false);
+            if (canBurnArea)
+            {
+                canInteractive = true;
+            }
+            else {
+                canInteractive = false;
+            }
         }
         if (Physics.Raycast(ray, out hit, Item_rayCastDistance))
         {
             switch (hit.collider.tag)
             {
                 case "Note":
-                    buttonE.SetActive(true);
+                    canInteractive = true;
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         SoundManager.PlaySound(SoundManager.SoundEffects.PaperPickUp);
@@ -89,7 +98,7 @@ public class InteractiveAction : MonoBehaviour
                     }
                     break;
                 case "Ritual":
-                    buttonE.SetActive(true);
+                    canInteractive = true;
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         SoundManager.PlaySound(SoundManager.SoundEffects.ItemPickUp);
@@ -102,8 +111,16 @@ public class InteractiveAction : MonoBehaviour
             }
         }
         else {
-            buttonE.SetActive(false);
+            if (canBurnArea)
+            {
+                canInteractive = true;
+            }
+            else
+            {
+                canInteractive = false;
+            }
         }
+        buttonE.SetActive(canInteractive);
     }
 
     void ActiveFlashLight() {
@@ -183,6 +200,43 @@ public class InteractiveAction : MonoBehaviour
     {
         isOpeningSetting = false;
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Fire" && ObjectCounter.theScore >= 3 && !GameEventObserver.i.isBurningItems)
+        {
+            canBurnArea = true;
+        }
+        if (other.tag == "CloseDoorTrigger") {
+            GameEventObserver.i.isClosingFrontDoor = true;
+            Destroy(other.gameObject);
+        }
+        if (other.tag == "Ending") {
+            GameEventObserver.i.isEnding = true;
+        }
+    }
 
-    
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Fire" && ObjectCounter.theScore >= 3 && !GameEventObserver.i.isBurningItems)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                //InventoryManager.i.BurnRitualItems();
+                InventoryManager.i.RemoveFromInventory(ItemType.type.Cross);
+                InventoryManager.i.RemoveFromInventory(ItemType.type.Candelabra);
+                InventoryManager.i.RemoveFromInventory(ItemType.type.Blood_flask);
+                GameEventObserver.i.isBurningItems = true;
+                canBurnArea = false;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Fire" && ObjectCounter.theScore >= 3 && !GameEventObserver.i.isBurningItems)
+        {
+            canBurnArea = false;
+
+        }
+    }
 }
