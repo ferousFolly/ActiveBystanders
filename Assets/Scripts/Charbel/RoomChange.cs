@@ -23,8 +23,9 @@ public class RoomChange : MonoBehaviour
     public GameObject Dinningroom;
     public GameObject DinningroomSwap;
 
+    public GameObject Mainbedroom;
+    public GameObject MainbedroomSwap;
 
-     public bool PlayerIsStraight;
 
     BoxCollider collider;
 
@@ -58,30 +59,21 @@ public class RoomChange : MonoBehaviour
 
             LivingRoom.SetActive(LivingRoomSwap.activeInHierarchy);
             LivingRoomSwap.SetActive(!LivingRoom.activeInHierarchy);
-        }
-        if (other.tag == "Player")
-        {
+
             Bathroom.SetActive(BathroomSwap.activeInHierarchy);
             BathroomSwap.SetActive(!Bathroom.activeInHierarchy);
-        }
-        if (other.tag == "Player")
-        {
+
             Basement.SetActive(BasementSwap.activeInHierarchy);
             BasementSwap.SetActive(!Basement.activeInHierarchy);
 
-        }
-        if (other.tag == "Player")
-        {
             SmallBedroom.SetActive(SmallBedroomSwap.activeInHierarchy);
             SmallBedroomSwap.SetActive(!SmallBedroom.activeInHierarchy);
-        }
-        if (other.tag == "Player")
-        {
+
             Dinningroom.SetActive(DinningroomSwap.activeInHierarchy);
             DinningroomSwap.SetActive(!Dinningroom.activeInHierarchy);
+
+            Mainbedroom.SetActive(MainbedroomSwap.activeInHierarchy);
+            MainbedroomSwap.SetActive(!Mainbedroom.activeInHierarchy);
         }
-
-
-
     }
 }
