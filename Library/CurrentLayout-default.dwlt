@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 881, y: 613}
   m_MaxSize: {x: 16006, y: 18063}
   vertical: 1
-  controlID: 145
+  controlID: 168
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 881, y: 613}
   m_MaxSize: {x: 16006, y: 18063}
   vertical: 0
-  controlID: 146
+  controlID: 169
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 613}
   m_MaxSize: {x: 12005, y: 18063}
   vertical: 1
-  controlID: 147
+  controlID: 170
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 342}
   m_MaxSize: {x: 12005, y: 8042}
   vertical: 0
-  controlID: 148
+  controlID: 171
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 342}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 149
+  controlID: 172
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -494,7 +494,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 24780000
+      m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 6efbffff
       m_RenameOverlay:
@@ -556,9 +556,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 29.68102, y: 14.534597, z: -24.61019}
+    m_Target: {x: -31.624146, y: -6.299342, z: -27.790321}
     speed: 2
-    m_Value: {x: 29.68102, y: 14.534597, z: -24.61019}
+    m_Value: {x: -31.624146, y: -6.299342, z: -27.790321}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -604,13 +604,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.12840603, y: -0.7396204, z: 0.14747347, w: -0.6439928}
+    m_Target: {x: 0.0777827, y: -0.9216126, z: 0.25091082, w: 0.2857003}
     speed: 2
-    m_Value: {x: 0.12840603, y: 0.7396203, z: -0.14747347, w: 0.6439928}
+    m_Value: {x: -0.07778267, y: 0.92161226, z: -0.25091073, w: -0.2857002}
   m_Size:
-    m_Target: 7.2275753
+    m_Target: 31.405752
     speed: 2
-    m_Value: 7.2275753
+    m_Value: 31.405752
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -781,7 +781,7 @@ MonoBehaviour:
     height: 252
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
-    m_NameFilter: plate
+    m_NameFilter: 
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -793,20 +793,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Jordan Scene/3D Models Prop House 180 Pack/Prefab/04_Props
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Jordan Scene/3D Models Prop House 180 Pack/Prefab/04_Props
+  - Assets/Jordan Scene
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/vincent/Documents/GitHub/ActiveBystanders
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 349.8886}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c0710000c2710000c4710000c6710000b4730000ba73000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 806a0000
+    m_LastClickedID: 27264
+    m_ExpandedIDs: 00000000806a0000826a0000846a0000866a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -834,7 +834,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c0710000c2710000c4710000c6710000
+    m_ExpandedIDs: 00000000806a0000826a0000846a0000866a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -861,7 +861,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000cc4400003aaa00009067000000000000029400003e8a000064470000f6380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
