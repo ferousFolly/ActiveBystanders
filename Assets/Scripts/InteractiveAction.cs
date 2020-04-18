@@ -200,6 +200,7 @@ public class InteractiveAction : MonoBehaviour
     {
         isOpeningSetting = false;
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Fire" && ObjectCounter.theScore >= 3 && !GameEventObserver.i.isBurningItems)
@@ -207,10 +208,11 @@ public class InteractiveAction : MonoBehaviour
             canBurnArea = true;
         }
         if (other.tag == "CloseDoorTrigger") {
-            GameEventObserver.i.isClosingFrontDoor = true;
+            GameEventObserver.i.CloseFrontDoor();
             Destroy(other.gameObject);
         }
         if (other.tag == "Ending") {
+            GameEventObserver.i.CloseFrontDoor();
             GameEventObserver.i.isEnding = true;
         }
     }

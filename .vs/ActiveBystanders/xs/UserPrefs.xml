@@ -1,10 +1,12 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Jordan/CollectItems.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Jordan/ObjectCounter.cs">
     <Files>
-      <File FileName="Assets/Scripts/Jordan/ObjectCounter.cs" Line="20" Column="5" />
-      <File FileName="Assets/Scripts/Vi/GameEventObserver.cs" Line="67" Column="39" />
-      <File FileName="Assets/Scripts/Charbel/RoomChange.cs" Line="78" Column="1" />
-      <File FileName="Assets/Scripts/Jordan/CollectItems.cs" Line="25" Column="168" />
+      <File FileName="Assets/Scripts/Jordan/ObjectCounter.cs" Line="47" Column="1" />
+      <File FileName="Assets/Scripts/Vi/GameEventObserver.cs" Line="134" Column="35" />
+      <File FileName="Assets/Scripts/Charbel/RoomChange.cs" />
+      <File FileName="Assets/Scripts/Jordan/CollectItems.cs" />
+      <File FileName="Assets/Scripts/InteractiveAction.cs" Line="106" Column="50" />
+      <File FileName="Assets/Scripts/Vi/DialogueSystem.cs" Line="80" Column="95" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,7 +21,7 @@
                 <Node name="Arjun" expanded="True" />
                 <Node name="Charbel" expanded="True" />
                 <Node name="Jordan" expanded="True">
-                  <Node name="CollectItems.cs" selected="True" />
+                  <Node name="ObjectCounter.cs" selected="True" />
                 </Node>
                 <Node name="Mercurius" expanded="True" />
                 <Node name="Vi" expanded="True">
@@ -34,7 +36,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2ee7fda7-d5e9-4cbe-8361-8327d304e85b" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a080788c-a7ce-49bd-ac7b-7ba76fe6908b" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

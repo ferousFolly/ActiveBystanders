@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,6 +33,7 @@ public class GameEventObserver : MonoBehaviour
     bool isTalking;
 
     [Header("SomeEvents")]
+    private Action eventHappen;
     public bool isBurningItems;
 
     public bool isClosingFrontDoor;
@@ -47,6 +49,16 @@ public class GameEventObserver : MonoBehaviour
         }
         GameEventManager.isEncounterDemon = false;
         isBurningItems = false;
+
+    }
+
+    public void CloseFrontDoor() {
+        eventHappen += CloseFrontDoor;
+        frontDoor.OpenDoor(false);
+        frontDoor.canOpen = false;
+        frontDoor.canClose = false;
+        isClosingFrontDoor = false;
+        eventHappen -= CloseFrontDoor;
     }
 
     private void Update()
@@ -55,16 +67,12 @@ public class GameEventObserver : MonoBehaviour
             RandomSpawn();
         }
         AcitveDialogue();
-        if (isClosingFrontDoor) {
-            frontDoor.OpenDoor(false);
-            frontDoor.canOpen = false;
-            frontDoor.canClose = false;
-            isClosingFrontDoor = false;
-        }
+        eventHappen?.Invoke();
         if (isBurningItems) {
             frontDoor.canOpen = true;
             endingTrigger.SetActive(true);
             policeSiren.SetActive(true);
+            isBurningItems = false;
         }
     }
 
@@ -77,7 +85,7 @@ public class GameEventObserver : MonoBehaviour
     IEnumerator Appear() {
         isVanishing = true;
         yield return new WaitForSeconds(disAppearTime);
-        Transform nextSpawnPoint = demonAppearPoints[Random.Range(0, demonAppearPoints.Length)];
+        Transform nextSpawnPoint = demonAppearPoints[UnityEngine.Random.Range(0, demonAppearPoints.Length)];
         Destroy(demon);
         yield return new WaitForSeconds(appearTime);
         GameObject D = Instantiate(demonPrefab);
@@ -102,6 +110,10 @@ public class GameEventObserver : MonoBehaviour
             }
             if (GameEventManager.isEncounterDemon && GetDialogue(DialogueEventType.FirstMeetDemon)!=null) {
                 GetDialogue(DialogueEventType.FirstMeetDemon).SetActive(true);
+                isTalking = true;
+            }
+            if (isEnding && GetDialogue(DialogueEventType.Final) != null) {
+                GetDialogue(DialogueEventType.Final).SetActive(true);
                 isTalking = true;
             }
         }
