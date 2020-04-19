@@ -2,30 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class RoomSetting {
+    public string name;
+    public GameObject originalRoom;
+    public GameObject swapRoom;
+}
+
 public class RoomChange : MonoBehaviour
 {
     Transform player;
-
-    public GameObject LivingRoom;
-    public GameObject LivingRoomSwap;
-
-    public GameObject Bathroom;
-    public GameObject BathroomSwap;
-
-
-    public GameObject Basement;
-    public GameObject BasementSwap;
-
-
-    public GameObject SmallBedroom;
-    public GameObject SmallBedroomSwap;
-
-    public GameObject Dinningroom;
-    public GameObject DinningroomSwap;
-
-    public GameObject Mainbedroom;
-    public GameObject MainbedroomSwap;
-
+    public List<RoomSetting> roomSettings;
 
     BoxCollider collider;
 
@@ -35,7 +22,6 @@ public class RoomChange : MonoBehaviour
         collider = GetComponent<BoxCollider>();
         collider.enabled = false;
         player = FindObjectOfType<FirstPersonAIO>().transform;
-       
     }
 
     private void Update()
@@ -45,6 +31,7 @@ public class RoomChange : MonoBehaviour
         if (dotPos < -2f)
         {
             collider.enabled = true;
+          
         }
 
         else if (dotPos > 1)
@@ -56,24 +43,26 @@ public class RoomChange : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player") {
+            if (!GameEventManager.allRoom.Contains(this)) {
+                GameEventManager.allRoom.Add(this);
+            }
 
-            LivingRoom.SetActive(LivingRoomSwap.activeInHierarchy);
-            LivingRoomSwap.SetActive(!LivingRoom.activeInHierarchy);
+            for (int i = 0; i < roomSettings.Count; i++)
+            {
+                roomSettings[i].originalRoom.SetActive(roomSettings[i].swapRoom.activeInHierarchy);
+                roomSettings[i].swapRoom.SetActive(!roomSettings[i].originalRoom.activeInHierarchy);
+            }
 
-            Bathroom.SetActive(BathroomSwap.activeInHierarchy);
-            BathroomSwap.SetActive(!Bathroom.activeInHierarchy);
-
-            Basement.SetActive(BasementSwap.activeInHierarchy);
-            BasementSwap.SetActive(!Basement.activeInHierarchy);
-
-            SmallBedroom.SetActive(SmallBedroomSwap.activeInHierarchy);
-            SmallBedroomSwap.SetActive(!SmallBedroom.activeInHierarchy);
-
-            Dinningroom.SetActive(DinningroomSwap.activeInHierarchy);
-            DinningroomSwap.SetActive(!Dinningroom.activeInHierarchy);
-
-            Mainbedroom.SetActive(MainbedroomSwap.activeInHierarchy);
-            MainbedroomSwap.SetActive(!Mainbedroom.activeInHierarchy);
+            if (gameObject.name != "LilyRoomTrigger")
+            {
+                if (GameEventObserver.i.IsDialougeCompleted())
+                {
+                    GameEventObserver.i.isRoomChange = true;
+                }
+            }
+            else {
+                GameEventObserver.i.isEnterLilyRoom = true;
+            }
         }
     }
 }

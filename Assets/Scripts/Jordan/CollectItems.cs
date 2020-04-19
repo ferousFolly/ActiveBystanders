@@ -19,7 +19,12 @@ public class CollectItems : MonoBehaviour
     private void OnMouseEnter()
     {
         text3D.SetActive(true);
-        text3D.transform.position = new Vector3(transform.position.x,transform.position.y+ text3DPopup_Height,transform.position.z);
+      
+    }
+
+    private void OnMouseOver()
+    {
+        text3D.transform.position = new Vector3(transform.position.x, transform.position.y + text3DPopup_Height, transform.position.z);
         text3D.GetComponentInChildren<TextMesh>().text = shortDescription;
         text3D.transform.LookAt(InGameAssetManager.i.player.transform);
     }
