@@ -41,6 +41,8 @@ public class GameEventObserver : MonoBehaviour
     public GameObject endingTrigger;
     public GameObject policeSiren;
     public bool isEnding;
+    public bool isRoomChange;
+    public bool isEnterLilyRoom;
 
     private void Start()
     {
@@ -98,6 +100,7 @@ public class GameEventObserver : MonoBehaviour
     }
 
     void AcitveDialogue() {
+        Debug.Log(InventoryManager.i.IsReadFirst3Note());
         if (!isTalking) {
             if (InventoryManager.i.IsReadFirst3Note() && GetDialogue(DialogueEventType.After3Notes) != null)
             {
@@ -116,8 +119,26 @@ public class GameEventObserver : MonoBehaviour
                 GetDialogue(DialogueEventType.Final).SetActive(true);
                 isTalking = true;
             }
+            if (isRoomChange && GetDialogue(DialogueEventType.RoomChange) != null)
+            {
+                GetDialogue(DialogueEventType.RoomChange).SetActive(true);
+                isTalking = true;
+            }
+            if (isEnterLilyRoom && GetDialogue(DialogueEventType.LilysRoom) != null)
+            {
+                GetDialogue(DialogueEventType.LilysRoom).SetActive(true);
+                isTalking = true;
+            }
+            if (IsDialougeCompleted() && GameEventManager.allRoom.Count >=5 && GetDialogue(DialogueEventType.AllRoomChange)!=null && GetDialogue(DialogueEventType.LilysRoom)==null) {
+                GetDialogue(DialogueEventType.AllRoomChange).SetActive(true);
+                isTalking = true;
+            }
         }
       
+    }
+
+    public bool IsDialougeCompleted() {
+        return InGameAssetManager.i.dialogueText.text == "";
     }
 
     GameObject GetDialogue(DialogueEventType dialogue)

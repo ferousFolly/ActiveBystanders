@@ -10,7 +10,7 @@ public static class GameEventManager
     public static int loadSceneTime = 0;
 
     public static bool isEncounterDemon = true;
-
+    public static List<RoomChange> allRoom = new List<RoomChange>();
 
     public static void IncreaseOpeningDoorNumbers() {
         doorsHasBeenOpened += 1;
