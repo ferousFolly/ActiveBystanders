@@ -26,6 +26,9 @@ public class RoomChange : MonoBehaviour
     public GameObject Mainbedroom;
     public GameObject MainbedroomSwap;
 
+    public GameObject Demon;
+    public GameObject DemonSwap;
+
 
     BoxCollider collider;
 
@@ -74,6 +77,10 @@ public class RoomChange : MonoBehaviour
 
             Mainbedroom.SetActive(MainbedroomSwap.activeInHierarchy);
             MainbedroomSwap.SetActive(!Mainbedroom.activeInHierarchy);
+
+
+            Demon.SetActive(DemonSwap.activeInHierarchy);
+            DemonSwap.SetActive(!Demon.activeInHierarchy);
         }
     }
 }
