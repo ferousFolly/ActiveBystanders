@@ -285,11 +285,27 @@ public class AI_Base : MonoBehaviour
     }
 
     public void GetHit() {
-        _isHurt = true;
+        if (currentHP > 0)
+        {
+            _isHurt = true;
+            currentHP -= 20;
+        }
+        else
+        {
+            _isDead = true;
+        }
     }
 
     void Die() {
-        
+        anim.SetBool("isWalking", false);
+        anim.SetBool("isAttacking", false);
+        anim.SetBool("isHurt", false);
+        anim.SetBool("isRunning", false);
+        anim.SetBool("isDead",true);
+        enabled = false;
+        agent.enabled = false;
+        fov.enabled = false;
+        GetComponentInChildren<CapsuleCollider>().enabled = false;
     }
 
     public void AttackDetect() {
