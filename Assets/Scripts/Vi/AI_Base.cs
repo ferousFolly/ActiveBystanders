@@ -310,4 +310,16 @@ public class AI_Base : MonoBehaviour
             Gizmos.DrawWireSphere(transform.position + attackOffset,attackArea);
         }
     }
+
+    public void FootStep(int i) {
+        if (i == 0)
+        {
+            //Demon
+            GetComponent<AudioSource>().PlayOneShot(SoundManager.GetAudioClip(SoundManager.SoundEffects.DemonFootstep));
+        }
+        else {
+            //Butcher
+            GetComponent<AudioSource>().PlayOneShot(SoundManager.GetAudioClip(SoundManager.SoundEffects.ButcherFootstep));
+        }
+    }
 }

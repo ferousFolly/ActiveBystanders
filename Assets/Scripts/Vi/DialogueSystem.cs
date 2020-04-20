@@ -21,6 +21,9 @@ public enum DialogueEventType
     DestroyRitualItemCanKillDemon,
     FirstItemisBurnt,
     Final,
+    RoomChange,
+    LilysRoom,
+    AllRoomChange,
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -147,8 +150,10 @@ public class DialogueSystem : MonoBehaviour
                     textAlpha -= Time.unscaledDeltaTime;
                     dialogueText.color = new Color(1, 1, 1, textAlpha);
 
-                    if (textAlpha <= 0) 
-                    Destroy(gameObject);
+                    if (textAlpha <= 0) {
+                        Destroy(gameObject);
+                        dialogueText.text = null;
+                    }
                 }
             }
         }

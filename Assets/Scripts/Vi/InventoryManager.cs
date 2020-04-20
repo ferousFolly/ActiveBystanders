@@ -23,6 +23,7 @@ public class ItemType {
         OptionalNote_1,
         OptionalNote_2,
         OptionalNote_3,
+        None,
     }
     public string itemName;
     public type typeOfItem;
@@ -110,7 +111,7 @@ public class InventoryManager : MonoBehaviour
         int isClickNumber = 0;
         for (int i = 0; i < itemInInventory.Count; i++)
         {
-            switch (itemInInventory[i].itemName) {
+            switch (itemInInventory[i].type.ToString()) {
                 case "Note1":
                 case "Note2":
                 case "Note3":
@@ -141,7 +142,7 @@ public class InventoryManager : MonoBehaviour
         int isClickNumber = 0;
         for (int i = 0; i < itemInInventory.Count; i++)
         {
-            switch (itemInInventory[i].itemName)
+            switch (itemInInventory[i].type.ToString())
             {
                 case "Note4":
                 case "Note5":

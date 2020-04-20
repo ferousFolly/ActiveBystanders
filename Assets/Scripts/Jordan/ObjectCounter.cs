@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,7 +17,7 @@ public class ObjectCounter : MonoBehaviour
     private bool isshowingText;
   
     float colorFadeBlack = 0f;
-
+    bool isEnding;
 
     private void Start()
     {
@@ -31,7 +30,7 @@ public class ObjectCounter : MonoBehaviour
     {
         UpdateText();
         FadeOutText();
-        if (GameEventObserver.i.isEnding)
+        if (isEnding)
         {
             colorFadeBlack += Time.deltaTime;
         }
@@ -40,6 +39,10 @@ public class ObjectCounter : MonoBehaviour
             SceneControlle.NextScene();
         }
         FadeBlack.color = new Color(1, 1, 1, colorFadeBlack);
+    }
+
+    public void EndingFadeOut() {
+        isEnding = true;
     }
 
 
@@ -51,9 +54,12 @@ public class ObjectCounter : MonoBehaviour
         if (GameEventObserver.i.isBurningItems && !isshowingText) {
             objecttiveBG.gameObject.SetActive(true);
             ObjectiveText.GetComponent<Text>().text = "Escape from the house!";
-            isshowingText = true;
+            isshowingText = false;
         }
+       
     }
+
+  
 
     void FadeOutText() {
         if (objecttiveBG.gameObject.activeSelf) {

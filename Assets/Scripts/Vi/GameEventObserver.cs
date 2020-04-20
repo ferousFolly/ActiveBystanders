@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,6 +33,7 @@ public class GameEventObserver : MonoBehaviour
     bool isTalking;
 
     [Header("SomeEvents")]
+    private Action eventHappen;
     public bool isBurningItems;
 
     public bool isClosingFrontDoor;
@@ -39,6 +41,8 @@ public class GameEventObserver : MonoBehaviour
     public GameObject endingTrigger;
     public GameObject policeSiren;
     public bool isEnding;
+    public bool isRoomChange;
+    public bool isEnterLilyRoom;
 
     private void Start()
     {
@@ -47,6 +51,16 @@ public class GameEventObserver : MonoBehaviour
         }
         GameEventManager.isEncounterDemon = false;
         isBurningItems = false;
+
+    }
+
+    public void CloseFrontDoor() {
+        eventHappen += CloseFrontDoor;
+        frontDoor.OpenDoor(false);
+        frontDoor.canOpen = false;
+        frontDoor.canClose = false;
+        isClosingFrontDoor = false;
+        eventHappen -= CloseFrontDoor;
     }
 
     private void Update()
@@ -55,16 +69,12 @@ public class GameEventObserver : MonoBehaviour
             RandomSpawn();
         }
         AcitveDialogue();
-        if (isClosingFrontDoor) {
-            frontDoor.OpenDoor(false);
-            frontDoor.canOpen = false;
-            frontDoor.canClose = false;
-            isClosingFrontDoor = false;
-        }
+        eventHappen?.Invoke();
         if (isBurningItems) {
             frontDoor.canOpen = true;
             endingTrigger.SetActive(true);
             policeSiren.SetActive(true);
+            isBurningItems = false;
         }
     }
 
@@ -77,7 +87,7 @@ public class GameEventObserver : MonoBehaviour
     IEnumerator Appear() {
         isVanishing = true;
         yield return new WaitForSeconds(disAppearTime);
-        Transform nextSpawnPoint = demonAppearPoints[Random.Range(0, demonAppearPoints.Length)];
+        Transform nextSpawnPoint = demonAppearPoints[UnityEngine.Random.Range(0, demonAppearPoints.Length)];
         Destroy(demon);
         yield return new WaitForSeconds(appearTime);
         GameObject D = Instantiate(demonPrefab);
@@ -90,6 +100,7 @@ public class GameEventObserver : MonoBehaviour
     }
 
     void AcitveDialogue() {
+        Debug.Log(InventoryManager.i.IsReadFirst3Note());
         if (!isTalking) {
             if (InventoryManager.i.IsReadFirst3Note() && GetDialogue(DialogueEventType.After3Notes) != null)
             {
@@ -104,8 +115,30 @@ public class GameEventObserver : MonoBehaviour
                 GetDialogue(DialogueEventType.FirstMeetDemon).SetActive(true);
                 isTalking = true;
             }
+            if (isEnding && GetDialogue(DialogueEventType.Final) != null) {
+                GetDialogue(DialogueEventType.Final).SetActive(true);
+                isTalking = true;
+            }
+            if (isRoomChange && GetDialogue(DialogueEventType.RoomChange) != null)
+            {
+                GetDialogue(DialogueEventType.RoomChange).SetActive(true);
+                isTalking = true;
+            }
+            if (isEnterLilyRoom && GetDialogue(DialogueEventType.LilysRoom) != null)
+            {
+                GetDialogue(DialogueEventType.LilysRoom).SetActive(true);
+                isTalking = true;
+            }
+            if (IsDialougeCompleted() && GameEventManager.allRoom.Count >=5 && GetDialogue(DialogueEventType.AllRoomChange)!=null && GetDialogue(DialogueEventType.LilysRoom)==null) {
+                GetDialogue(DialogueEventType.AllRoomChange).SetActive(true);
+                isTalking = true;
+            }
         }
       
+    }
+
+    public bool IsDialougeCompleted() {
+        return InGameAssetManager.i.dialogueText.text == "";
     }
 
     GameObject GetDialogue(DialogueEventType dialogue)
