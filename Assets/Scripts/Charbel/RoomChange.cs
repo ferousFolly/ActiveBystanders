@@ -2,10 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class RoomSetting {
+    public string name;
+    public GameObject originalRoom;
+    public GameObject swapRoom;
+}
+
 public class RoomChange : MonoBehaviour
 {
     Transform player;
+    public List<RoomSetting> roomSettings;
 
+<<<<<<< HEAD
     public GameObject LivingRoom;
     public GameObject LivingRoomSwap;
 
@@ -30,6 +39,8 @@ public class RoomChange : MonoBehaviour
     public GameObject DemonSwap;
 
 
+=======
+>>>>>>> JordanNew
     BoxCollider collider;
 
 
@@ -38,7 +49,6 @@ public class RoomChange : MonoBehaviour
         collider = GetComponent<BoxCollider>();
         collider.enabled = false;
         player = FindObjectOfType<FirstPersonAIO>().transform;
-       
     }
 
     private void Update()
@@ -48,6 +58,7 @@ public class RoomChange : MonoBehaviour
         if (dotPos < -2f)
         {
             collider.enabled = true;
+          
         }
 
         else if (dotPos > 1)
@@ -59,13 +70,17 @@ public class RoomChange : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player") {
+            if (!GameEventManager.allRoom.Contains(this)) {
+                GameEventManager.allRoom.Add(this);
+            }
 
-            LivingRoom.SetActive(LivingRoomSwap.activeInHierarchy);
-            LivingRoomSwap.SetActive(!LivingRoom.activeInHierarchy);
+            for (int i = 0; i < roomSettings.Count; i++)
+            {
+                roomSettings[i].originalRoom.SetActive(roomSettings[i].swapRoom.activeInHierarchy);
+                roomSettings[i].swapRoom.SetActive(!roomSettings[i].originalRoom.activeInHierarchy);
+            }
 
-            Bathroom.SetActive(BathroomSwap.activeInHierarchy);
-            BathroomSwap.SetActive(!Bathroom.activeInHierarchy);
-
+<<<<<<< HEAD
             Basement.SetActive(BasementSwap.activeInHierarchy);
             BasementSwap.SetActive(!Basement.activeInHierarchy);
 
@@ -82,5 +97,18 @@ public class RoomChange : MonoBehaviour
             Demon.SetActive(DemonSwap.activeInHierarchy);
             DemonSwap.SetActive(!Demon.activeInHierarchy);
         }
+=======
+            if (gameObject.name != "LilyRoomTrigger")
+            {
+                if (GameEventObserver.i.IsDialougeCompleted())
+                {
+                    GameEventObserver.i.isRoomChange = true;
+                }
+            }
+            else {
+                GameEventObserver.i.isEnterLilyRoom = true;
+            }
+        }
+>>>>>>> JordanNew
     }
 }
