@@ -147,9 +147,9 @@ public class InteractiveAction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && !isOpeningSetting)
         {
             SoundManager.PlaySound(SoundManager.UI_SoundEffects.UI_ESC);
-            isOpeningSetting = true;
+            InGameAssetManager.i.settingPanel.SetActive(true);
         }
-        InGameAssetManager.i.settingPanel.SetActive(isOpeningSetting);
+        isOpeningSetting = InGameAssetManager.i.settingPanel.activeInHierarchy;
     }
 
     void OpenInventory() {

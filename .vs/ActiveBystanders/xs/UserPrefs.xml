@@ -1,12 +1,20 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Vi/InventoryManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Vi/MainMenu/SettingManager.cs">
     <Files>
       <File FileName="Assets/Scripts/Jordan/CollectItems.cs" Line="26" Column="6" />
-      <File FileName="Assets/Scripts/InteractiveAction.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Vi/InventoryManager.cs" Line="145" Column="55" />
-      <File FileName="Assets/Scripts/Charbel/RoomChange.cs" Line="43" Column="31" />
-      <File FileName="Assets/Scripts/Vi/DialogueSystem.cs" Line="26" Column="19" />
-      <File FileName="Assets/Scripts/Vi/GameEventObserver.cs" Line="103" Column="46" />
+      <File FileName="Assets/Scripts/InteractiveAction.cs" Line="202" Column="6" />
+      <File FileName="Assets/Scripts/Vi/InventoryManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Charbel/RoomChange.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Vi/DialogueSystem.cs" />
+      <File FileName="Assets/Scripts/Vi/GameEventObserver.cs" />
+      <File FileName="Assets/Scripts/Charbel/Gun.cs" />
+      <File FileName="Assets/Scripts/Vi/AI_Base.cs" />
+      <File FileName="Assets/Scripts/Vi/DemonOnly.cs" />
+      <File FileName="Assets/Scripts/Jordan/ObjectCounter.cs" />
+      <File FileName="Assets/Scripts/Vi/MainMenu/UI_Button.cs" />
+      <File FileName="Assets/Scripts/Vi/GameAssetManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Vi/InGameAssetManager.cs" Line="54" Column="1" />
+      <File FileName="Assets/Scripts/Vi/MainMenu/SettingManager.cs" Line="22" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,8 +31,9 @@
                 <Node name="Jordan" expanded="True" />
                 <Node name="Mercurius" expanded="True" />
                 <Node name="Vi" expanded="True">
-                  <Node name="MainMenu" expanded="True" />
-                  <Node name="InventoryManager.cs" selected="True" />
+                  <Node name="MainMenu" expanded="True">
+                    <Node name="SettingManager.cs" selected="True" />
+                  </Node>
                 </Node>
               </Node>
             </Node>
@@ -35,7 +44,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="16a0e87c-8c53-45d7-99c4-8b968f9f905d" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d44ab887-e3a8-4009-abf6-7061a5ccd43d" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

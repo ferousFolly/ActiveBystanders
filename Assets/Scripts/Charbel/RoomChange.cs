@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class RoomSetting {
+public class RoomSetting
+{
     public string name;
     public GameObject originalRoom;
     public GameObject swapRoom;
@@ -31,7 +32,7 @@ public class RoomChange : MonoBehaviour
         if (dotPos < -2f)
         {
             collider.enabled = true;
-          
+
         }
 
         else if (dotPos > 1)
@@ -42,8 +43,10 @@ public class RoomChange : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player") {
-            if (!GameEventManager.allRoom.Contains(this)) {
+        if (other.tag == "Player")
+        {
+            if (!GameEventManager.allRoom.Contains(this))
+            {
                 GameEventManager.allRoom.Add(this);
             }
 
@@ -60,7 +63,8 @@ public class RoomChange : MonoBehaviour
                     GameEventObserver.i.isRoomChange = true;
                 }
             }
-            else {
+            else
+            {
                 GameEventObserver.i.isEnterLilyRoom = true;
             }
         }

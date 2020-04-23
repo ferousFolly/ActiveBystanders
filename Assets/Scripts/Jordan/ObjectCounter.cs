@@ -56,7 +56,6 @@ public class ObjectCounter : MonoBehaviour
             ObjectiveText.GetComponent<Text>().text = "Escape from the house!";
             isshowingText = false;
         }
-       
     }
 
   

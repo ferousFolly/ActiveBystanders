@@ -100,7 +100,6 @@ public class GameEventObserver : MonoBehaviour
     }
 
     void AcitveDialogue() {
-        Debug.Log(InventoryManager.i.IsReadFirst3Note());
         if (!isTalking) {
             if (InventoryManager.i.IsReadFirst3Note() && GetDialogue(DialogueEventType.After3Notes) != null)
             {
