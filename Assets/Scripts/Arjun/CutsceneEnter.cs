@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class CutsceneEnter : MonoBehaviour
 {
-    public GameObject thePlayer;
+    private GameObject thePlayer;
     public GameObject CutsceneCam;
     public AI_Base AI;
 
+    private void Start()
+    {
+        thePlayer = InGameAssetManager.i.player;
+    }
+
     void OnTriggerEnter (Collider other)
     {
-        this.gameObject.GetComponent<BoxCollider>().enabled = false;
-        CutsceneCam.SetActive(true);
-        thePlayer.SetActive(false);
-        SoundManager.PlaySound(SoundManager.InGameMusic.BeingTraced);
-        StartCoroutine(FinishCut());
+        if (other.tag == "Player") {
+            this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            CutsceneCam.SetActive(true);
+            thePlayer.SetActive(false);
+            SoundManager.PlaySound(SoundManager.InGameMusic.BeingTraced);
+            StartCoroutine(FinishCut());
+        }
     }
 
     IEnumerator FinishCut()
