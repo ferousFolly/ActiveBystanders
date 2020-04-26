@@ -13,6 +13,7 @@ public class ObjectCounter : MonoBehaviour
     private float currentShowingTimer;
     public static int theScore;
     public static bool isCollected;
+    
 
     private bool isshowingText;
   
@@ -50,6 +51,8 @@ public class ObjectCounter : MonoBehaviour
         if (isCollected) {
             objecttiveBG.gameObject.SetActive(true);
             ObjectiveText.GetComponent<Text>().text = "Collect Ritual Items: " + theScore + "/3";
+            //Notes.Text = "Notes:" + NotesCollected + "/10".ToString();
+            //ObjectiveText.GetComponent<Text>().text = "Notes: " + theScore + "/10";
         }
         if (GameEventObserver.i.isBurningItems && !isshowingText) {
             objecttiveBG.gameObject.SetActive(true);
