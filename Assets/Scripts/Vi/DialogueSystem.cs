@@ -24,6 +24,7 @@ public enum DialogueEventType
     RoomChange,
     LilysRoom,
     AllRoomChange,
+    AfterBeingTraced,
 }
 
 [RequireComponent(typeof(AudioSource))]

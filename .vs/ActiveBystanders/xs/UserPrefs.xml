@@ -1,11 +1,17 @@
 ﻿<Properties StartupConfiguration="{5DACD273-41F6-1C87-82F0-70BCCA112BF5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Arjun/CutsceneEnter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Vi/GameEventObserver.cs">
     <Files>
       <File FileName="Assets/Scripts/Arjun/HiddenMenu.cs" Line="42" Column="54" />
-      <File FileName="Assets/Scripts/Vi/GameEventObserver.cs" />
+      <File FileName="Assets/Scripts/Vi/GameEventObserver.cs" Line="91" Column="1" />
       <File FileName="Assets/Scripts/InteractiveAction.cs" />
       <File FileName="Assets/Scripts/Vi/InventoryManager.cs" Line="128" Column="1" />
-      <File FileName="Assets/Scripts/Arjun/CutsceneEnter.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Arjun/CutsceneEnter.cs" Line="25" Column="6" />
+      <File FileName="Assets/Scripts/Vi/InGameAssetManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Vi/GameEventManager.cs" Line="12" Column="48" />
+      <File FileName="Assets/Scripts/Vi/AI_Base.cs" Line="107" Column="20" />
+      <File FileName="Assets/Scripts/Vi/AI_Demon.cs" Line="27" Column="14" />
+      <File FileName="Assets/Scripts/Vi/DialogueSystem.cs" Line="27" Column="22" />
+      <File FileName="Assets/Scripts/Vi/AI_FOV.cs" Line="27" Column="30" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,14 +23,13 @@
                 <Node name="FirstPersonAIO" expanded="True" />
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="Arjun" expanded="True">
-                  <Node name="CutsceneEnter.cs" selected="True" />
-                </Node>
+                <Node name="Arjun" expanded="True" />
                 <Node name="Charbel" expanded="True" />
                 <Node name="Jordan" expanded="True" />
                 <Node name="Mercurius" expanded="True" />
                 <Node name="Vi" expanded="True">
                   <Node name="MainMenu" expanded="True" />
+                  <Node name="GameEventObserver.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
@@ -35,7 +40,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="55da8dd9-e831-48ca-88c2-ae2d0072dfc2" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9f8ec2e8-3ee9-4ad2-9434-34b66146006a" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

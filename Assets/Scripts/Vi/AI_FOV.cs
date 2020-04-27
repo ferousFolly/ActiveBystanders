@@ -17,24 +17,12 @@ public class AI_FOV : MonoBehaviour
 
     public List<Transform> visibleTargets = new List<Transform>();
 
-    void Start()
-    {
-       // StartCoroutine("FindTargetsWithDelay", 0.1f);
-    }
+ 
 
     private void Update()
     {
         FindIsVisibleTargets();
     }
-
-    //public IEnumerator FindTargetsWithDelay(float delay)
-    //{
-    //    while (true)
-    //    {
-    //        yield return new WaitForSeconds(delay);
-    //        FindIsVisibleTargets();
-    //    }
-    //}
 
     void FindIsVisibleTargets()
     {

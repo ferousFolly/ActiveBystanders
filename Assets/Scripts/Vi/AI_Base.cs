@@ -104,7 +104,7 @@ public class AI_Base : MonoBehaviour
         }
     }
 
-    bool IsFindTarget() {
+    public virtual bool IsFindTarget() {
         if (_isHurt && !fov.visibleTargets.Contains(InGameAssetManager.i.player.transform)) {
             fov.visibleTargets.Add(InGameAssetManager.i.player.transform);
         }

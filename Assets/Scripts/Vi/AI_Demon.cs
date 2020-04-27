@@ -17,6 +17,7 @@ public class AI_Demon : AI_Base
     {
         if (!isScreaming)
         {
+            GameEventManager.isEncounterDemon = true;
             audio.PlayOneShot(SoundManager.GetAudioClip(SoundManager.SoundEffects.Demon_Scream));
             isScreaming = true;
         }
@@ -29,5 +30,10 @@ public class AI_Demon : AI_Base
         base.Persuing();
     }
 
-   
+    public bool IsFirstTimeGetridofPlayer() {
+        if (GameEventManager.isEncounterDemon && !IsFindTarget()) {
+            return true;
+        }
+        return false;
+    }
 }

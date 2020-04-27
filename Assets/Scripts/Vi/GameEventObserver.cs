@@ -19,13 +19,7 @@ public class GameEventObserver : MonoBehaviour
     }
 
     [Header("Demon")]
-    public bool enableRandomPosition;
-    public Transform[] demonAppearPoints;
-    private GameObject demon;
-    public GameObject demonPrefab;
-    public float appearTime;
-    public float disAppearTime;
-    bool isVanishing;
+    public AI_Demon demon;
 
     [Header("EventForDialogue")]
     [SerializeField]
@@ -44,9 +38,7 @@ public class GameEventObserver : MonoBehaviour
 
     private void Start()
     {
-        if (enableRandomPosition) {
-            demon = FindObjectOfType<AI_Demon>().gameObject;
-        }
+        demon = FindObjectOfType<AI_Demon>();
         GameEventManager.isEncounterDemon = false;
         isBurningItems = false;
 
@@ -67,9 +59,7 @@ public class GameEventObserver : MonoBehaviour
 
     private void Update()
     {
-        if (enableRandomPosition) {
-            RandomSpawn();
-        }
+     
         AcitveDialogue();
         if (isBurningItems) {
             frontDoor.canOpen = true;
@@ -77,27 +67,6 @@ public class GameEventObserver : MonoBehaviour
             policeSiren.SetActive(true);
             isBurningItems = false;
         }
-    }
-
-    void RandomSpawn() {
-        if (!isVanishing) {
-            StartCoroutine(Appear());
-        }
-    }
-
-    IEnumerator Appear() {
-        isVanishing = true;
-        yield return new WaitForSeconds(disAppearTime);
-        Transform nextSpawnPoint = demonAppearPoints[UnityEngine.Random.Range(0, demonAppearPoints.Length)];
-        Destroy(demon);
-        yield return new WaitForSeconds(appearTime);
-        GameObject D = Instantiate(demonPrefab);
-        D.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-        D.transform.position = nextSpawnPoint.position;
-        yield return new WaitForSeconds(0.1f);
-        D.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-        demon = D;
-        isVanishing = false;
     }
 
     void AcitveDialogue() {
@@ -115,6 +84,11 @@ public class GameEventObserver : MonoBehaviour
                 GetDialogue(DialogueEventType.FirstMeetDemon).SetActive(true);
                 isTalking = true;
             }
+            if (demon.IsFirstTimeGetridofPlayer() && GetDialogue(DialogueEventType.AfterBeingTraced)!=null) {
+                GetDialogue(DialogueEventType.AfterBeingTraced).SetActive(true);
+                isTalking = true;
+            }
+
             if (isEnding && GetDialogue(DialogueEventType.Final) != null) {
                 GetDialogue(DialogueEventType.Final).SetActive(true);
                 isTalking = true;
