@@ -33,10 +33,8 @@ public class GameEventObserver : MonoBehaviour
     bool isTalking;
 
     [Header("SomeEvents")]
-    private Action eventHappen;
     public bool isBurningItems;
 
-    public bool isClosingFrontDoor;
     public Door frontDoor;
     public GameObject endingTrigger;
     public GameObject policeSiren;
@@ -55,13 +53,17 @@ public class GameEventObserver : MonoBehaviour
     }
 
     public void CloseFrontDoor() {
-        eventHappen += CloseFrontDoor;
         frontDoor.OpenDoor(false);
         frontDoor.canOpen = false;
         frontDoor.canClose = false;
-        isClosingFrontDoor = false;
-        eventHappen -= CloseFrontDoor;
     }
+
+    public void UnlockFrontDoor() {
+        frontDoor.OpenDoor(false);
+        frontDoor.canOpen = true;
+        frontDoor.canClose = true;
+    }
+
 
     private void Update()
     {
@@ -69,7 +71,6 @@ public class GameEventObserver : MonoBehaviour
             RandomSpawn();
         }
         AcitveDialogue();
-        eventHappen?.Invoke();
         if (isBurningItems) {
             frontDoor.canOpen = true;
             endingTrigger.SetActive(true);

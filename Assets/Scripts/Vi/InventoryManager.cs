@@ -52,6 +52,7 @@ public class InventoryManager : MonoBehaviour
     public Transform slots;
     public List<UIItem> itemInInventory = new List<UIItem>();
 
+    private bool isCheating;
 
     private void Start()
     {
@@ -98,6 +99,41 @@ public class InventoryManager : MonoBehaviour
                 itemInInventory.Remove(itemInInventory[i]);
             }
         }
+    }
+
+    public void CollectAllItems() {
+        StartCoroutine(ClearItems());
+        StartCoroutine(AddItems());
+    }
+
+    IEnumerator ClearItems() {
+        while (itemInInventory.Count > 0) {
+            for (int i = 0; i < itemInInventory.Count; i++)
+            {
+                Destroy(itemInInventory[i].gameObject);
+                itemInInventory.Remove(itemInInventory[i]);
+            }
+        }
+        yield return new WaitForSeconds(0.1f);
+       
+    }
+
+    IEnumerator AddItems() {
+        AddInnventory(ItemType.type.Gun);
+        AddInnventory(ItemType.type.FlashLight);
+
+        AddInnventory(ItemType.type.Blood_flask);
+        AddInnventory(ItemType.type.Cross);
+        AddInnventory(ItemType.type.Candelabra);
+
+        AddInnventory(ItemType.type.Note1);
+        AddInnventory(ItemType.type.Note2);
+        AddInnventory(ItemType.type.Note3);
+        AddInnventory(ItemType.type.Note4);
+        AddInnventory(ItemType.type.Note5);
+        AddInnventory(ItemType.type.Note6);
+        AddInnventory(ItemType.type.Note7);
+        yield return new WaitForSeconds(0.1f);
     }
 
     string NewLighHighText(string s)
