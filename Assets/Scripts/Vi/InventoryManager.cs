@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ItemType {
     public enum type
     {
+       
         Note1,
         Note2,
         Note3,
@@ -14,15 +15,15 @@ public class ItemType {
         Note5,
         Note6,
         Note7,
+        OptionalNote_1,
+        OptionalNote_2,
+        OptionalNote_3,
         Flare,
         Candelabra,
         Cross,
         Blood_flask,
         Gun,
         FlashLight,
-        OptionalNote_1,
-        OptionalNote_2,
-        OptionalNote_3,
         None,
     }
     public string itemName;
