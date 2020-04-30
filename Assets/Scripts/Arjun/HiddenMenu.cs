@@ -10,15 +10,6 @@ public class HiddenMenu : MonoBehaviour
     private int index;
     private bool cheat;
     public GameObject AI;
-    public GameObject FrontDoor;
-    public GameObject Note1;
-    public GameObject Note2;
-    public GameObject Note3;
-    public GameObject Note4;
-    public GameObject Note5;
-    public GameObject Note6;
-    public GameObject Note8;
-    public GameObject Note7;
 
     void OnGUI()
     {
@@ -40,23 +31,21 @@ public class HiddenMenu : MonoBehaviour
             }
             if (GUI.Button(new Rect(40, 210, 200, 20), "Unlock Front Door"))
             {
-                FrontDoor.SetActive(false);
+                GameEventObserver.i.UnlockFrontDoor();
             }
-            if (GUI.Button(new Rect(40, 240, 200, 20), "Collectitems"))
+            if (GUI.Button(new Rect(40, 240, 200, 20), "BurnRitualItems"))
             {
-                Note1.SetActive(true);
-                Note2.SetActive(true);
-                Note3.SetActive(true);
-                Note4.SetActive(true);
-                Note5.SetActive(true);
-                Note6.SetActive(true);
-                Note7.SetActive(true);
+                GameEventObserver.i.isBurningItems = true;
             }
-            if (GUI.Button(new Rect(40, 270, 200, 20), "Play Credits"))
+            if (GUI.Button(new Rect(40, 270, 200, 20), "CollectAllItems"))
+            {
+                InventoryManager.i.CollectAllItems();
+            }
+            if (GUI.Button(new Rect(40, 300, 200, 20), "Play Credits"))
             {
                 SceneManager.LoadScene("Ending");
             }
-            if (GUI.Button(new Rect(40, 300, 200, 20), "Close this menu"))
+            if (GUI.Button(new Rect(40, 330, 200, 20), "Close this menu"))
             {
                 cheat = false;
                 index = 0;
@@ -79,6 +68,7 @@ public class HiddenMenu : MonoBehaviour
 
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             Application.Quit();
